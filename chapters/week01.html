@@ -1,0 +1,2190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Modelling, Sets, and Algebra – Advanced Mathematical Tools for Management</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../index.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-8a84cfd26a81cac07cced63adb3cfe4f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-af0209dd186707271a4c448b58cde707.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-8a84cfd26a81cac07cced63adb3cfe4f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/week01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Advanced Mathematical Tools for Management</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">How to use these notes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/week01.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#this-week-at-a-glance" id="toc-this-week-at-a-glance" class="nav-link active" data-scroll-target="#this-week-at-a-glance">This week at a glance</a></li>
+  <li><a href="#what-a-mathematical-model-is" id="toc-what-a-mathematical-model-is" class="nav-link" data-scroll-target="#what-a-mathematical-model-is"><span class="header-section-number">2</span> What a mathematical model is</a>
+  <ul class="collapse">
+  <li><a href="#sec-var-param" id="toc-sec-var-param" class="nav-link" data-scroll-target="#sec-var-param"><span class="header-section-number">2.1</span> Variables and parameters</a></li>
+  <li><a href="#the-components-of-a-decision-model" id="toc-the-components-of-a-decision-model" class="nav-link" data-scroll-target="#the-components-of-a-decision-model"><span class="header-section-number">2.2</span> The components of a decision model</a></li>
+  <li><a href="#deterministic-and-probabilistic-models" id="toc-deterministic-and-probabilistic-models" class="nav-link" data-scroll-target="#deterministic-and-probabilistic-models"><span class="header-section-number">2.3</span> Deterministic and probabilistic models</a></li>
+  <li><a href="#sec-stat-model" id="toc-sec-stat-model" class="nav-link" data-scroll-target="#sec-stat-model"><span class="header-section-number">2.4</span> Statistical models</a></li>
+  </ul></li>
+  <li><a href="#sets" id="toc-sets" class="nav-link" data-scroll-target="#sets"><span class="header-section-number">3</span> Sets</a>
+  <ul class="collapse">
+  <li><a href="#three-ways-to-describe-a-set" id="toc-three-ways-to-describe-a-set" class="nav-link" data-scroll-target="#three-ways-to-describe-a-set"><span class="header-section-number">3.1</span> Three ways to describe a set</a></li>
+  <li><a href="#the-standard-number-sets" id="toc-the-standard-number-sets" class="nav-link" data-scroll-target="#the-standard-number-sets"><span class="header-section-number">3.2</span> The standard number sets</a></li>
+  <li><a href="#intervals" id="toc-intervals" class="nav-link" data-scroll-target="#intervals"><span class="header-section-number">3.3</span> Intervals</a></li>
+  <li><a href="#absolute-value-and-distance" id="toc-absolute-value-and-distance" class="nav-link" data-scroll-target="#absolute-value-and-distance"><span class="header-section-number">3.4</span> Absolute value and distance</a></li>
+  <li><a href="#subsets-and-cardinality" id="toc-subsets-and-cardinality" class="nav-link" data-scroll-target="#subsets-and-cardinality"><span class="header-section-number">3.5</span> Subsets and cardinality</a></li>
+  <li><a href="#set-operations" id="toc-set-operations" class="nav-link" data-scroll-target="#set-operations"><span class="header-section-number">3.6</span> Set operations</a></li>
+  <li><a href="#cartesian-products-and-the-data-matrix" id="toc-cartesian-products-and-the-data-matrix" class="nav-link" data-scroll-target="#cartesian-products-and-the-data-matrix"><span class="header-section-number">3.7</span> Cartesian products and the data matrix</a></li>
+  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions"><span class="header-section-number">3.8</span> Partitions</a></li>
+  <li><a href="#the-simplex" id="toc-the-simplex" class="nav-link" data-scroll-target="#the-simplex"><span class="header-section-number">3.9</span> The simplex</a></li>
+  </ul></li>
+  <li><a href="#summation-notation" id="toc-summation-notation" class="nav-link" data-scroll-target="#summation-notation"><span class="header-section-number">4</span> Summation notation</a>
+  <ul class="collapse">
+  <li><a href="#the-notation" id="toc-the-notation" class="nav-link" data-scroll-target="#the-notation"><span class="header-section-number">4.1</span> The notation</a></li>
+  <li><a href="#three-rules" id="toc-three-rules" class="nav-link" data-scroll-target="#three-rules"><span class="header-section-number">4.2</span> Three rules</a></li>
+  <li><a href="#the-mean-and-deviations-from-it" id="toc-the-mean-and-deviations-from-it" class="nav-link" data-scroll-target="#the-mean-and-deviations-from-it"><span class="header-section-number">4.3</span> The mean and deviations from it</a></li>
+  <li><a href="#double-sums" id="toc-double-sums" class="nav-link" data-scroll-target="#double-sums"><span class="header-section-number">4.4</span> Double sums</a></li>
+  </ul></li>
+  <li><a href="#algebra-for-working-with-models" id="toc-algebra-for-working-with-models" class="nav-link" data-scroll-target="#algebra-for-working-with-models"><span class="header-section-number">5</span> Algebra for working with models</a>
+  <ul class="collapse">
+  <li><a href="#rearranging-expressions" id="toc-rearranging-expressions" class="nav-link" data-scroll-target="#rearranging-expressions"><span class="header-section-number">5.1</span> Rearranging expressions</a></li>
+  <li><a href="#linear-equations" id="toc-linear-equations" class="nav-link" data-scroll-target="#linear-equations"><span class="header-section-number">5.2</span> Linear equations</a></li>
+  <li><a href="#quadratic-equations" id="toc-quadratic-equations" class="nav-link" data-scroll-target="#quadratic-equations"><span class="header-section-number">5.3</span> Quadratic equations</a></li>
+  <li><a href="#exponents" id="toc-exponents" class="nav-link" data-scroll-target="#exponents"><span class="header-section-number">5.4</span> Exponents</a></li>
+  <li><a href="#logarithms" id="toc-logarithms" class="nav-link" data-scroll-target="#logarithms"><span class="header-section-number">5.5</span> Logarithms</a></li>
+  <li><a href="#growth-and-decay" id="toc-growth-and-decay" class="nav-link" data-scroll-target="#growth-and-decay"><span class="header-section-number">5.6</span> Growth and decay</a></li>
+  <li><a href="#turning-a-multiplicative-model-into-a-linear-one" id="toc-turning-a-multiplicative-model-into-a-linear-one" class="nav-link" data-scroll-target="#turning-a-multiplicative-model-into-a-linear-one"><span class="header-section-number">5.7</span> Turning a multiplicative model into a linear one</a></li>
+  </ul></li>
+  <li><a href="#sec-proofs" id="toc-sec-proofs" class="nav-link" data-scroll-target="#sec-proofs"><span class="header-section-number">6</span> Proof techniques</a></li>
+  <li><a href="#one-minute-recap" id="toc-one-minute-recap" class="nav-link" data-scroll-target="#one-minute-recap">One-minute recap</a></li>
+  <li><a href="#where-to-practise" id="toc-where-to-practise" class="nav-link" data-scroll-target="#where-to-practise">Where to practise</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="hidden">
+<p><span class="math display">\[
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rp}{\mathbb{R}_{+}}
+\newcommand{\simplex}[1]{\Delta_{#1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\sd}{\operatorname{sd}}
+\newcommand{\MAE}{\operatorname{MAE}}
+\newcommand{\MSE}{\operatorname{MSE}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\xbar}{\bar{x}}
+\newcommand{\normal}{\mathcal{N}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+\]</span></p>
+</div>
+<!--
+HTML only, on purpose. MathJax reads the definitions above and registers them
+for the page; the .hidden wrapper stops the (empty) display equation showing.
+
+PDF gets the SAME macros from tex/macros.tex via include-in-header in
+_quarto.yml. Keeping the two paths separate matters: if both fired, LaTeX would
+hit \newcommand on an already-defined macro and abort. tex/macros.tex therefore
+uses \providecommand as a second line of defence.
+
+If you add a macro, add it in BOTH files.
+-->
+<section id="this-week-at-a-glance" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="this-week-at-a-glance">This week at a glance</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>take a described business situation and say which quantities are <strong>variables</strong> and which are <strong>parameters</strong>, and justify the split;</li>
+<li>write down the objective and constraints of a small decision problem in symbols;</li>
+<li>describe a set three ways — by listing, by a defining property, and as an interval — and move between them;</li>
+<li>read and write <span class="math inline">\(\cup\)</span>, <span class="math inline">\(\cap\)</span>, complement, and difference, and compute the size of a union without double-counting;</li>
+<li>expand and condense <span class="math inline">\(\sum\)</span> notation, and prove the two identities about deviations from the mean;</li>
+<li>solve linear and quadratic equations, and use logarithms to turn a multiplicative relationship into a linear one.</li>
+</ul>
+<p>Nothing here is new mathematics. Most of it you have met before and put down. The aim is to pick it up in a form you can use.</p>
+<hr>
+</section>
+<section id="what-a-mathematical-model-is" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> What a mathematical model is</h1>
+<p>A <strong>mathematical model</strong> is a deliberately simplified description of a real situation, written in symbols, built to answer a specific question. The word <em>deliberately</em> is doing real work: a model leaves things out on purpose. A model of a delivery network that accounted for every pothole would be useless, because you could not solve it and could not learn anything from it.</p>
+<p>Three questions organise every model you will meet in this course:</p>
+<ol type="1">
+<li>What am I allowed to choose, or what am I trying to learn?</li>
+<li>What am I taking as given?</li>
+<li>What has to be true for the answer to be believable?</li>
+</ol>
+<p>The vocabulary below is just a precise way of asking those three questions.</p>
+<section id="sec-var-param" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-var-param"><span class="header-section-number">2.1</span> Variables and parameters</h2>
+<p>Almost every difficulty students have with modelling notation traces back to blurring these two words, so it is worth a sharp test rather than a description.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: variable and parameter">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: variable and parameter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Fix a model and a question you are asking of it.</p>
+<p>A <strong>parameter</strong> is a quantity whose value is settled <em>before</em> you solve the model. It is an input: given in the problem statement, measured, or estimated from data.</p>
+<p>A <strong>variable</strong> is a quantity whose value is <em>produced by</em> solving the model, or supplied by an observation. It is not settled in advance.</p>
+<p><em>In words: parameters are what you feed in; variables are what comes out, or what varies across the rows of your data.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: the operative test">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: the operative test
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To classify a quantity, ask one question:</p>
+<blockquote class="blockquote">
+<p><strong>Do I already know this number before I start solving?</strong></p>
+</blockquote>
+<p>If yes, it is a parameter. If no, it is a variable.</p>
+</div>
+</div>
+<p>This test is more reliable than any list of examples, because the <em>same symbol can switch roles depending on the question</em>. That is not a flaw in the definitions; it is the point.</p>
+<p>Consider a straight-line relationship <span class="math inline">\(y = \beta_0 + \beta_1 x\)</span>.</p>
+<ul>
+<li>If you are a manager who has been handed <span class="math inline">\(\beta_0 = 12\)</span> and <span class="math inline">\(\beta_1 = 3\)</span> and asked to predict <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 20\)</span>: then <span class="math inline">\(\beta_0, \beta_1\)</span> are <strong>parameters</strong> and <span class="math inline">\(y, x\)</span> are <strong>variables</strong>.</li>
+<li>If you are an analyst with a spreadsheet of <span class="math inline">\((x, y)\)</span> pairs, trying to work out what <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are: then the data <span class="math inline">\((x,y)\)</span> are the inputs and <span class="math inline">\(\beta_0, \beta_1\)</span> are what you are solving for. The roles have swapped.</li>
+</ul>
+<p>Same equation, same letters, different question. Keep the question in view and the classification is never ambiguous.</p>
+</section>
+<section id="the-components-of-a-decision-model" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="the-components-of-a-decision-model"><span class="header-section-number">2.2</span> The components of a decision model</h2>
+<p>When the question is <em>“what should we do?”</em>, the model has a standard anatomy. The example below carries the vocabulary; read the story first, then the table.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: staffing a courier fleet">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: staffing a courier fleet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A grocery-delivery startup plans next week’s courier capacity. It can use two kinds of shift.</p>
+<ul>
+<li>A <strong>salaried shift</strong> completes 40 deliveries and costs $180.</li>
+<li>A <strong>gig shift</strong> completes 15 deliveries and costs $80.</li>
+</ul>
+<p>The week’s forecast demand is 600 deliveries, and all of it must be covered. A labour agreement caps salaried shifts at 12 per week. The gig platform can supply at most 20 shifts. The company wants to cover demand as cheaply as possible.</p>
+<p><strong>Setting it up.</strong> What can the company choose? The number of each kind of shift. Nothing else in the description is up to them — the costs, the capacities, the forecast, and the two caps are all handed over. So:</p>
+<p><span class="math display">\[x_S = \text{number of salaried shifts}, \qquad x_G = \text{number of gig shifts}.\]</span></p>
+<p>Total cost is <span class="math inline">\(180\)</span> per salaried shift plus <span class="math inline">\(80\)</span> per gig shift:</p>
+<p><span class="math display">\[\text{minimise} \quad 180\,x_S + 80\,x_G.\]</span></p>
+<p>Deliveries completed must reach 600:</p>
+<p><span class="math display">\[40\,x_S + 15\,x_G \ \geq\ 600.\]</span></p>
+<p>And the two supply caps, plus the obvious requirement that you cannot schedule a negative number of shifts:</p>
+<p><span class="math display">\[x_S \leq 12, \qquad x_G \leq 20, \qquad x_S \geq 0, \quad x_G \geq 0.\]</span></p>
+<p><strong>Solving it.</strong> Compare the two shift types on cost per delivery:</p>
+<p><span class="math display">\[\frac{180}{40} = \$4.50 \text{ per delivery}, \qquad \frac{80}{15} \approx \$5.33 \text{ per delivery}.\]</span></p>
+<p>Salaried shifts are cheaper per delivery, so use as many as the agreement permits: <span class="math inline">\(x_S = 12\)</span>. Those cover</p>
+<p><span class="math display">\[40 \times 12 = 480 \text{ deliveries},\]</span></p>
+<p>leaving <span class="math inline">\(600 - 480 = 120\)</span> to be covered by gig shifts. Each covers 15, so</p>
+<p><span class="math display">\[x_G \geq \frac{120}{15} = 8.\]</span></p>
+<p>Taking <span class="math inline">\(x_G = 8\)</span> (there is no reason to buy more than needed), the cost is</p>
+<p><span class="math display">\[180(12) + 80(8) = 2160 + 640 = \$2{,}800.\]</span></p>
+<p><strong>Check the answer is legal.</strong> Deliveries: <span class="math inline">\(40(12) + 15(8) = 480 + 120 = 600 \geq 600\)</span>, satisfied. Salaried shifts: <span class="math inline">\(12 \leq 12\)</span>, satisfied. Gig shifts: <span class="math inline">\(8 \leq 20\)</span>, satisfied. Both variables non-negative. All four constraints hold, so the schedule is feasible.</p>
+</div>
+</div>
+<p>Now the anatomy, using that example:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Component</th>
+<th style="text-align: left;">What it is</th>
+<th style="text-align: left;">In the courier example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Decision variables</strong></td>
+<td style="text-align: left;">The quantities you choose. Unknown before solving.</td>
+<td style="text-align: left;"><span class="math inline">\(x_S\)</span>, <span class="math inline">\(x_G\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Parameters</strong></td>
+<td style="text-align: left;">Values handed to you. Known before solving.</td>
+<td style="text-align: left;">costs 180 and 80; capacities 40 and 15; demand 600; caps 12 and 20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Objective function</strong></td>
+<td style="text-align: left;">The single number you are making as large or as small as possible.</td>
+<td style="text-align: left;"><span class="math inline">\(180x_S + 80x_G\)</span>, minimised</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Constraints</strong></td>
+<td style="text-align: left;">Equations and inequalities every admissible answer must satisfy.</td>
+<td style="text-align: left;"><span class="math inline">\(40x_S + 15x_G \geq 600\)</span>; <span class="math inline">\(x_S \leq 12\)</span>; <span class="math inline">\(x_G \leq 20\)</span>; <span class="math inline">\(x_S, x_G \geq 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Assumptions</strong></td>
+<td style="text-align: left;">Simplifications that make the problem solvable, and that you should be prepared to defend.</td>
+<td style="text-align: left;">every shift completes its full quota; costs do not change with volume; shifts can be fractional</td>
+</tr>
+</tbody>
+</table>
+<p>That last assumption deserves a comment, because it is the kind of thing a model quietly does to you. Nothing in the mathematics stops <span class="math inline">\(x_G\)</span> from coming out as <span class="math inline">\(8.4\)</span>, and there is no such thing as <span class="math inline">\(0.4\)</span> of a shift. Here we were lucky and the answer landed on whole numbers. In general, forcing variables to be whole numbers makes a problem substantially harder to solve — it becomes an <em>integer</em> program. Recognising when you have made this assumption is more important right now than knowing how to fix it.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Confusing the objective with a constraint.</strong> “Cover 600 deliveries” and “spend as little as possible” are doing different jobs. The first is a bar you must clear — a constraint, written with <span class="math inline">\(\geq\)</span>. The second is what you optimise — the objective, with no number on the right-hand side.</p>
+<p>A quick diagnostic: a constraint has a comparison symbol (<span class="math inline">\(\leq\)</span>, <span class="math inline">\(\geq\)</span>, <span class="math inline">\(=\)</span>) and a fixed number. An objective has the word <em>minimise</em> or <em>maximise</em> and no comparison at all. If you have written “minimise cost <span class="math inline">\(\leq 2800\)</span>”, you have merged the two.</p>
+</div>
+</div>
+</section>
+<section id="deterministic-and-probabilistic-models" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="deterministic-and-probabilistic-models"><span class="header-section-number">2.3</span> Deterministic and probabilistic models</h2>
+<p>The courier model is <strong>deterministic</strong>: every parameter is treated as known with certainty. Put the same inputs in twice and you get the same answer twice.</p>
+<p>That is a strong assumption, and often a false one. The forecast of 600 deliveries is a <em>forecast</em>; the true number will be something else. A <strong>probabilistic</strong> (or <em>stochastic</em>) model replaces a fixed value with a random quantity:</p>
+<p><span class="math display">\[D \sim \normal(600, 50^2),\]</span></p>
+<p>read as “<span class="math inline">\(D\)</span> follows a normal distribution with mean 600 and standard deviation 50”.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the notation <span class="math inline">\(\normal(\mu, \sigma^2)\)</span>, the <strong>second argument is the variance, not the standard deviation</strong>. Writing <span class="math inline">\(\normal(600, 50^2)\)</span> means a standard deviation of 50. Writing <span class="math inline">\(\normal(600, 50)\)</span> means a <em>variance</em> of 50, hence a standard deviation of about 7.07 — a completely different model. Some software (including R’s <code>rnorm</code>) takes the standard deviation as its argument instead, which is a frequent source of error when moving between a formula and code.</p>
+</div>
+</div>
+<p>Once demand is random, the question changes shape. “Cover all demand” is no longer something you can guarantee; you can only make it likely. Questions become “what schedule covers demand at least 95% of the time?” That is beyond this week, but it is worth seeing where the road leads.</p>
+</section>
+<section id="sec-stat-model" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-stat-model"><span class="header-section-number">2.4</span> Statistical models</h2>
+<p>A third kind of model does not choose anything. It explains: given data, how does one quantity move with another?</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: how long does a delivery take?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: how long does a delivery take?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A logistics team wants to predict delivery time from distance. For delivery <span class="math inline">\(i\)</span> they record the time <span class="math inline">\(T_i\)</span> in minutes and the distance <span class="math inline">\(d_i\)</span> in kilometres, and propose</p>
+<p><span class="math display">\[T_i = \beta_0 + \beta_1 d_i + \varepsilon_i, \qquad \varepsilon_i \sim \normal(0, \sigma^2).\]</span></p>
+<p>Reading the pieces:</p>
+<ul>
+<li><span class="math inline">\(\beta_0\)</span> is the time a delivery takes even at zero distance — parking, finding the door, handover.</li>
+<li><span class="math inline">\(\beta_1\)</span> is the additional minutes per extra kilometre.</li>
+<li><span class="math inline">\(\varepsilon_i\)</span> is everything else: traffic that day, a slow lift, a customer who does not answer. It is not an error in the sense of a mistake; it is the part of <span class="math inline">\(T_i\)</span> that distance does not explain.</li>
+<li><span class="math inline">\(\sigma^2\)</span> measures how much that unexplained part varies.</li>
+</ul>
+</div>
+</div>
+<p>This is where the vocabulary of <em>dependent</em> and <em>independent</em> variables belongs, and it is worth defining properly rather than mentioning in passing.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: response and explanatory variables">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: response and explanatory variables
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In a statistical model, the <strong>response variable</strong> (also called the <strong>dependent variable</strong>) is the quantity the model sets out to explain or predict. It sits on the left-hand side.</p>
+<p>An <strong>explanatory variable</strong> (also called an <strong>independent variable</strong>, a <em>predictor</em>, a <em>regressor</em>, or a <em>covariate</em>) is a quantity used to account for variation in the response. Explanatory variables sit on the right-hand side.</p>
+<p><em>In words: the response is what you want to know; the explanatory variables are what you already know and are using to guess it.</em></p>
+</div>
+</div>
+<p>In the delivery model, <span class="math inline">\(T_i\)</span> is the response and <span class="math inline">\(d_i\)</span> is the explanatory variable. The names “dependent” and “independent” are older and, frankly, misleading — “independent” here has nothing to do with statistical independence, and the explanatory variables are frequently related to one another. This course prefers <em>response</em> and <em>explanatory</em>, but you will meet all of these words in the wild and they mean the same thing.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Do not use “response” and “explanatory” for a model that has no random component.</strong> They are statistical terms; they presuppose data and unexplained variation. In a deterministic model such as a supply-and-demand equilibrium, where you solve algebraically for a price, the right distinction is between quantities determined <em>inside</em> the model (<strong>endogenous</strong>) and quantities taken as given from <em>outside</em> it (<strong>exogenous</strong>). Calling the price an “explanatory variable” when the whole point is to solve for it is a contradiction — it cannot both explain and be the unknown.</p>
+</div>
+</div>
+<p>Note also the notation split established in the conventions table, which now has a reason attached: <span class="math inline">\(\beta_0, \beta_1, \sigma^2\)</span> are properties of the <em>population</em> and are unknown; the numbers you compute from a sample are estimates of them, written <span class="math inline">\(\hat\beta_0, \hat\beta_1, \hat\sigma^2\)</span>. The same distinction separates <span class="math inline">\(\mu\)</span> (a population mean) from <span class="math inline">\(\xbar\)</span> (a sample mean). They are different objects and the notation should never blur them.</p>
+<hr>
+</section>
+</section>
+<section id="sets" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Sets</h1>
+<p>A <strong>set</strong> is a collection of distinct objects, called its <strong>elements</strong>. That is the whole definition. Sets are useful in analytics because so many things are naturally collections: the customers in a segment, the days in a quarter, the values a variable is permitted to take, the decisions that satisfy every constraint.</p>
+<p>We write <span class="math inline">\(x \in A\)</span> for “<span class="math inline">\(x\)</span> is an element of <span class="math inline">\(A\)</span>”, and <span class="math inline">\(x \notin A\)</span> for “<span class="math inline">\(x\)</span> is not”.</p>
+<section id="three-ways-to-describe-a-set" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="three-ways-to-describe-a-set"><span class="header-section-number">3.1</span> Three ways to describe a set</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: the three descriptions">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: the three descriptions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>By listing</strong> (roster notation): write the elements between braces. <span class="math display">\[A = \{2, 4, 6, 8\}\]</span></p>
+<p><strong>By a defining property</strong> (set-builder notation): state the universe the elements are drawn from, a vertical bar read “such that”, and the condition. <span class="math display">\[B = \{\, x \in \Z \mid x \text{ is even and } 2 \leq x \leq 8 \,\}\]</span></p>
+<p><strong>By an interval</strong>: for sets of consecutive real numbers only. <span class="math display">\[C = [2, 8]\]</span></p>
+<p><em>In words: you can name the members one by one, state the rule for membership, or — if the members form an unbroken stretch of the number line — give the two endpoints.</em></p>
+</div>
+</div>
+<p>Note that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> above are the <em>same set</em>, written two ways. <span class="math inline">\(C\)</span> is a different set: it contains <span class="math inline">\(3.7\)</span>, which <span class="math inline">\(A\)</span> does not.</p>
+<p>Listing is only practical for small finite sets. Set-builder notation is the workhorse, and it is worth being fussy about its three parts, because omitting the universe is the most common error in the whole topic:</p>
+<p><span class="math display">\[\underbrace{\{\, x \in \R}_{\text{where } x \text{ lives}} \ \mid \ \underbrace{x \geq 0}_{\text{the condition}} \,\}\]</span></p>
+<p>Write <span class="math inline">\(\{x \mid x \geq 0\}\)</span> without the <span class="math inline">\(\in \R\)</span> and you have not said whether you mean the non-negative integers, the non-negative reals, or something else. The universe is not decoration.</p>
+</section>
+<section id="the-standard-number-sets" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="the-standard-number-sets"><span class="header-section-number">3.2</span> The standard number sets</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Contains</th>
+<th style="text-align: left;">Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\N\)</span></td>
+<td style="text-align: left;">naturals</td>
+<td style="text-align: left;"><span class="math inline">\(0, 1, 2, 3, \dots\)</span></td>
+<td style="text-align: left;">counts: customers, orders, periods</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\Z\)</span></td>
+<td style="text-align: left;">integers</td>
+<td style="text-align: left;"><span class="math inline">\(\dots, -2, -1, 0, 1, 2, \dots\)</span></td>
+<td style="text-align: left;">changes that can go either way</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Q\)</span></td>
+<td style="text-align: left;">rationals</td>
+<td style="text-align: left;">all <span class="math inline">\(p/q\)</span> with <span class="math inline">\(p, q \in \Z\)</span>, <span class="math inline">\(q \neq 0\)</span></td>
+<td style="text-align: left;">exact proportions</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\R\)</span></td>
+<td style="text-align: left;">reals</td>
+<td style="text-align: left;">everything on the number line</td>
+<td style="text-align: left;">prices, times, rates</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\Rp\)</span></td>
+<td style="text-align: left;">non-negative reals</td>
+<td style="text-align: left;"><span class="math inline">\([0, +\infty)\)</span></td>
+<td style="text-align: left;">quantities that cannot be negative</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\R^p\)</span></td>
+<td style="text-align: left;">real <span class="math inline">\(p\)</span>-vectors</td>
+<td style="text-align: left;">ordered lists of <span class="math inline">\(p\)</span> reals</td>
+<td style="text-align: left;">one observation, <span class="math inline">\(p\)</span> variables</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\R^{n\times p}\)</span></td>
+<td style="text-align: left;">real matrices</td>
+<td style="text-align: left;"><span class="math inline">\(n\)</span> rows, <span class="math inline">\(p\)</span> columns</td>
+<td style="text-align: left;">a whole dataset</td>
+</tr>
+</tbody>
+</table>
+<p>These nest: <span class="math inline">\(\N \subset \Z \subset \Q \subset \R\)</span>. Every integer is a rational (write <span class="math inline">\(-3\)</span> as <span class="math inline">\(-3/1\)</span>), and every rational is real. The reverse fails: <span class="math inline">\(\sqrt{2}\)</span> and <span class="math inline">\(\pi\)</span> are real but not rational.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(0 \in \N\)</span> in this course. Many textbooks start the naturals at 1. Ours starts at 0, so the statement “<span class="math inline">\(0\)</span> is a natural number” is true here. This is a convention, not a fact about the world, and conventions differ — which is exactly why the course fixes one and states it.</p>
+<p>Relatedly, <span class="math inline">\(\Rp = [0, +\infty)\)</span> <strong>includes</strong> zero. If you need strictly positive reals, write <span class="math inline">\((0, +\infty)\)</span> and say so.</p>
+</div>
+</div>
+</section>
+<section id="intervals" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="intervals"><span class="header-section-number">3.3</span> Intervals</h2>
+<p>An interval is the set of all reals between two endpoints. The only thing to get right is whether the endpoints themselves are in.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 50%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Set-builder form</th>
+<th style="text-align: left;">Endpoints included?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\([a, b]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid a \leq x \leq b\}\)</span></td>
+<td style="text-align: left;">both</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\((a, b)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid a &lt; x &lt; b\}\)</span></td>
+<td style="text-align: left;">neither</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\([a, b)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid a \leq x &lt; b\}\)</span></td>
+<td style="text-align: left;">left only</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\((a, b]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid a &lt; x \leq b\}\)</span></td>
+<td style="text-align: left;">right only</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\([a, +\infty)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid x \geq a\}\)</span></td>
+<td style="text-align: left;">left only</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\((-\infty, b]\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \R \mid x \leq b\}\)</span></td>
+<td style="text-align: left;">right only</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern: <strong>a square bracket admits the endpoint, a round bracket excludes it.</strong> Infinity always gets a round bracket, because <span class="math inline">\(+\infty\)</span> is not a number and cannot be an element of anything.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may see the open interval written <span class="math inline">\(]a, b[\)</span>, with the brackets turned outwards. This is the standard French convention and means exactly the same thing as <span class="math inline">\((a,b)\)</span>. Some of the course slides use it. This course, and essentially all statistical software, uses <span class="math inline">\((a,b)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="absolute-value-and-distance" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="absolute-value-and-distance"><span class="header-section-number">3.4</span> Absolute value and distance</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: absolute value">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: absolute value
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(a \in \R\)</span>, <span class="math display">\[\abs{a} = \begin{cases} a, &amp; \text{if } a \geq 0, \\ -a, &amp; \text{if } a &lt; 0. \end{cases}\]</span></p>
+<p><em>In words: strip the sign. The absolute value of a number is how far it is from zero, and distance is never negative.</em></p>
+</div>
+</div>
+<p>So <span class="math inline">\(\abs{7} = 7\)</span>, <span class="math inline">\(\abs{-7} = 7\)</span>, and <span class="math inline">\(\abs{0} = 0\)</span>. Note that <span class="math inline">\(-a\)</span> is <em>positive</em> when <span class="math inline">\(a\)</span> is negative: <span class="math inline">\(\abs{-7} = -(-7) = 7\)</span>. The minus sign in the definition is not a typo.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: distance and tolerance">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: distance and tolerance
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The distance between two reals <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> is <span class="math display">\[d(u,v) = \abs{u - v},\]</span> and for any <span class="math inline">\(c &gt; 0\)</span>, <span class="math display">\[\abs{u - v} \leq c \iff -c \leq u - v \leq c \iff v - c \leq u \leq v + c \iff u \in [v-c,\; v+c].\]</span></p>
+<p><em>In words: “</em><span class="math inline">\(u\)</span> is within <span class="math inline">\(c\)</span> of <span class="math inline">\(v\)</span>” and “<span class="math inline">\(u\)</span> lies in the interval of width <span class="math inline">\(2c\)</span> centred at <span class="math inline">\(v\)</span>” say the same thing. Absolute-value inequalities are interval statements in disguise.</p>
+</div>
+</div>
+<p>This one identity converts a large class of business requirements into intervals you can compute with.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: a cold-chain shipment">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: a cold-chain shipment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A vaccine shipment must be held at <span class="math inline">\(5^\circ\)</span>C, and the carrier guarantees the temperature will never stray more than <span class="math inline">\(2^\circ\)</span>C from target. Write the admissible temperature range as an interval.</p>
+<p>Let <span class="math inline">\(T\)</span> be the temperature. “Never more than 2 degrees from 5” is a statement about distance:</p>
+<p><span class="math display">\[\abs{T - 5} \leq 2.\]</span></p>
+<p>Unfold it using the result above:</p>
+<p><span class="math display">\[-2 \leq T - 5 \leq 2.\]</span></p>
+<p>Add 5 throughout — adding the same number to all three parts of a chained inequality is always legal and does not flip anything:</p>
+<p><span class="math display">\[-2 + 5 \leq T \leq 2 + 5,\]</span> <span class="math display">\[3 \leq T \leq 7.\]</span></p>
+<p>So <span class="math inline">\(T \in [3, 7]\)</span>. The endpoints are included because the guarantee was “no more than”, written <span class="math inline">\(\leq\)</span>; had it been “strictly less than”, we would have written <span class="math inline">\((3,7)\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="subsets-and-cardinality" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="subsets-and-cardinality"><span class="header-section-number">3.5</span> Subsets and cardinality</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: subset">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: subset
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(A\)</span> is a <strong>subset</strong> of <span class="math inline">\(B\)</span>, written <span class="math inline">\(A \subseteq B\)</span>, if every element of <span class="math inline">\(A\)</span> is also an element of <span class="math inline">\(B\)</span>: <span class="math display">\[A \subseteq B \iff \big(\text{for every } x,\ x \in A \Rightarrow x \in B\big).\]</span></p>
+<p><em>In words:</em> <span class="math inline">\(A\)</span> sits entirely inside <span class="math inline">\(B\)</span>. Nothing in <span class="math inline">\(A\)</span> escapes.</p>
+</div>
+</div>
+<p>A natural example: among the recipients of an email campaign, let <span class="math inline">\(O\)</span> be those who opened it and <span class="math inline">\(K\)</span> those who clicked a link inside it. You cannot click a link in an email you never opened, so <span class="math inline">\(K \subseteq O\)</span>. Note this is a claim about <em>every possible dataset</em>, not about one particular week’s numbers — that is what makes it a subset relation rather than a coincidence.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: cardinality">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: cardinality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a finite set <span class="math inline">\(A\)</span>, the <strong>cardinality</strong> <span class="math inline">\(\card{A}\)</span> is the number of elements in <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+<p>So <span class="math inline">\(\card{\{2,4,6,8\}} = 4\)</span> and <span class="math inline">\(\card{\varnothing} = 0\)</span>, where <span class="math inline">\(\varnothing\)</span> denotes the <strong>empty set</strong>, the set with no elements at all.</p>
+</section>
+<section id="set-operations" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="set-operations"><span class="header-section-number">3.6</span> Set operations</h2>
+<p>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be subsets of a <strong>universe</strong> <span class="math inline">\(\Omega\)</span> — the reference set of everything currently under consideration.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Notation</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Union</td>
+<td style="text-align: left;"><span class="math inline">\(A \cup B\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \Omega \mid x \in A \text{ or } x \in B\}\)</span></td>
+<td style="text-align: left;">in at least one</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Intersection</td>
+<td style="text-align: left;"><span class="math inline">\(A \cap B\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \Omega \mid x \in A \text{ and } x \in B\}\)</span></td>
+<td style="text-align: left;">in both</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Difference</td>
+<td style="text-align: left;"><span class="math inline">\(A \setminus B\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \Omega \mid x \in A \text{ and } x \notin B\}\)</span></td>
+<td style="text-align: left;">in <span class="math inline">\(A\)</span> but not <span class="math inline">\(B\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Complement</td>
+<td style="text-align: left;"><span class="math inline">\(A^c\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{x \in \Omega \mid x \notin A\}\)</span></td>
+<td style="text-align: left;">everything outside <span class="math inline">\(A\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The “or” in the union is <strong>inclusive</strong>: <span class="math inline">\(x\)</span> may be in <span class="math inline">\(A\)</span>, in <span class="math inline">\(B\)</span>, or in both. Everyday English often uses “or” exclusively (“tea or coffee” usually rules out both), which is a genuine source of confusion. Mathematical “or” never does.</p>
+<p>Two relations worth noticing: <span class="math inline">\(A \setminus B = A \cap B^c\)</span>, and <span class="math inline">\(A^c = \Omega \setminus A\)</span>. Difference and complement are the same operation, one relative to <span class="math inline">\(B\)</span> and one relative to the whole universe.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: two campaign audiences">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: two campaign audiences
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ten subscribers, numbered 1 to 10, received a product announcement. Let</p>
+<p><span class="math display">\[\Omega = \{1,2,3,4,5,6,7,8,9,10\}\]</span></p>
+<p>be all recipients, and record two behaviours:</p>
+<p><span class="math display">\[O = \{1, 3, 4, 6, 9, 10\} \quad \text{(opened the email)},\]</span> <span class="math display">\[P = \{2, 3, 4, 7, 9\} \quad \text{(visited the pricing page)}.\]</span></p>
+<p>Compute each operation by reading its definition literally.</p>
+<p><strong>Intersection</strong> — in both lists: <span class="math inline">\(3, 4, 9\)</span> appear in each. <span class="math display">\[O \cap P = \{3, 4, 9\}.\]</span></p>
+<p><strong>Union</strong> — in at least one list; collect everything, listing each subscriber once. <span class="math display">\[O \cup P = \{1, 2, 3, 4, 6, 7, 9, 10\}.\]</span></p>
+<p><strong>Difference</strong> <span class="math inline">\(O \setminus P\)</span> — opened but did not reach pricing. From <span class="math inline">\(O\)</span>, remove 3, 4, 9. <span class="math display">\[O \setminus P = \{1, 6, 10\}.\]</span></p>
+<p><strong>Difference</strong> <span class="math inline">\(P \setminus O\)</span> — reached pricing without opening the email. From <span class="math inline">\(P\)</span>, remove 3, 4, 9. <span class="math display">\[P \setminus O = \{2, 7\}.\]</span></p>
+<p><strong>Complement</strong> — everyone who did not open. <span class="math display">\[O^c = \{2, 5, 7, 8\}.\]</span></p>
+<p><strong>Interpreting them.</strong> <span class="math inline">\(O \cap P\)</span> is the engaged group: the campaign plausibly drove them to pricing. <span class="math inline">\(P \setminus O\)</span> is more interesting than it looks — two people reached the pricing page without opening the email, so they arrived by some other route. Attributing their visit to the campaign would overstate its effect. Notice that <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> overlap without either containing the other, so neither <span class="math inline">\(O \subseteq P\)</span> nor <span class="math inline">\(P \subseteq O\)</span> holds.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: the size of a union (inclusion–exclusion)">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: the size of a union (inclusion–exclusion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For finite sets <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, <span class="math display">\[\card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}.\]</span></p>
+<p><em>In words: add the two sizes, then subtract the overlap once — because anything in both sets got counted twice when you added.</em></p>
+</div>
+</div>
+<p>Checking it on the campaign data: <span class="math inline">\(\card{O} = 6\)</span>, <span class="math inline">\(\card{P} = 5\)</span>, <span class="math inline">\(\card{O \cap P} = 3\)</span>, so the formula predicts <span class="math inline">\(6 + 5 - 3 = 8\)</span>. Counting <span class="math inline">\(O \cup P = \{1,2,3,4,6,7,9,10\}\)</span> directly gives 8, which matches.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Adding audience sizes without subtracting the overlap.</strong> “The email reached 6 people and the pricing page had 5 visitors, so 11 people engaged” is wrong: it is 8. This error is endemic in marketing reports, where it inflates reach, and it is exactly what inclusion–exclusion corrects. The two counts only add cleanly when <span class="math inline">\(A \cap B = \varnothing\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="cartesian-products-and-the-data-matrix" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="cartesian-products-and-the-data-matrix"><span class="header-section-number">3.7</span> Cartesian products and the data matrix</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Cartesian product">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: Cartesian product
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>Cartesian product</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is the set of ordered pairs with first component from <span class="math inline">\(A\)</span> and second from <span class="math inline">\(B\)</span>: <span class="math display">\[A \times B = \{(a, b) \mid a \in A,\ b \in B\}.\]</span></p>
+<p><em>In words: every possible pairing of something from</em> <span class="math inline">\(A\)</span> with something from <span class="math inline">\(B\)</span>. Order matters — <span class="math inline">\((a,b)\)</span> and <span class="math inline">\((b,a)\)</span> are different pairs.</p>
+</div>
+</div>
+<p>Repeating this gives <span class="math inline">\(\R^p\)</span>: an element of <span class="math inline">\(\R^p\)</span> is an ordered list of <span class="math inline">\(p\)</span> real numbers. This is precisely how a single observation with <span class="math inline">\(p\)</span> measured variables is represented.</p>
+<p>Stack <span class="math inline">\(n\)</span> such observations and you have a dataset:</p>
+<p><span class="math display">\[X = (x_{ij}) \in \R^{n \times p},\]</span></p>
+<p>where <span class="math inline">\(x_{ij}\)</span> is the value of variable <span class="math inline">\(j\)</span> for observation <span class="math inline">\(i\)</span>. Row <span class="math inline">\(i\)</span> is one observation; column <span class="math inline">\(j\)</span> is one variable across all observations.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: reading a data matrix">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: reading a data matrix
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Four subscribers are described by three variables — tenure in months, monthly spend in dollars, and support tickets raised:</p>
+<p><span class="math display">\[X = \begin{pmatrix} 8 &amp; 42 &amp; 1 \\ 24 &amp; 115 &amp; 0 \\ 3 &amp; 28 &amp; 4 \\ 36 &amp; 96 &amp; 2 \end{pmatrix}.\]</span></p>
+<p><strong>Which space does</strong> <span class="math inline">\(X\)</span> belong to? Four rows, three columns, so <span class="math inline">\(X \in \R^{4 \times 3}\)</span>. Here <span class="math inline">\(n = 4\)</span> observations and <span class="math inline">\(p = 3\)</span> variables.</p>
+<p><strong>What is</strong> <span class="math inline">\(x_{32}\)</span>? Row 3, column 2. Row 3 is <span class="math inline">\((3, 28, 4)\)</span>, and its second entry is <span class="math inline">\(28\)</span> — subscriber 3 spends $28 per month. The row index always comes first.</p>
+<p><strong>What is observation 2?</strong> The second row, <span class="math inline">\((24, 115, 0)\)</span>: a subscriber of 24 months, spending $115, who has never contacted support.</p>
+<p><strong>What is the mean of variable 2?</strong> Add the second column and divide by the number of observations: <span class="math display">\[\frac{42 + 115 + 28 + 96}{4} = \frac{281}{4} = 70.25.\]</span> Average monthly spend is $70.25.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Reading</strong> <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> off the wrong axis. A dataset in <span class="math inline">\(\R^{100 \times 8}\)</span> has 100 observations and 8 variables, not the other way round. Rows are observations; columns are variables. In these notes <span class="math inline">\(n\)</span> <em>always</em> means the number of observations and <span class="math inline">\(p\)</span> <em>always</em> means the number of variables, and no other letter is used for either.</p>
+</div>
+</div>
+</section>
+<section id="partitions" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="partitions"><span class="header-section-number">3.8</span> Partitions</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: partition">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: partition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A family of sets <span class="math inline">\(X_1, X_2, \dots, X_k\)</span> is a <strong>partition</strong> of the universe <span class="math inline">\(\Omega\)</span> if all three of the following hold:</p>
+<ol type="1">
+<li>each <span class="math inline">\(X_i\)</span> is non-empty: <span class="math inline">\(X_i \neq \varnothing\)</span>;</li>
+<li>they do not overlap: <span class="math inline">\(X_i \cap X_j = \varnothing\)</span> whenever <span class="math inline">\(i \neq j\)</span>;</li>
+<li>together they account for everything: <span class="math inline">\(\displaystyle\bigcup_{i=1}^{k} X_i = \Omega\)</span>.</li>
+</ol>
+<p><em>In words: the sets carve</em> <span class="math inline">\(\Omega\)</span> into pieces with no gaps and no overlaps — every element of <span class="math inline">\(\Omega\)</span> lands in exactly one piece.</p>
+</div>
+</div>
+<p>The phrase “exactly one” is the whole content of the definition. Condition 3 gives <em>at least one</em>; condition 2 gives <em>at most one</em>. Together: exactly one.</p>
+<p>Partitions are what a categorical variable does to a dataset. Assigning every customer a tier, every transaction a region, or every ticket a priority partitions the population — provided the categories are built correctly.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: customer tiers">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: customer tiers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A retailer sorts customers by annual spend <span class="math inline">\(s\)</span> into Bronze, Silver, and Gold:</p>
+<p><span class="math display">\[T_1 = \{c \in \Omega \mid s(c) &lt; 500\}, \quad T_2 = \{c \in \Omega \mid 500 \leq s(c) &lt; 2000\}, \quad T_3 = \{c \in \Omega \mid s(c) \geq 2000\}.\]</span></p>
+<p><strong>Is this a partition?</strong> Check the conditions.</p>
+<p><em>No overlaps.</em> Take a customer with <span class="math inline">\(s(c) = 500\)</span>. Is it in <span class="math inline">\(T_1\)</span>? That needs <span class="math inline">\(500 &lt; 500\)</span>, which is false. In <span class="math inline">\(T_2\)</span>? That needs <span class="math inline">\(500 \leq 500 &lt; 2000\)</span>, true. In <span class="math inline">\(T_3\)</span>? Needs <span class="math inline">\(500 \geq 2000\)</span>, false. Exactly one. The same check at the other boundary, <span class="math inline">\(s(c) = 2000\)</span>, puts the customer in <span class="math inline">\(T_3\)</span> only.</p>
+<p><em>Covers everything.</em> Any spend <span class="math inline">\(s\)</span> is either below 500, or at least 500 but below 2000, or at least 2000 — no fourth possibility.</p>
+<p><em>Non-empty.</em> Provided the retailer has at least one customer in each band.</p>
+<p>So <span class="math inline">\(\{T_1, T_2, T_3\}\)</span> partitions the customer base.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Boundary values assigned to two tiers.</strong> Had the retailer written the bands as <span class="math inline">\([0, 500]\)</span>, <span class="math inline">\([500, 2000]\)</span>, <span class="math inline">\([2000, \infty)\)</span> — square brackets throughout — then a customer spending exactly $500 would qualify for both Bronze and Silver, and one spending $2000 for both Silver and Gold. That is not a partition, and in practice it means the tiers sum to more than the customer base and a customer’s tier depends on which rule the query happens to evaluate first.</p>
+<p>The fix is the pattern used above: <strong>closed on the left, open on the right</strong>, <span class="math inline">\([a, b)\)</span>, for every band except the last. This is the convention nearly all statistical software follows when binning a continuous variable, and it is worth adopting as a habit.</p>
+</div>
+</div>
+</section>
+<section id="the-simplex" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="the-simplex"><span class="header-section-number">3.9</span> The simplex</h2>
+<p>One particular set recurs so often — in weights, proportions, market shares, and predicted class probabilities — that it has a name.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: the simplex">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: the simplex
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong>simplex</strong> in <span class="math inline">\(\R^p\)</span> is <span class="math display">\[\simplex{p} = \left\{ \vect{w} \in \R^p_{+} \ \middle|\ \sum_{j=1}^{p} w_j = 1 \right\}.\]</span></p>
+<p><em>In words: the set of vectors with</em> <span class="math inline">\(p\)</span> components that are all non-negative and add up to exactly 1 — that is, the set of all possible ways of splitting a whole into <span class="math inline">\(p\)</span> shares.</p>
+</div>
+</div>
+<p>Two conditions, and both are needed. Non-negativity alone permits shares summing to 3; summing to 1 alone permits a negative share. The subscript <span class="math inline">\(p\)</span> counts <em>components</em>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: market shares">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: market shares
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Three firms hold shares <span class="math inline">\(\vect{v} = (0.45, 0.35, 0.20)\)</span>. Is <span class="math inline">\(\vect{v} \in \simplex{3}\)</span>?</p>
+<p><em>Non-negative?</em> <span class="math inline">\(0.45 \geq 0\)</span>, <span class="math inline">\(0.35 \geq 0\)</span>, <span class="math inline">\(0.20 \geq 0\)</span>. Yes.</p>
+<p><em>Sums to one?</em> <span class="math inline">\(0.45 + 0.35 + 0.20 = 1.00\)</span>. Yes.</p>
+<p>Both conditions hold, so <span class="math inline">\(\vect{v} \in \simplex{3}\)</span>.</p>
+<p>Now test <span class="math inline">\(\vect{u} = (0.60, 0.55, -0.15)\)</span>. Its components sum to <span class="math inline">\(0.60 + 0.55 - 0.15 = 1.00\)</span>, so the second condition passes. But <span class="math inline">\(-0.15 &lt; 0\)</span>, so the first fails, and <span class="math inline">\(\vect{u} \notin \simplex{3}\)</span>. A negative market share is not a rounding quibble — it is meaningless, and the non-negativity condition is what rules it out.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Superscript versus subscript on</strong> <span class="math inline">\(\Delta\)</span>. You will see <span class="math inline">\(\Delta^2\)</span>, <span class="math inline">\(\Delta_3\)</span>, and <span class="math inline">\(\Delta^{K-1}\)</span> in different sources, all describing three shares summing to one. The disagreement is over whether the index counts components (3) or dimensions (2 — a triangle is a two-dimensional object even though it sits in three-dimensional space). This course always uses the subscript and always counts <strong>components</strong>: <span class="math inline">\(\simplex{p}\)</span> has <span class="math inline">\(p\)</span> of them. When you read another source, check which it means before comparing.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="summation-notation" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Summation notation</h1>
+<p>Summation notation is not a new idea; it is shorthand for addition. It earns its place because it lets you write a sum whose length is a symbol rather than a number, and because it makes the algebra of sums visible.</p>
+<section id="the-notation" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-notation"><span class="header-section-number">4.1</span> The notation</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: the summation symbol">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: the summation symbol
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\sum_{i=1}^{n} a_i = a_1 + a_2 + \cdots + a_n.\]</span></p>
+<p>*In words: “add up the* <span class="math inline">\(a_i\)</span>, letting <span class="math inline">\(i\)</span> run from 1 to <span class="math inline">\(n\)</span>.” The letter <span class="math inline">\(i\)</span> is the <strong>index</strong>, the numbers below and above <span class="math inline">\(\sum\)</span> are the <strong>limits</strong>, and <span class="math inline">\(a_i\)</span> is the <strong>summand</strong>.</p>
+</div>
+</div>
+<p>The index is a placeholder with no meaning outside the sum. Writing <span class="math inline">\(\sum_{j=1}^{n} a_j\)</span> or <span class="math inline">\(\sum_{k=1}^{n} a_k\)</span> denotes exactly the same number. This matters more than it seems: an index that also appears <em>outside</em> the sum is a symptom of an error.</p>
+<p>Reading in both directions is the skill to build:</p>
+<p><span class="math display">\[\sum_{i=1}^{4} x_i = x_1 + x_2 + x_3 + x_4, \qquad \sum_{t=0}^{3} r_t = r_0 + r_1 + r_2 + r_3,\]</span></p>
+<p><span class="math display">\[\sum_{j=2}^{5} (2j - 1) = 3 + 5 + 7 + 9 = 24, \qquad \sum_{k=1}^{n} c = \underbrace{c + c + \cdots + c}_{n \text{ terms}} = nc.\]</span></p>
+<p>That last one is worth staring at. The summand <span class="math inline">\(c\)</span> does not mention <span class="math inline">\(k\)</span>, so nothing changes as <span class="math inline">\(k\)</span> advances; you simply add <span class="math inline">\(c\)</span> to itself <span class="math inline">\(n\)</span> times. Students routinely write <span class="math inline">\(\sum_{k=1}^n c = c\)</span>, forgetting that the sum still runs.</p>
+</section>
+<section id="three-rules" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="three-rules"><span class="header-section-number">4.2</span> Three rules</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: algebra of sums">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: algebra of sums
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any numbers <span class="math inline">\(a_i, b_i\)</span> and any constant <span class="math inline">\(c\)</span> (a value not depending on the index):</p>
+<p><span class="math display">\[\textbf{Additivity:} \quad \sum_{i=1}^{n} (a_i + b_i) = \sum_{i=1}^{n} a_i + \sum_{i=1}^{n} b_i\]</span></p>
+<p><span class="math display">\[\textbf{Homogeneity:} \quad \sum_{i=1}^{n} c\,a_i = c \sum_{i=1}^{n} a_i\]</span></p>
+<p><span class="math display">\[\textbf{Constant:} \quad \sum_{i=1}^{n} c = nc\]</span></p>
+<p><em>In words: sums split across addition, constants slide out front, and a constant summand just gets multiplied by the number of terms.</em></p>
+</div>
+</div>
+<p>The first two together are called <strong>linearity</strong>, and they are the reason summation notation is worth learning: they let you manipulate sums without ever expanding them.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>There is no product rule and no rule for squares.</strong> In general <span class="math display">\[\sum a_i b_i \neq \left(\sum a_i\right)\left(\sum b_i\right), \qquad \sum a_i^2 \neq \left(\sum a_i\right)^2.\]</span></p>
+<p>A two-term counterexample settles it: with <span class="math inline">\(a = (1,2)\)</span>, <span class="math inline">\(\sum a_i^2 = 1 + 4 = 5\)</span> while <span class="math inline">\((\sum a_i)^2 = 3^2 = 9\)</span>. Linearity covers addition and constant multiples — nothing else.</p>
+</div>
+</div>
+</section>
+<section id="the-mean-and-deviations-from-it" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="the-mean-and-deviations-from-it"><span class="header-section-number">4.3</span> The mean and deviations from it</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: arithmetic mean">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: arithmetic mean
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For observed values <span class="math inline">\(x_1, \dots, x_n\)</span>, the <strong>sample mean</strong> is <span class="math display">\[\xbar = \frac{1}{n}\sum_{i=1}^{n} x_i.\]</span></p>
+<p>The quantity <span class="math inline">\(x_i - \xbar\)</span> is the <strong>deviation</strong> of observation <span class="math inline">\(i\)</span> from the mean.</p>
+</div>
+</div>
+<p>Multiplying both sides by <span class="math inline">\(n\)</span> gives a form used constantly in derivations:</p>
+<p><span class="math display">\[\sum_{i=1}^{n} x_i = n\xbar.\]</span></p>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: deviations sum to zero">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: deviations sum to zero
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\sum_{i=1}^{n} (x_i - \xbar) = 0.\]</span></p>
+</div>
+</div>
+<p><strong>Derivation.</strong> Split the sum using additivity, then handle each piece:</p>
+<p><span class="math display">\[\sum_{i=1}^{n} (x_i - \xbar) = \sum_{i=1}^{n} x_i - \sum_{i=1}^{n} \xbar.\]</span></p>
+<p>The second sum has a constant summand — <span class="math inline">\(\xbar\)</span> is a single fixed number, not something that changes with <span class="math inline">\(i\)</span> — so by the constant rule it equals <span class="math inline">\(n\xbar\)</span>:</p>
+<p><span class="math display">\[= \sum_{i=1}^{n} x_i - n\xbar.\]</span></p>
+<p>But <span class="math inline">\(\sum x_i = n\xbar\)</span>, so this is</p>
+<p><span class="math display">\[= n\xbar - n\xbar = 0. \qquad \blacksquare\]</span></p>
+<p><em>In words: the mean sits exactly at the balance point of the data. Whatever lies above it is matched, in total, by what lies below.</em> This is why raw deviations are useless as a measure of spread — they always total zero, no matter how scattered the data — and hence why we square them.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: the computational form of the sum of squares">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: the computational form of the sum of squares
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[\sum_{i=1}^{n} (x_i - \xbar)^2 = \sum_{i=1}^{n} x_i^2 - n\xbar^{\,2}.\]</span></p>
+</div>
+</div>
+<p><strong>Derivation.</strong> Expand the square inside the sum:</p>
+<p><span class="math display">\[\sum_{i=1}^{n} (x_i - \xbar)^2 = \sum_{i=1}^{n} \left( x_i^2 - 2 x_i \xbar + \xbar^{\,2} \right).\]</span></p>
+<p>Split into three sums by additivity:</p>
+<p><span class="math display">\[= \sum_{i=1}^{n} x_i^2 - \sum_{i=1}^{n} 2 x_i \xbar + \sum_{i=1}^{n} \xbar^{\,2}.\]</span></p>
+<p>In the middle sum, <span class="math inline">\(2\xbar\)</span> is constant, so pull it out by homogeneity. In the last, <span class="math inline">\(\xbar^{\,2}\)</span> is constant, so apply the constant rule:</p>
+<p><span class="math display">\[= \sum_{i=1}^{n} x_i^2 - 2\xbar \sum_{i=1}^{n} x_i + n\xbar^{\,2}.\]</span></p>
+<p>Substitute <span class="math inline">\(\sum x_i = n\xbar\)</span> into the middle term:</p>
+<p><span class="math display">\[= \sum_{i=1}^{n} x_i^2 - 2\xbar (n \xbar) + n\xbar^{\,2} = \sum_{i=1}^{n} x_i^2 - 2n\xbar^{\,2} + n\xbar^{\,2}.\]</span></p>
+<p>Combine the last two terms:</p>
+<p><span class="math display">\[= \sum_{i=1}^{n} x_i^2 - n\xbar^{\,2}. \qquad \blacksquare\]</span></p>
+<p><em>In words: you can get the sum of squared deviations without ever computing a single deviation — square the raw values, add them, and subtract</em> <span class="math inline">\(n\)</span> times the squared mean. Before computers this saved enormous labour. It is still how the formula is often stored in software, though it is numerically less stable than the direct form when the data are large and close together.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: weekly order volumes">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: weekly order volumes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A warehouse records orders over five weeks: <span class="math display">\[\vect{x} = (120,\ 95,\ 140,\ 105,\ 90).\]</span></p>
+<p><strong>The mean.</strong> <span class="math display">\[\xbar = \frac{120 + 95 + 140 + 105 + 90}{5} = \frac{550}{5} = 110.\]</span></p>
+<p><strong>The deviations.</strong> Subtract 110 from each: <span class="math display">\[(10,\ -15,\ 30,\ -5,\ -20).\]</span> Their total: <span class="math inline">\(10 - 15 + 30 - 5 - 20 = 0\)</span>, as the first key result guarantees. This is a useful arithmetic check — if your deviations do not sum to zero, the mean is wrong.</p>
+<p><strong>Sum of squared deviations, directly.</strong> <span class="math display">\[\sum (x_i - \xbar)^2 = 10^2 + (-15)^2 + 30^2 + (-5)^2 + (-20)^2 = 100 + 225 + 900 + 25 + 400 = 1650.\]</span></p>
+<p><strong>The same quantity, computationally.</strong> First the raw squares: <span class="math display">\[\sum x_i^2 = 120^2 + 95^2 + 140^2 + 105^2 + 90^2 = 14400 + 9025 + 19600 + 11025 + 8100 = 62150.\]</span> Then <span class="math display">\[\sum x_i^2 - n\xbar^{\,2} = 62150 - 5(110)^2 = 62150 - 5(12100) = 62150 - 60500 = 1650.\]</span></p>
+<p>The two routes agree, as they must.</p>
+</div>
+</div>
+</section>
+<section id="double-sums" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="double-sums"><span class="header-section-number">4.4</span> Double sums</h2>
+<p>When data are arranged in a grid, two indices are needed: <span class="math inline">\(a_{ij}\)</span> for row <span class="math inline">\(i\)</span>, column <span class="math inline">\(j\)</span>.</p>
+<p><span class="math display">\[\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij}\]</span></p>
+<p>means: for each row <span class="math inline">\(i\)</span>, add across the columns to get a row total; then add the row totals. The inner sum runs first.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: order of summation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: order of summation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a finite grid, <span class="math display">\[\sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij} = \sum_{j=1}^{n} \sum_{i=1}^{m} a_{ij}.\]</span></p>
+<p><em>In words: totalling by rows and totalling by columns give the same grand total — you are adding the same numbers in a different order.</em></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: totalling a grid two ways">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: totalling a grid two ways
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">\[A = \begin{pmatrix} 3 &amp; 1 &amp; 4 \\ 2 &amp; 5 &amp; 0 \end{pmatrix}.\]</span></p>
+<p><strong>By rows.</strong> <span class="math display">\[S_1 = 3 + 1 + 4 = 8, \qquad S_2 = 2 + 5 + 0 = 7, \qquad S_1 + S_2 = 15.\]</span></p>
+<p><strong>By columns.</strong> <span class="math display">\[T_1 = 3 + 2 = 5, \qquad T_2 = 1 + 5 = 6, \qquad T_3 = 4 + 0 = 4, \qquad T_1 + T_2 + T_3 = 15.\]</span></p>
+<p>Both give 15. Nothing deep is happening — six numbers were added in two different orders — but the fact licenses swapping summation order in algebra, which is used constantly.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Reusing an index.</strong> In <span class="math inline">\(\sum_{i} \sum_{i} a_{ii}\)</span> the two sums collide and the expression is meaningless. Each sum needs its own index letter. Likewise, if <span class="math inline">\(i\)</span> appears outside the sum in your final answer — as in “<span class="math inline">\(\sum_{i=1}^{n} x_i = n x_i\)</span>” — something has gone wrong: the index cannot survive the summation.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="algebra-for-working-with-models" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Algebra for working with models</h1>
+<p>This section is a toolkit. The operations are ones you have seen; what is worth rebuilding is the <em>fluency</em> to apply them without hesitation, because in later weeks they will be steps inside a larger argument rather than the point of the exercise.</p>
+<section id="rearranging-expressions" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="rearranging-expressions"><span class="header-section-number">5.1</span> Rearranging expressions</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operation</th>
+<th style="text-align: left;">Identity</th>
+<th style="text-align: left;">Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Collect like terms</td>
+<td style="text-align: left;"><span class="math inline">\(2x + 3x = 5x\)</span></td>
+<td style="text-align: left;">tidy up</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Expand</td>
+<td style="text-align: left;"><span class="math inline">\(a(b + c) = ab + ac\)</span></td>
+<td style="text-align: left;">remove brackets</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Factor</td>
+<td style="text-align: left;"><span class="math inline">\(ab + ac = a(b+c)\)</span></td>
+<td style="text-align: left;">expose a common factor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Square of a sum</td>
+<td style="text-align: left;"><span class="math inline">\((a+b)^2 = a^2 + 2ab + b^2\)</span></td>
+<td style="text-align: left;">expand quadratics</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Difference of squares</td>
+<td style="text-align: left;"><span class="math inline">\(a^2 - b^2 = (a-b)(a+b)\)</span></td>
+<td style="text-align: left;">factor, simplify fractions</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\((a+b)^2 \neq a^2 + b^2\)</span>. The cross term <span class="math inline">\(2ab\)</span> is not optional. Test with <span class="math inline">\(a = b = 1\)</span>: the left side is <span class="math inline">\(4\)</span>, and <span class="math inline">\(a^2 + b^2 = 2\)</span>. The same error in a different costume: <span class="math inline">\(\sqrt{a + b} \neq \sqrt{a} + \sqrt{b}\)</span>, and <span class="math inline">\(\dfrac{1}{a+b} \neq \dfrac{1}{a} + \dfrac{1}{b}\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="linear-equations" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="linear-equations"><span class="header-section-number">5.2</span> Linear equations</h2>
+<p>A <strong>linear equation in one unknown</strong> has the form <span class="math inline">\(ax + b = 0\)</span> with <span class="math inline">\(a \neq 0\)</span>, and the single solution</p>
+<p><span class="math display">\[x = -\frac{b}{a}.\]</span></p>
+<p>The condition <span class="math inline">\(a \neq 0\)</span> matters: if <span class="math inline">\(a = 0\)</span> the equation reads <span class="math inline">\(b = 0\)</span>, which is either always true (if <span class="math inline">\(b=0\)</span>, so every <span class="math inline">\(x\)</span> works) or never true (if <span class="math inline">\(b \neq 0\)</span>, so no <span class="math inline">\(x\)</span> works). Dividing by <span class="math inline">\(a\)</span> without checking it is non-zero is the most common way to lose a case.</p>
+</section>
+<section id="quadratic-equations" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="quadratic-equations"><span class="header-section-number">5.3</span> Quadratic equations</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: quadratic equation and discriminant">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: quadratic equation and discriminant
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <strong>quadratic equation</strong> is <span class="math inline">\(ax^2 + bx + c = 0\)</span> with <span class="math inline">\(a \neq 0\)</span>. Its <strong>discriminant</strong> is <span class="math display">\[\Delta = b^2 - 4ac.\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled" title="Notation clash — read once">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Notation clash — read once
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The letter <span class="math inline">\(\Delta\)</span> is doing two unrelated jobs in this course. Bare <span class="math inline">\(\Delta\)</span>, as here, is the <strong>discriminant</strong> of a quadratic — a single number. Subscripted <span class="math inline">\(\simplex{p}\)</span>, from Section 2, is the <strong>simplex</strong> — a set of vectors. They have nothing to do with each other; the alphabet is simply short. The subscript is what tells them apart, so read it.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: solutions of a quadratic">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: solutions of a quadratic
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>If <span class="math inline">\(\Delta &gt; 0\)</span>: two distinct real roots, <span class="math inline">\(\displaystyle x = \frac{-b \pm \sqrt{\Delta}}{2a}\)</span>.</li>
+<li>If <span class="math inline">\(\Delta = 0\)</span>: one repeated real root, <span class="math inline">\(\displaystyle x = -\frac{b}{2a}\)</span>.</li>
+<li>If <span class="math inline">\(\Delta &lt; 0\)</span>: no real roots.</li>
+</ul>
+<p><em>In words: the discriminant is a preview. Compute it first and you know how many answers to expect before doing any work — and whether a real answer exists at all.</em></p>
+</div>
+</div>
+<p>The vertex of the parabola <span class="math inline">\(y = ax^2+bx+c\)</span> sits at <span class="math inline">\(x = -b/(2a)\)</span>, midway between the roots. When <span class="math inline">\(a &lt; 0\)</span> the parabola opens downward and the vertex is a maximum — which is why quadratics show up in profit problems.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: break-even and best output">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: break-even and best output
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A meal-kit company sells boxes at $30 each. Producing <span class="math inline">\(q\)</span> boxes per day costs</p>
+<p><span class="math display">\[C(q) = 800 + 20q + 0.02q^2,\]</span></p>
+<p>where $800 is fixed daily cost, $20 is the direct cost per box, and the quadratic term captures overtime and spoilage as the kitchen is pushed harder.</p>
+<p><strong>Build the profit function.</strong> Revenue is <span class="math inline">\(R(q) = 30q\)</span>, so</p>
+<p><span class="math display">\[\pi(q) = R(q) - C(q) = 30q - \left(800 + 20q + 0.02q^2\right).\]</span></p>
+<p>Distribute the minus sign across every term in the bracket — this is where sign errors happen:</p>
+<p><span class="math display">\[\pi(q) = 30q - 800 - 20q - 0.02q^2 = -0.02q^2 + 10q - 800.\]</span></p>
+<p><strong>Find the break-even points.</strong> Break-even means <span class="math inline">\(\pi(q) = 0\)</span>:</p>
+<p><span class="math display">\[-0.02q^2 + 10q - 800 = 0.\]</span></p>
+<p>Here <span class="math inline">\(a = -0.02\)</span>, <span class="math inline">\(b = 10\)</span>, <span class="math inline">\(c = -800\)</span>. The discriminant:</p>
+<p><span class="math display">\[\Delta = b^2 - 4ac = 10^2 - 4(-0.02)(-800) = 100 - 64 = 36.\]</span></p>
+<p>Note both minus signs in the product <span class="math inline">\(4ac\)</span>: <span class="math inline">\((-0.02)(-800) = +16\)</span>, and <span class="math inline">\(4 \times 16 = 64\)</span>, which is then <em>subtracted</em>. Since <span class="math inline">\(\Delta = 36 &gt; 0\)</span> there are two roots, and <span class="math inline">\(\sqrt{36} = 6\)</span>:</p>
+<p><span class="math display">\[q = \frac{-10 \pm 6}{2(-0.02)} = \frac{-10 \pm 6}{-0.04}.\]</span></p>
+<p>Taking the two signs separately:</p>
+<p><span class="math display">\[q_1 = \frac{-10 + 6}{-0.04} = \frac{-4}{-0.04} = 100, \qquad q_2 = \frac{-10 - 6}{-0.04} = \frac{-16}{-0.04} = 400.\]</span></p>
+<p><strong>Find the output that maximises profit.</strong> Since <span class="math inline">\(a = -0.02 &lt; 0\)</span> the parabola opens downward, so the vertex is the maximum:</p>
+<p><span class="math display">\[q^\ast = -\frac{b}{2a} = -\frac{10}{2(-0.02)} = -\frac{10}{-0.04} = 250,\]</span></p>
+<p>with profit</p>
+<p><span class="math display">\[\pi(250) = -0.02(250)^2 + 10(250) - 800 = -0.02(62500) + 2500 - 800 = -1250 + 1700 = 450.\]</span></p>
+<p><strong>Reading the answer.</strong> The company breaks even at 100 boxes and again at 400. Between those it makes money, peaking at 250 boxes with $450 profit a day. Below 100 the $800 fixed cost is not covered; above 400 the rising marginal cost overwhelms the $30 price. The existence of an <em>upper</em> break-even point is the interesting part — it is easy to assume more output is always better, and the quadratic cost term is precisely what makes that false.</p>
+</div>
+</div>
+</section>
+<section id="exponents" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="exponents"><span class="header-section-number">5.4</span> Exponents</h2>
+<p>For <span class="math inline">\(a, b &gt; 0\)</span> and compatible exponents:</p>
+<p><span class="math display">\[a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn},\]</span></p>
+<p><span class="math display">\[(ab)^n = a^n b^n, \qquad a^{-n} = \frac{1}{a^n}, \qquad a^0 = 1, \qquad a^{1/n} = \sqrt[n]{a}.\]</span></p>
+<p>And for a fixed base <span class="math inline">\(a &gt; 0\)</span> with <span class="math inline">\(a \neq 1\)</span>, exponentials are one-to-one:</p>
+<p><span class="math display">\[a^f = a^g \iff f = g.\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\(a^m a^n = a^{m+n}\)</span>, <strong>not</strong> <span class="math inline">\(a^{mn}\)</span>. Exponents add when you multiply powers and multiply only when you raise a power to a power. Check with small numbers whenever unsure: <span class="math inline">\(2^2 \cdot 2^3 = 4 \cdot 8 = 32 = 2^5\)</span>, and <span class="math inline">\(5 = 2+3\)</span>.</p>
+</div>
+</div>
+</section>
+<section id="logarithms" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="logarithms"><span class="header-section-number">5.5</span> Logarithms</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: logarithm">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition: logarithm
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For base <span class="math inline">\(a &gt; 0\)</span> with <span class="math inline">\(a \neq 1\)</span>, <span class="math display">\[\log_a(x) = y \iff a^y = x.\]</span></p>
+<p>The <strong>natural logarithm</strong> is the case <span class="math inline">\(a = e\)</span>, written <span class="math inline">\(\ln\)</span>: <span class="math display">\[\ln(x) = y \iff e^y = x.\]</span></p>
+<p>*In words: a logarithm answers “what power do I raise the base to, in order to get* <span class="math inline">\(x\)</span>?” It is the exponential run backwards.</p>
+</div>
+</div>
+<p>The rules follow directly from the exponent rules, since logarithms <em>are</em> exponents:</p>
+<p><span class="math display">\[\ln(xy) = \ln x + \ln y, \qquad \ln\!\left(\frac{x}{y}\right) = \ln x - \ln y, \qquad \ln(x^r) = r \ln x,\]</span></p>
+<p><span class="math display">\[\ln(1) = 0, \qquad \ln(e) = 1, \qquad \ln(e^x) = x, \qquad e^{\ln x} = x \ \ (x&gt;0).\]</span></p>
+<p>The third rule — that a logarithm turns a power into a multiplication — is the one that does the work in this course. It is how an unknown stuck in an exponent gets brought down where you can solve for it.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Common pitfall
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Two distinct traps.</strong></p>
+<p><em>The notation.</em> “<span class="math inline">\(\log\)</span>” is ambiguous. In R and most mathematical writing, <code>log(x)</code> means the natural logarithm; in many spreadsheets, engineering texts, and calculators, <code>LOG</code> means base 10. These notes always write <span class="math inline">\(\ln\)</span> for the natural log and always show the base otherwise. When reading anything else, check.</p>
+<p><em>The algebra.</em> There is no rule for the logarithm of a sum: <span class="math display">\[\ln(x + y) \neq \ln x + \ln y.\]</span> The left side cannot be simplified at all. What <span class="math inline">\(\ln x + \ln y\)</span> equals is <span class="math inline">\(\ln(xy)\)</span> — a product, not a sum. This is probably the single most common algebra error in the course.</p>
+</div>
+</div>
+</section>
+<section id="growth-and-decay" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="growth-and-decay"><span class="header-section-number">5.6</span> Growth and decay</h2>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: compound growth">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: compound growth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A quantity starting at <span class="math inline">\(Q_0\)</span> and changing by <span class="math inline">\(p\%\)</span> per period has, after <span class="math inline">\(t\)</span> periods, <span class="math display">\[Q(t) = Q_0 \left(1 + \frac{p}{100}\right)^t.\]</span> The quantity <span class="math inline">\(1 + p/100\)</span> is the <strong>growth factor</strong>. Growth uses <span class="math inline">\(p &gt; 0\)</span>; decay is the same formula with <span class="math inline">\(p &lt; 0\)</span>, giving a factor below 1.</p>
+</div>
+</div>
+<p>The reason the factor is <em>multiplied</em> repeatedly rather than added is that each period’s change applies to the new total, not the original — that is what “compound” means.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: subscriber growth and doubling time">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: subscriber growth and doubling time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A service has 12,000 subscribers, growing 8% per year.</p>
+<p><strong>Subscribers after five years.</strong> The growth factor is <span class="math inline">\(1 + 8/100 = 1.08\)</span>, so</p>
+<p><span class="math display">\[Q(5) = 12000 \times (1.08)^5 = 12000 \times 1.46933 \approx 17{,}632.\]</span></p>
+<p><strong>When does the base double?</strong> We need <span class="math inline">\(Q(t) = 24000\)</span>:</p>
+<p><span class="math display">\[12000 \times (1.08)^t = 24000.\]</span></p>
+<p>Divide both sides by 12,000 — note that the initial size cancels, so doubling time does not depend on where you start:</p>
+<p><span class="math display">\[(1.08)^t = 2.\]</span></p>
+<p>The unknown is in the exponent, so take natural logarithms of both sides:</p>
+<p><span class="math display">\[\ln\!\left((1.08)^t\right) = \ln 2.\]</span></p>
+<p>Apply <span class="math inline">\(\ln(x^r) = r\ln x\)</span> to bring <span class="math inline">\(t\)</span> down:</p>
+<p><span class="math display">\[t \ln(1.08) = \ln 2,\]</span></p>
+<p><span class="math display">\[t = \frac{\ln 2}{\ln 1.08} = \frac{0.6931}{0.07696} \approx 9.01 \text{ years}.\]</span></p>
+<p>So the subscriber base doubles in just over nine years.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: depreciation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: depreciation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Equipment bought for $50,000 loses 20% of its value each year. Its value after four years:</p>
+<p>Here <span class="math inline">\(p = -20\)</span>, so the factor is <span class="math inline">\(1 - 20/100 = 0.8\)</span>, and</p>
+<p><span class="math display">\[V(4) = 50000 \times (0.8)^4 = 50000 \times 0.4096 = \$20{,}480.\]</span></p>
+<p>A common wrong answer is <span class="math inline">\(50000 \times (1 - 0.8) = \$10{,}000\)</span>, from subtracting 80% once instead of retaining 80% four times. Sanity-check by stepping through: $50,000 <span class="math inline">\(\to\)</span> $40,000 <span class="math inline">\(\to\)</span> $32,000 <span class="math inline">\(\to\)</span> $25,600 <span class="math inline">\(\to\)</span> $20,480.</p>
+</div>
+</div>
+</section>
+<section id="turning-a-multiplicative-model-into-a-linear-one" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="turning-a-multiplicative-model-into-a-linear-one"><span class="header-section-number">5.7</span> Turning a multiplicative model into a linear one</h2>
+<p>Many business relationships are multiplicative rather than additive, and logarithms are what make them tractable.</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Key result: log-linearisation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key result: log-linearisation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The multiplicative model <span class="math display">\[Y = A X^{\beta} e^{\gamma Z}, \qquad A &gt; 0,\ X &gt; 0,\ Y &gt; 0\]</span> becomes, on taking natural logarithms of both sides, <span class="math display">\[\ln Y = \ln A + \beta \ln X + \gamma Z.\]</span></p>
+<p><em>In words: a model that multiplies its inputs turns into one that adds them, once you work in logarithms. The right-hand side is now a straight line in</em> <span class="math inline">\(\ln X\)</span> and <span class="math inline">\(Z\)</span> — which is exactly the form that standard regression can fit.</p>
+</div>
+</div>
+<p><strong>Derivation.</strong> Take <span class="math inline">\(\ln\)</span> of both sides and apply the product rule twice:</p>
+<p><span class="math display">\[\ln Y = \ln\!\left(A X^\beta e^{\gamma Z}\right) = \ln A + \ln\!\left(X^\beta\right) + \ln\!\left(e^{\gamma Z}\right).\]</span></p>
+<p>Now <span class="math inline">\(\ln(X^\beta) = \beta \ln X\)</span> by the power rule, and <span class="math inline">\(\ln(e^{\gamma Z}) = \gamma Z\)</span> since <span class="math inline">\(\ln\)</span> and <span class="math inline">\(e\)</span> undo each other:</p>
+<p><span class="math display">\[\ln Y = \ln A + \beta \ln X + \gamma Z. \qquad \blacksquare\]</span></p>
+<p>The parameter <span class="math inline">\(\beta\)</span> has a clean interpretation here: it is the percentage change in <span class="math inline">\(Y\)</span> associated with a one-percent change in <span class="math inline">\(X\)</span> — an <strong>elasticity</strong>. That is why this functional form is ubiquitous in demand modelling.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Worked example: isolating a variable">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Worked example: isolating a variable
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given <span class="math inline">\(Y = A X^{\beta} e^{-\gamma Z}\)</span> with <span class="math inline">\(A, X, Y &gt; 0\)</span> and <span class="math inline">\(\beta \neq 0\)</span>, solve for <span class="math inline">\(X\)</span>.</p>
+<p>Start by isolating the power of <span class="math inline">\(X\)</span>. Divide both sides by <span class="math inline">\(A\)</span> and multiply by <span class="math inline">\(e^{\gamma Z}\)</span>:</p>
+<p><span class="math display">\[X^{\beta} = \frac{Y e^{\gamma Z}}{A}.\]</span></p>
+<p>The right-hand side is strictly positive (a positive number divided by a positive number, times a positive exponential), so raising both sides to the power <span class="math inline">\(1/\beta\)</span> is legitimate:</p>
+<p><span class="math display">\[X = \left(\frac{Y e^{\gamma Z}}{A}\right)^{1/\beta}.\]</span></p>
+<p><strong>Numerically</strong>, with <span class="math inline">\(A = 12\)</span>, <span class="math inline">\(\beta = 0.8\)</span>, <span class="math inline">\(\gamma = 0.15\)</span>, <span class="math inline">\(Z = 4\)</span>, <span class="math inline">\(Y = 30\)</span>:</p>
+<p><span class="math display">\[X = \left(\frac{30 \, e^{0.15 \times 4}}{12}\right)^{1/0.8} = \left(\frac{30 \, e^{0.6}}{12}\right)^{1.25}.\]</span></p>
+<p>Since <span class="math inline">\(e^{0.6} \approx 1.8221\)</span>:</p>
+<p><span class="math display">\[X = \left(\frac{30 \times 1.8221}{12}\right)^{1.25} = \left(\frac{54.664}{12}\right)^{1.25} = (4.5553)^{1.25} \approx 6.655.\]</span></p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sec-proofs" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Proof techniques</h1>
+<div class="callout callout-style-default callout-note callout-titled" title="Covered in class">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Covered in class
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This section is developed during the lecture, not before it. It covers propositions and quantifiers (<span class="math inline">\(\forall\)</span>, <span class="math inline">\(\exists\)</span>, <span class="math inline">\(\exists!\)</span>), implication and equivalence, necessary and sufficient conditions, and the five proof strategies: direct proof, contrapositive, contradiction, induction, and disproof by counterexample.</p>
+<p>Notes will be added here after the session.</p>
+</div>
+</div>
+<p>One thing is worth flagging in advance, because it trips up anyone who has written code. The symbol <span class="math inline">\(\exists!\)</span> means <strong>“there exists exactly one”</strong> — the <code>!</code> marks <em>uniqueness</em>, not negation. It is a stronger claim than <span class="math inline">\(\exists\)</span>, not its opposite:</p>
+<p><span class="math display">\[\exists x\, P(x) \quad \text{means at least one } x \text{ works;}\]</span> <span class="math display">\[\exists!\, x\, P(x) \quad \text{means exactly one } x \text{ works.}\]</span></p>
+<p>For instance <span class="math inline">\(\exists x \in \R\)</span> with <span class="math inline">\(x^2 = 4\)</span> is true (both <span class="math inline">\(2\)</span> and <span class="math inline">\(-2\)</span> qualify), but <span class="math inline">\(\exists! x \in \R\)</span> with <span class="math inline">\(x^2 = 4\)</span> is <strong>false</strong>, precisely because there are two. Negation is written <span class="math inline">\(\neg\)</span> or <span class="math inline">\(\nexists\)</span>.</p>
+<hr>
+</section>
+<section id="one-minute-recap" class="level1 unnumbered">
+<h1 class="unnumbered">One-minute recap</h1>
+<div class="callout callout-style-default callout-caution callout-titled" title="If you remember nothing else">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-53-contents" aria-controls="callout-53" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Caution</span>If you remember nothing else
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-53" class="callout-53-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Variable or parameter?</strong> Ask whether you know the number before you start solving. Known in advance <span class="math inline">\(\Rightarrow\)</span> parameter. The same symbol can switch roles when the question changes.</li>
+<li><strong>Set-builder notation needs a universe.</strong> <span class="math inline">\(\{x \in \R \mid x \geq 0\}\)</span>, not <span class="math inline">\(\{x \mid x \geq 0\}\)</span>.</li>
+<li><strong>Brackets:</strong> square includes the endpoint, round excludes it. Infinity always gets round.</li>
+<li><span class="math inline">\(\abs{u - v} \leq c\)</span> <strong>is</strong> the interval <span class="math inline">\([v-c,\ v+c]\)</span>. Every tolerance statement is an interval statement.</li>
+<li><span class="math inline">\(\card{A \cup B} = \card{A} + \card{B} - \card{A \cap B}\)</span> — subtract the overlap, or you double-count.</li>
+<li><strong>A partition means exactly one.</strong> Use <span class="math inline">\([a, b)\)</span> bands so boundary values land in one bin only.</li>
+<li><span class="math inline">\(\sum\)</span> <strong>is linear and nothing more:</strong> it splits over <span class="math inline">\(+\)</span> and lets constants out. There is no product rule.</li>
+<li><span class="math inline">\(\sum (x_i - \xbar) = 0\)</span> always. Use it as an arithmetic check on any mean you compute.</li>
+<li><strong>Logs turn powers into products and products into sums</strong> — that is how you get an unknown out of an exponent. But <span class="math inline">\(\ln(x+y)\)</span> does not simplify.</li>
+<li><strong>In this course:</strong> <span class="math inline">\(0 \in \N\)</span>; <span class="math inline">\(n\)</span> = observations, <span class="math inline">\(p\)</span> = variables; vectors are bold; <span class="math inline">\(\ln\)</span> is natural log.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="where-to-practise" class="level1 unnumbered">
+<h1 class="unnumbered">Where to practise</h1>
+<p>Work the pre-class exercise set for Session 01 before reading its solutions. Exercises 1–5 cover the notation in Sections 2; Exercises 6–8 cover Section 3; Exercises 9–12 cover Sections 1 and 4. The tutorial sheet then extends into inequalities and set identities.</p>
+<p>If you are short of time, the highest-value three are the summation identities (the two derivations in Section 3 are the ones that recur all semester), the partition boundary check, and the log-linearisation.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../index.html" class="pagination-link" aria-label="How to use these notes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">How to use these notes</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>MATH 40604 — Study Notes</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Complementary study aid. The official course material is the slide deck distributed in class.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
