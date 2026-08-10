@@ -4,8 +4,8 @@ project:
 
 book:
   title: "Advanced Mathematical Tools for Management"
-  subtitle: "MATH 40604 — Study Notes"
-  author: "Khaled Fouda"
+  subtitle: "MATH 40604 — Course Notes"
+  author: ""
   date: today
   date-format: "D MMMM YYYY"
   search: true
@@ -13,11 +13,10 @@ book:
     style: docked
     collapse-level: 2
   chapters:
-    - index.qmd
     - chapters/week01.qmd
   page-footer:
-    left: "MATH 40604 — Study Notes"
-    right: "Complementary study aid. The official course material is the slide deck distributed in class."
+    left: "MATH 40604 — Course Notes"
+    right: ""
 
 bibliography: []
 
