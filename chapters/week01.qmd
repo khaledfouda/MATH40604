@@ -1,4 +1,4 @@
-# Modelling, Sets, and Algebra
+# Lecture 1: Modelling, Sets, and Algebra
 
 {{< include ../_macros.qmd >}}
 
@@ -6,7 +6,7 @@ Most of the mathematics here are not new and its likely that you have met it bef
 
 ------------------------------------------------------------------------
 
-# What a mathematical model is
+## What a mathematical model is
 
 A **mathematical model** is a simplified description of a real-world situation, written in symbols. We say simplified because a mathematical model leaves things out on purpose. For example, a model of a delivery network that accounted for every pothole would be useless, because it will be impossible to solve.
 
@@ -14,7 +14,7 @@ The mathematical model is represented by an equation between variables and param
 \
 Consider a straight-line relationship $y = \beta_0 + \beta_1 x$. If you are a manager who has been handed $\beta_0 = 12$ and $\beta_1 = 3$ and asked to predict $y$ when $x = 20$, then $\beta_0, \beta_1$ are **parameters** and $y, x$ are **variables**.
 
-## The components of an optimization problem (decision model)
+### The components of an optimization problem (decision model)
 
 ::: {.callout-tip title="Example" icon="false"}
 A company manufactures two products, $A$ and $B$. It must determine the quantities to produce each week in order to maximize its profit.
@@ -62,7 +62,7 @@ Below we summarize the components of an optimization problem as we saw them in t
 Some assumptions are necessary for the validity of the solution even though they are not necessary to obtain a solution. For example, we will obtain a solution to the problem regardless of whether we assume that every unit produced can be sold. However, our solution is valid only under this assumption. Assumptions allow us to simplify the problem and, in particular, the objective function. But we must state them clearly, as they affect the interpretation of the results.
 :::
 
-## Deterministic and probabilistic models
+### Deterministic and probabilistic models
 
 In the example above, the model is **deterministic** because profits, production times, capacity and maximum demand are assumed to be known with certainty. That is a strong assumption. If some of these data were uncertain, then the model would become **probabilistic**. For example, recall that we assumed a demand ceiling of 40 units for product $A$. Now, if we assume instead that the demand for product $A$ follows a normal distribution with mean $40$ and standard deviation of $5$, then the demand for product $A$ will be represented by the random variable:
 
@@ -74,7 +74,7 @@ The company would then have to choose its production level while accounting for 
 In the notation $\normal(\mu, \sigma^2)$ the **second argument is the variance, not the standard deviation**. Writing $\normal(40, 5^2)$ means a standard deviation of 5. Some software, including R's `rnorm`, takes the standard deviation as its argument instead, which is a frequent source of error when moving between a formula and code.
 :::
 
-## Statistical models {#sec-stat-model}
+### Statistical models {#sec-stat-model}
 
 In the previous example, profits per unit were given to us. We said earlier that model parameters are either known in advance or estimated. A statistical model allows us to estimate those parameters from observed data and to say how much we trust them.
 
@@ -91,7 +91,7 @@ where
 - $\sigma^2$ is the error variance, measuring how much that unexplained part varies.
 :::
 
-::: {.callout-note title="Definition: response and explanatory variables"}
+::: {.callout-note title="Definition:"}
 In a statistical model, the **response variable** (also called the **dependent variable**) is the quantity the model sets out to explain or predict. It sits on the left-hand side.
 
 An **explanatory variable** (also called an **independent variable**, a *predictor*, a *regressor*, or a *covariate*) is a quantity used to explain the variation in the response.
@@ -99,13 +99,13 @@ An **explanatory variable** (also called an **independent variable**, a *predict
 
 In the sales model, $Y_i$ is the response and $X_i$ is the explanatory variable. The quantities $\beta_0$ and $\beta_1$ are the model parameters. Generally, we would have a limited number of observations of pairs $(Y_i, X_i)$ which we use to estimate the model parameters as well as the error variance. Then, we use the estimated parameters and the explanatory variable(s) to predict future values of the response. One final note: the names "dependent" and "independent" are somewhat misleading, as they have nothing to do with statistical independence.
 
-# Sets and subsets
+## Sets and subsets
 
 A **set** is a well-defined unordered collection of distinct objects, called **elements**. Sets are useful because so many things are naturally collections, for example, a population, the domain of a variable, the set of feasible decisions, a set of observations.
 
 We write $x \in A$ for "$x$ belongs to the set $A$", and $x \notin A$ for "$x$ does not belong to $A$". We first present some basic mathematical notation that we will rely on for the rest of the course. Here, lower-case letters denote scalars ($a,b,x$), and $P$ and $Q$ are statements. Statements could be mathematical relationships (e.g., $a=b$) or just plain English (e.g., this course is fun).
 
-## Basic mathematical notation
+### Basic mathematical notation
 
 | Symbol | Reading | Example |
 |:-----------------------|:-----------------------|:-----------------------|
@@ -148,11 +148,11 @@ $$\text{break-even reached} \iff pq = C_f + C_v q.$$
 Here the arrow runs both ways: break-even implies the equation, and the equation implies break-even.
 :::
 
-## Describing a set
+### Describing a set
 
 A set can be defined in three main ways.
 
-::: {.callout-note title="Definition: the three descriptions"}
+::: {.callout-note title="Definition:"}
 **a) By enumeration** $$A = \{1, 2, 3, 4\}.$$ The set $A$ contains exactly the elements 1, 2, 3 and 4.
 
 **b) By a property** (set-builder notation) $$B = \{\, x \in \R \mid x \geq 0 \,\}, \qquad C = \{\, x \in \R \mid a \leq x \leq b \,\}.$$ The vertical bar is read "such that". $B$ is the set of non-negative real numbers; $C$ is the set of reals between $a$ and $b$ inclusive.
@@ -183,7 +183,7 @@ Below, we show a representation of intervals on the real line.
 
 In @fig-intervals, $A = [-4, -2]$, $B = [0, 1)$ and $C = (2, 5)$. The number $-3$ is an **interior point** of $A$ because it lies in $A$ with a little room on both sides, unlike the endpoints $-4$ and $-2$. Note that $B$ contains $0$ but not $1$, and that $C$ contains neither $2$ nor $5$.
 
-## The standard number sets
+### The standard number sets
 
 We briefly mentioned the sets of real and natural numbers earlier. The table below presents the standard number sets commonly used.
 
@@ -197,9 +197,9 @@ We briefly mentioned the sets of real and natural numbers earlier. The table bel
 | $\R^p$ | real vectors of dimension $p$ | $\vect{x} = (x_1, \dots, x_p)$; one observation on $p$ variables |
 | $\R^{n \times p}$ | real $n \times p$ matrices | a whole data set: $n$ observations, $p$ variables |
 
-## Absolute value of a number
+### Absolute value of a number
 
-::: {.callout-note title="Definition: absolute value"}
+::: {.callout-note title="Definition:"}
 The absolute value of a real number $a$, written $\abs{a}$, is $$\abs{a} = \begin{cases} a, & \text{if } a \geq 0, \\ -a, & \text{if } a < 0. \end{cases}$$
 
 *That is, we remove the sign. The absolute value is how far the number is from zero, and distance is never negative.*
@@ -209,19 +209,19 @@ For example,
 
 $$\abs{13} = 13, \qquad \abs{-13} = -(-13) = 13, \qquad \left\lvert -\tfrac{1}{2} \right\rvert = \tfrac{1}{2}, \qquad \abs{0} = 0.$$
 
-### Distance between two real numbers
+#### Distance between two real numbers
 
-::: {.callout-important title="Key result: distance and tolerance"}
+::: callout-important
 Let $x_1$ and $x_2$ be real. The distance between them on the real line is $$d(x_1, x_2) = \abs{x_1 - x_2}.$$ Distance is always non-negative, and it is zero exactly when the two numbers are equal: $$d(x_1,x_2) \geq 0, \qquad d(x_1,x_2) = 0 \iff x_1 = x_2.$$ For $a > 0$, $$\abs{x} < a \iff -a < x < a \iff x \in (-a, a), \qquad \abs{x} \leq a \iff x \in [-a, a].$$
 
 *That is, we can say that "*$x$ is within $a$ of zero" and "$x$ lies in the interval of width $2a$ centred at zero".
 :::
 
-## Summation notation (sigma)
+### Summation notation (sigma)
 
 Summation notation is shorthand for addition.
 
-::: {.callout-note title="Definition: the summation symbol"}
+::: {.callout-note title="Definition:"}
 $$\sum_{i=1}^{n} a_i = a_1 + a_2 + \cdots + a_n.$$
 
 The letter $i$ is the **index** and the numbers above and below $\sum$ are the limits.
@@ -235,7 +235,7 @@ Here are more examples of summation
 
 $$\sum_{i=1}^{4} x_i = x_1 + x_2 + x_3 + x_4, \qquad \sum_{j=2}^{5}(2j-1) = 3 + 5 + 7 + 9 = 24, \qquad \sum_{k=1}^{n} c = \underbrace{c + \cdots + c}_{n \text{ terms}} = nc.$$
 
-### Example: price index
+#### Example: price index
 
 ::: {.callout-tip title="Example" icon="false"}
 Suppose the prices of several goods vary over time in an economy. Price indices are used to summarize the overall effect of these changes.
@@ -265,11 +265,11 @@ $$I_t = \frac{\sum_{i=1}^{n} p_i^t q_i}{\sum_{i=1}^{n} p_i^0 q_i} \times 100.$$
 - If $I_t = 150$, the basket costs 150% of its base-year cost. In other words, prices have risen by $150 - 100 = 50\%$.
 :::
 
-### Summation rules
+#### Summation rules
 
 The following properties are useful when manipulating sums.
 
-::: {.callout-important title="Key result: algebra of sums"}
+::: callout-important
 For any numbers $a_i, b_i$ and any constant $c$ (a value not depending on the index):
 
 $$\textbf{Additivity:} \quad \sum_{i=1}^{n}(a_i + b_i) = \sum_{i=1}^{n} a_i + \sum_{i=1}^{n} b_i$$
@@ -281,9 +281,9 @@ It is important to note that there is no product rule. That is,
 
 $$\sum a_i b_i \neq \left(\sum a_i\right)\left(\sum b_i\right), \qquad \sum a_i^2 \neq \left(\sum a_i\right)^2.$$
 
-### Example: arithmetic mean and deviations from the mean
+#### Example: arithmetic mean and deviations from the mean
 
-::: {.callout-note title="Definition: arithmetic mean"}
+::: callout-note
 The arithmetic mean of $n$ numbers $x_1, x_2, \dots, x_n$ is their sum divided by $n$: $$\xbar = \frac{1}{n}\sum_{i=1}^{n} x_i.$$
 :::
 
@@ -299,7 +299,7 @@ The quantity $x_i - \xbar$ is the deviation of observation $i$ from the mean. Be
 
 $$\sum_{i=1}^{n}(x_i - \xbar)^2 = \sum_{i=1}^{n} x_i^2 - n\xbar^{\,2}.$$
 
-### Double sums
+#### Double sums
 
 It is often necessary to combine two or more summation symbols. For example, when data are arranged in a grid (matrix), two indices are needed: $a_{ij}$ for row $i$, column $j$. Consider a matrix with $m$ rows and $n$ columns, and let $S_i$ be the total of row $i$:
 
@@ -316,9 +316,9 @@ Adding the row totals gives the grand total, and the same grand total is reached
 
 $$S_1 + S_2 + \cdots + S_m = \sum_{i=1}^{m} S_i = \sum_{i=1}^{m}\sum_{j=1}^{n} a_{ij} = \sum_{j=1}^{n}\sum_{i=1}^{m} a_{ij}.$$
 
-## Subsets, cardinality, and set operations
+### Subsets, cardinality, and set operations
 
-::: {.callout-note title="Definition: subset"}
+::: {.callout-note title="Definition:"}
 A set $A$ is a **subset** of $B$ if every element of $A$ also belongs to $B$: $$A \subseteq B \iff \forall x, \ x \in A \Rightarrow x \in B.$$
 
 We say that the set $A$ is **strictly a subset** of $B$ if every element of $A$ belongs to $B$ while $B$ being larger than $A$:
@@ -345,9 +345,9 @@ Let $A$ and $B$ be two subsets of a universal set $U$.
 | Difference | $A - B = A \cap B^c$ | $\{x \in U \mid x \in A \text{ and } x \notin B\}$ | customers in $A$ but not in $B$ |
 | Complement | $A^c = U - A$ | $\{x \in U \mid x \notin A\}$ | customers in the universe who are not in $A$ |
 
-### Cartesian product and multidimensional observations
+#### Cartesian product and multidimensional observations
 
-::: {.callout-note title="Definition: Cartesian product"}
+::: {.callout-note title="Definition:"}
 The Cartesian product of two sets $A$ and $B$ is the set of ordered pairs whose first component belongs to $A$ and whose second belongs to $B$: $$A \times B = \{(a, b) \mid a \in A, \ b \in B\}.$$
 :::
 
@@ -361,9 +361,9 @@ where $p$ is the number of variables measured for individual $i$.
 A Netflix user may be represented by a vector containing age, the number of hours watched per week, a preferred movie genre encoded numerically, the number of series abandoned before completion, and the user's average rating of content. This five-dimensional vector, with $p = 5$ variables, lets a recommendation algorithm compare the user with others who have similar profiles.
 :::
 
-### Partition of a universal set
+#### Partition of a universal set
 
-::: {.callout-note title="Definition: partition"}
+::: {.callout-note title="Definition:"}
 Let $X_1, X_2, \dots, X_k$ be non-empty subsets of $U$. The family $\{X_i\}_{i \in \{1,2,\dots,k\}}$ forms a **partition** of $U$ if
 
 $$\bigcup_{i=1}^{k} X_i = U,$$ and $$\qquad X_i \cap X_j = \varnothing \ \text{ for every } i \neq j,$$
@@ -377,11 +377,11 @@ $$\bigcup_{i=1}^{k} X_i = X_1 \cup X_2 \cup X_3 \cup \cdots \cup X_k.$$
 
 ![Partition of a universal set into six non-empty subsets](../images/partition-universe.png){#fig-partition width="65%"}
 
-# Essential algebra for working with models
+## Essential algebra for working with models
 
 Algebra allows us to simplify expressions and solve equations.
 
-## Algebraic expressions
+### Algebraic expressions
 
 An algebraic expression combines numbers, variables and operations. The basic manipulations are as follows[:]{style="color:#128a3a"}
 
@@ -393,7 +393,7 @@ An algebraic expression combines numbers, variables and operations. The basic ma
 | Square of a sum | $(a+b)^2 = a^2 + 2ab + b^2$ | simplify quadratic functions |
 | Difference of squares | $a^2 - b^2 = (a-b)(a+b)$ | solve or factor expressions |
 
-## Polynomials and quadratic equations
+### Polynomials and quadratic equations
 
 A polynomial of degree $n$ is an expression of the form
 
@@ -405,7 +405,7 @@ $$P(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \qquad a_n \neq 0.$$
 - $P(x) = 2x^2 - 3x + 1$: a polynomial of degree 2.
 - $Q(x) = 5x^3 + x - 7$: a polynomial of degree 3.
 
-### Roots of a first-degree polynomial
+#### Roots of a first-degree polynomial
 
 A linear equation in one unknown is written as
 
@@ -415,7 +415,7 @@ with the single solution
 
 $$x = -\frac{b}{a} = -a^{-1}b.$$
 
-### Roots of a quadratic polynomial
+#### Roots of a quadratic polynomial
 
 A quadratic equation is written $$ax^2 + bx + c = 0, \qquad a \neq 0,$$ and its discriminant is $$\Delta = b^2 - 4ac.$$
 
@@ -427,7 +427,7 @@ A quadratic equation is written $$ax^2 + bx + c = 0, \qquad a \neq 0,$$ and its 
 
 *That is, the discriminant tells us whether we have two, one, or no real solutions.*
 
-## Exponents and logarithms
+### Exponents and logarithms
 
 For $a, b > 0$ and compatible exponents, the basic rules are
 
@@ -439,7 +439,7 @@ For equations with the same positive base $a \neq 1$,
 
 $$a^f = a^g \iff f = g, \qquad \text{and in particular} \qquad e^f = e^g \iff f = g.$$
 
-::: {.callout-warning title="Common pitfall"}
+::: callout-warning
 $a^m a^n = a^{m+n}$, **not** $a^{mn}$.
 :::
 
@@ -457,13 +457,13 @@ And for equations,
 
 $$\log_a(f) = \log_a(g) \iff f = g, \qquad \text{in particular} \qquad \ln(f) = \ln(g) \iff f = g.$$
 
-::: {.callout-warning title="Common pitfall"}
+::: callout-warning
 The notation "$\log$" can sometimes be ambiguous. In R and most mathematical writing, `log(x)` is the natural logarithm[.]{style="color:#128a3a"} However, in calculators, `LOG` means base 10. These notes always write $\ln$ for the natural log and always show the base otherwise. Moreover, there is no rule for the logarithm of a sum: $$\ln(x + y) \neq \ln x + \ln y.$$
 :::
 
-### Example: exponential growth and decay
+#### Example: exponential growth and decay
 
-::: {.callout-important title="Key result: growth and decay factors"}
+::: callout-important
 An initial quantity $Q_0$ that **increases** by $p\%$ each year has, after $t$ years, the value $$Q_0\left(1 + \frac{p}{100}\right)^{t}.$$ An initial quantity $Q_0$ that **decreases** by $p\%$ each year has, after $t$ years, the value $$Q_0\left(1 - \frac{p}{100}\right)^{t}.$$ The number $1 + p/100$ is the **growth factor** associated with an increase of $p\%$; the number $1 - p/100$ is the **decay factor** associated with a decrease of $p\%$. Here $Q_0$ is the initial value, $p$ the annual rate as a percentage, and $t$ the number of years.
 :::
 
