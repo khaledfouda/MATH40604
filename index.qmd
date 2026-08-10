@@ -1,0 +1,80 @@
+# How to use these notes {.unnumbered}
+
+{{< include _macros.qmd >}}
+
+These notes accompany **MATH 40604, Advanced Mathematical Tools for Management**. They are a study aid, not a replacement for the lectures: the official course material is the slide deck distributed each week. What the slides compress — the intermediate algebra, the reason a definition is written the way it is, the mistake that costs marks — is what these notes expand.
+
+They are written on one assumption: that you are a capable adult who has not done mathematics in a while. Nothing here requires you to remember a formula from years ago. Where a step looks small, it is written out anyway.
+
+## The structure of each chapter
+
+Every chapter follows the same path.
+
+- **Definitions** state an idea precisely, and are always followed by an *In words* reading in plain English. If the symbols do not land, read the plain-English version first and come back.
+- **Key results** are the facts you will actually use. Each one is derived, not asserted.
+- **Worked examples** are set in a business or analytics context and show every algebraic step.
+- **Common pitfalls** collect the errors that recur — usually not from misunderstanding the concept, but from a small slip in notation.
+- **One-minute recap** is what to reread on the train.
+
+## Notation used throughout
+
+Mathematical notation varies between textbooks, countries, and software. The conventions below are fixed for the whole course; where a different convention is common elsewhere, it is noted.
+
+| Symbol | Meaning | Note |
+### What the typeface tells you
+
+Mathematics uses the *shape* of a letter to signal what kind of object it is. Learn these five and you can often tell what a symbol is before you have read its definition.
+
+| Typeface | Kind of object | Examples |
+|:--|:--|:--|
+| lowercase italic | a **scalar** — a single number | $x$, $q$, $c$, $\beta_1$ |
+| **bold lowercase** | a **vector** — an ordered list of numbers | $\vect{x}$, $\vect{w}$ |
+| **bold uppercase** | a **matrix** — a rectangular table of numbers | $\mathbf{X}$ |
+| uppercase italic | a **set**, or a **random variable** | $A$, $U$, $\Omega$; $Y_i$, $X_i$ |
+| blackboard $\mathbb{}$ | a **standard number system** | $\R$, $\N$, $\Z$, $\Q$ |
+| calligraphic $\mathcal{}$ | a **named structured set** or distribution | $\normal$, $\simplex{p}$ |
+
+**The bold rule is the one to internalise.** Bold means "not a single number." Nothing else in these notes is ever bold inside mathematics, so if you see bold, you are looking at a vector or a matrix. This resolves ambiguities that case alone cannot: $\mathbf{X}$ is the data matrix, $X_i$ is a random variable, and $X_1, \dots, X_k$ are the pieces of a partition — three different objects, told apart by weight and by subscript rather than by which letter was chosen.
+
+Uppercase italic has to carry two jobs — sets and random variables — because both conventions are universal and neither can be dropped. Context separates them reliably: sets appear with $\in$, $\cup$, $\cap$; random variables appear with $\sim$ and with subscripts indexing observations.
+
+### Reserved symbols
+
+| Symbol | Meaning | Note |
+|:--|:--|:--|
+| $\N$ | natural numbers $\{0, 1, 2, \dots\}$ | **includes zero** in this course |
+| $\Z$ | integers $\{\dots, -1, 0, 1, \dots\}$ | |
+| $\Q$ | rational numbers | quotients $a/b$ with $b \neq 0$ |
+| $\R$ | real numbers | |
+| $\Rp$ | non-negative reals, $[0, +\infty)$ | includes $0$ |
+| $\R^p$ | real vectors with $p$ components | |
+| $\R^{n \times p}$ | real matrices, $n$ rows and $p$ columns | |
+| $(a,b)$ | open interval | **parentheses**, not $]a,b[$ |
+| $[a,b]$ | closed interval | |
+| $\simplex{p}$ | the simplex in $\R^p$ | $p$ components, non-negative, summing to $1$ |
+| $\vect{x}$ | a vector | **bold**, always |
+| $\mathbf{X}$ | a data matrix | **bold**, always |
+| $n$ | number of observations | reserved |
+| $p$ | number of variables | reserved wherever a data set is in play |
+| $i, j, k$ | summation and index letters | never used for a quantity |
+| $\xbar$ | mean of an observed sample | |
+| $\mu$ | mean of a population or distribution | not the same object as $\xbar$ |
+| $\hat{\beta}$ | an estimate of $\beta$ | the hat means "computed from data" |
+| $\ln$ | natural logarithm, base $e$ | written $\ln$, never $\log$ |
+| $\log_{10}$ | logarithm base ten | always written with its base |
+
+Five of these are worth pausing on, because they are the ones that silently change answers.
+
+**Zero is a natural number here.** Many textbooks, particularly North American ones, start $\N$ at $1$. This course starts at $0$. So "$0 \in \N$" is *true* in this course and false in some books you may own. When in doubt, look at the convention table rather than at your memory.
+
+**Open intervals use parentheses.** French-language material writes the open interval from $a$ to $b$ as $]a, b[$. This course writes $(a, b)$, the convention used in statistics and data science software. You will see the French form on some slides; it means the same thing.
+
+**"Non-negative" and "positive" are different words.** *Positive* means strictly greater than zero. *Non-negative* means greater than or equal to zero. French uses *positif* for both, so translated material sometimes says "positive" where "non-negative" is meant. When it matters, this course says which.
+
+**$\ln$ and $\log$ are not interchangeable.** In R, `log()` is the *natural* logarithm and `log10()` is base ten. In many spreadsheets and in engineering texts, `LOG` means base ten. These notes always write $\ln$ for the natural logarithm and always write the base explicitly otherwise.
+
+**A letter can be reused, and sometimes must be.** There are twenty-six letters and rather more than twenty-six ideas, so reuse is unavoidable — even in professional writing. Two cases appear in these notes. The letter $p$ means the number of variables whenever a data set is present, but in the growth formula $Q_0(1 + p/100)^t$ it is a percentage rate; the $\%$ or the $/100$ is what tells you which. The letter $\Delta$ is the discriminant of a quadratic when bare, and the simplex $\simplex{p}$ when subscripted. Both reuses are flagged where they occur. The lesson is not that notation is sloppy but that it is *local*: a symbol means what the surrounding text says it means, and checking is a habit worth forming rather than a sign that you have missed something.
+
+## A note on effort
+
+You will get more out of a worked example by covering the solution and attempting it than by reading it. The examples are chosen so that this is realistic: none of them requires an insight you have not been given.

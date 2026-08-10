@@ -1,0 +1,51 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Advanced Mathematical Tools for Management"
+  subtitle: "MATH 40604 — Study Notes"
+  author: "Khaled Fouda"
+  date: today
+  date-format: "D MMMM YYYY"
+  search: true
+  sidebar:
+    style: docked
+    collapse-level: 2
+  chapters:
+    - index.qmd
+    - chapters/week01.qmd
+  page-footer:
+    left: "MATH 40604 — Study Notes"
+    right: "Complementary study aid. The official course material is the slide deck distributed in class."
+
+bibliography: []
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    toc-title: "On this page"
+    number-sections: true
+    html-math-method: mathjax
+    code-copy: true
+    fig-align: center
+
+  pdf:
+    documentclass: scrreprt
+    papersize: letter
+    geometry:
+      - margin=2.5cm
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    colorlinks: true
+    # Notation macros for the PDF path. The HTML path gets the same macros from
+    # _macros.qmd, which is scoped to HTML only — see the comment in that file.
+    include-in-header:
+      - file: tex/macros.tex
+
+editor: visual

@@ -1,0 +1,20 @@
+# Quarto build artefacts
+/_book/
+/.quarto/
+/_freeze/
+*.tex.bak
+
+
+/_reference/
+
+# mac/editor stuff
+.DS_Store
+.Rproj.user/
+*.Rproj
+.vscode/
+.positron/
+**/*.quarto_ipynb
+
+
+# put it back later after you write it.
+Index.qmd

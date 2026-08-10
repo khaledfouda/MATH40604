@@ -1,0 +1,36 @@
+::: {.content-visible when-format="html"}
+::: {.hidden}
+$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Rp}{\mathbb{R}_{+}}
+\newcommand{\simplex}[1]{\Delta_{#1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\sd}{\operatorname{sd}}
+\newcommand{\MAE}{\operatorname{MAE}}
+\newcommand{\MSE}{\operatorname{MSE}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\xbar}{\bar{x}}
+\newcommand{\normal}{\mathcal{N}}
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\set}[1]{\left\{ #1 \right\}}
+$$
+:::
+:::
+
+<!--
+HTML only, on purpose. MathJax reads the definitions above and registers them
+for the page; the .hidden wrapper stops the (empty) display equation showing.
+
+PDF gets the SAME macros from tex/macros.tex via include-in-header in
+_quarto.yml. Keeping the two paths separate matters: if both fired, LaTeX would
+hit \newcommand on an already-defined macro and abort. tex/macros.tex therefore
+uses \providecommand as a second line of defence.
+
+If you add a macro, add it in BOTH files.
+-->
