@@ -13,6 +13,7 @@ book:
     style: docked
     collapse-level: 2
   chapters:
+    - index.qmd
     - chapters/week01.qmd
   page-footer:
     left: "MATH 40604 — Course Notes"
@@ -42,8 +43,7 @@ format:
     toc-depth: 2
     number-sections: true
     colorlinks: true
-    # Notation macros for the PDF path. The HTML path gets the same macros from
-    # _macros.qmd, which is scoped to HTML only — see the comment in that file.
+    # Notation macros for the PDF path. The HTML path gets the same macros from _macros.qmd
     include-in-header:
       - file: tex/macros.tex
 

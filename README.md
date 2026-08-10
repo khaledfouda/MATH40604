@@ -1,1 +1,1 @@
-# MATH 40604 — Study Notes
+# MATH 40604 — Course Notes
