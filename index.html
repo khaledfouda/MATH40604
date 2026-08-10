@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Khaled Fouda">
-<meta name="dcterms.date" content="2026-08-06">
+<meta name="dcterms.date" content="2026-08-09">
 
 <title>Advanced Mathematical Tools for Management</title>
 <style>
@@ -50,9 +50,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8a84cfd26a81cac07cced63adb3cfe4f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-af0209dd186707271a4c448b58cde707.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-8a84cfd26a81cac07cced63adb3cfe4f.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-71aa96dd783cecc28fad12b15280a1e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-ff6d47bf0ddbfcbbeb0180396094f431.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-71aa96dd783cecc28fad12b15280a1e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -337,7 +337,11 @@ window.Quarto = {
   <li><a href="#how-to-use-these-notes" id="toc-how-to-use-these-notes" class="nav-link active" data-scroll-target="#how-to-use-these-notes">How to use these notes</a>
   <ul class="collapse">
   <li><a href="#the-structure-of-each-chapter" id="toc-the-structure-of-each-chapter" class="nav-link" data-scroll-target="#the-structure-of-each-chapter">The structure of each chapter</a></li>
-  <li><a href="#notation-used-throughout" id="toc-notation-used-throughout" class="nav-link" data-scroll-target="#notation-used-throughout">Notation used throughout</a></li>
+  <li><a href="#notation-used-throughout" id="toc-notation-used-throughout" class="nav-link" data-scroll-target="#notation-used-throughout">Notation used throughout</a>
+  <ul class="collapse">
+  <li><a href="#what-the-typeface-tells-you" id="toc-what-the-typeface-tells-you" class="nav-link" data-scroll-target="#what-the-typeface-tells-you">What the typeface tells you</a></li>
+  <li><a href="#reserved-symbols" id="toc-reserved-symbols" class="nav-link" data-scroll-target="#reserved-symbols">Reserved symbols</a></li>
+  </ul></li>
   <li><a href="#a-note-on-effort" id="toc-a-note-on-effort" class="nav-link" data-scroll-target="#a-note-on-effort">A note on effort</a></li>
   </ul></li>
   </ul>
@@ -367,7 +371,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">6 August 2026</p>
+      <p class="date">9 August 2026</p>
     </div>
   </div>
   
@@ -430,6 +434,61 @@ If you add a macro, add it in BOTH files.
 <section id="notation-used-throughout" class="level2">
 <h2 class="anchored" data-anchor-id="notation-used-throughout">Notation used throughout</h2>
 <p>Mathematical notation varies between textbooks, countries, and software. The conventions below are fixed for the whole course; where a different convention is common elsewhere, it is noted.</p>
+<div class="line-block">Symbol | Meaning | Note |</div>
+<section id="what-the-typeface-tells-you" class="level3">
+<h3 class="anchored" data-anchor-id="what-the-typeface-tells-you">What the typeface tells you</h3>
+<p>Mathematics uses the <em>shape</em> of a letter to signal what kind of object it is. Learn these five and you can often tell what a symbol is before you have read its definition.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Typeface</th>
+<th style="text-align: left;">Kind of object</th>
+<th style="text-align: left;">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">lowercase italic</td>
+<td style="text-align: left;">a <strong>scalar</strong> — a single number</td>
+<td style="text-align: left;"><span class="math inline">\(x\)</span>, <span class="math inline">\(q\)</span>, <span class="math inline">\(c\)</span>, <span class="math inline">\(\beta_1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>bold lowercase</strong></td>
+<td style="text-align: left;">a <strong>vector</strong> — an ordered list of numbers</td>
+<td style="text-align: left;"><span class="math inline">\(\vect{x}\)</span>, <span class="math inline">\(\vect{w}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>bold uppercase</strong></td>
+<td style="text-align: left;">a <strong>matrix</strong> — a rectangular table of numbers</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uppercase italic</td>
+<td style="text-align: left;">a <strong>set</strong>, or a <strong>random variable</strong></td>
+<td style="text-align: left;"><span class="math inline">\(A\)</span>, <span class="math inline">\(U\)</span>, <span class="math inline">\(\Omega\)</span>; <span class="math inline">\(Y_i\)</span>, <span class="math inline">\(X_i\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">blackboard <span class="math inline">\(\mathbb{}\)</span></td>
+<td style="text-align: left;">a <strong>standard number system</strong></td>
+<td style="text-align: left;"><span class="math inline">\(\R\)</span>, <span class="math inline">\(\N\)</span>, <span class="math inline">\(\Z\)</span>, <span class="math inline">\(\Q\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">calligraphic <span class="math inline">\(\mathcal{}\)</span></td>
+<td style="text-align: left;">a <strong>named structured set</strong> or distribution</td>
+<td style="text-align: left;"><span class="math inline">\(\normal\)</span>, <span class="math inline">\(\simplex{p}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The bold rule is the one to internalise.</strong> Bold means “not a single number.” Nothing else in these notes is ever bold inside mathematics, so if you see bold, you are looking at a vector or a matrix. This resolves ambiguities that case alone cannot: <span class="math inline">\(\mathbf{X}\)</span> is the data matrix, <span class="math inline">\(X_i\)</span> is a random variable, and <span class="math inline">\(X_1, \dots, X_k\)</span> are the pieces of a partition — three different objects, told apart by weight and by subscript rather than by which letter was chosen.</p>
+<p>Uppercase italic has to carry two jobs — sets and random variables — because both conventions are universal and neither can be dropped. Context separates them reliably: sets appear with <span class="math inline">\(\in\)</span>, <span class="math inline">\(\cup\)</span>, <span class="math inline">\(\cap\)</span>; random variables appear with <span class="math inline">\(\sim\)</span> and with subscripts indexing observations.</p>
+</section>
+<section id="reserved-symbols" class="level3">
+<h3 class="anchored" data-anchor-id="reserved-symbols">Reserved symbols</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -457,7 +516,7 @@ If you add a macro, add it in BOTH files.
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\Q\)</span></td>
 <td style="text-align: left;">rational numbers</td>
-<td style="text-align: left;">quotients <span class="math inline">\(p/q\)</span> with <span class="math inline">\(q \neq 0\)</span></td>
+<td style="text-align: left;">quotients <span class="math inline">\(a/b\)</span> with <span class="math inline">\(b \neq 0\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\R\)</span></td>
@@ -500,14 +559,24 @@ If you add a macro, add it in BOTH files.
 <td style="text-align: left;"><strong>bold</strong>, always</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
-<td style="text-align: left;">number of observations</td>
-<td style="text-align: left;">never anything else</td>
+<td style="text-align: left;"><span class="math inline">\(\mathbf{X}\)</span></td>
+<td style="text-align: left;">a data matrix</td>
+<td style="text-align: left;"><strong>bold</strong>, always</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">number of observations</td>
+<td style="text-align: left;">reserved</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(p\)</span></td>
 <td style="text-align: left;">number of variables</td>
-<td style="text-align: left;">never anything else</td>
+<td style="text-align: left;">reserved wherever a data set is in play</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(i, j, k\)</span></td>
+<td style="text-align: left;">summation and index letters</td>
+<td style="text-align: left;">never used for a quantity</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\xbar\)</span></td>
@@ -520,22 +589,29 @@ If you add a macro, add it in BOTH files.
 <td style="text-align: left;">not the same object as <span class="math inline">\(\xbar\)</span></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\hat{\beta}\)</span></td>
+<td style="text-align: left;">an estimate of <span class="math inline">\(\beta\)</span></td>
+<td style="text-align: left;">the hat means “computed from data”</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\ln\)</span></td>
 <td style="text-align: left;">natural logarithm, base <span class="math inline">\(e\)</span></td>
 <td style="text-align: left;">written <span class="math inline">\(\ln\)</span>, never <span class="math inline">\(\log\)</span></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\log_{10}\)</span></td>
 <td style="text-align: left;">logarithm base ten</td>
 <td style="text-align: left;">always written with its base</td>
 </tr>
 </tbody>
 </table>
-<p>Four of these are worth pausing on, because they are the ones that silently change answers.</p>
+<p>Five of these are worth pausing on, because they are the ones that silently change answers.</p>
 <p><strong>Zero is a natural number here.</strong> Many textbooks, particularly North American ones, start <span class="math inline">\(\N\)</span> at <span class="math inline">\(1\)</span>. This course starts at <span class="math inline">\(0\)</span>. So “<span class="math inline">\(0 \in \N\)</span>” is <em>true</em> in this course and false in some books you may own. When in doubt, look at the convention table rather than at your memory.</p>
 <p><strong>Open intervals use parentheses.</strong> French-language material writes the open interval from <span class="math inline">\(a\)</span> to <span class="math inline">\(b\)</span> as <span class="math inline">\(]a, b[\)</span>. This course writes <span class="math inline">\((a, b)\)</span>, the convention used in statistics and data science software. You will see the French form on some slides; it means the same thing.</p>
 <p><strong>“Non-negative” and “positive” are different words.</strong> <em>Positive</em> means strictly greater than zero. <em>Non-negative</em> means greater than or equal to zero. French uses <em>positif</em> for both, so translated material sometimes says “positive” where “non-negative” is meant. When it matters, this course says which.</p>
 <p><strong><span class="math inline">\(\ln\)</span> and <span class="math inline">\(\log\)</span> are not interchangeable.</strong> In R, <code>log()</code> is the <em>natural</em> logarithm and <code>log10()</code> is base ten. In many spreadsheets and in engineering texts, <code>LOG</code> means base ten. These notes always write <span class="math inline">\(\ln\)</span> for the natural logarithm and always write the base explicitly otherwise.</p>
+<p><strong>A letter can be reused, and sometimes must be.</strong> There are twenty-six letters and rather more than twenty-six ideas, so reuse is unavoidable — even in professional writing. Two cases appear in these notes. The letter <span class="math inline">\(p\)</span> means the number of variables whenever a data set is present, but in the growth formula <span class="math inline">\(Q_0(1 + p/100)^t\)</span> it is a percentage rate; the <span class="math inline">\(\%\)</span> or the <span class="math inline">\(/100\)</span> is what tells you which. The letter <span class="math inline">\(\Delta\)</span> is the discriminant of a quadratic when bare, and the simplex <span class="math inline">\(\simplex{p}\)</span> when subscripted. Both reuses are flagged where they occur. The lesson is not that notation is sloppy but that it is <em>local</em>: a symbol means what the surrounding text says it means, and checking is a habit worth forming rather than a sign that you have missed something.</p>
+</section>
 </section>
 <section id="a-note-on-effort" class="level2">
 <h2 class="anchored" data-anchor-id="a-note-on-effort">A note on effort</h2>
