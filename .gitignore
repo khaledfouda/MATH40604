@@ -3,6 +3,8 @@
 /.quarto/
 /_freeze/
 *.tex.bak
+index.typ
+*.log
 
 
 /_reference/
@@ -14,9 +16,6 @@
 .vscode/
 .positron/
 **/*.quarto_ipynb
-
-
-# put it back later after you write it.
-index.typ
 .Rhistory
-*.log
+
+
