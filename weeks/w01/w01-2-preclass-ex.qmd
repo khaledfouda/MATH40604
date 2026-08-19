@@ -1,0 +1,11 @@
+---
+title: "Week 1 - Pre-class exercises"
+solutions: true       
+toc: false
+number-sections: false
+format:
+  html: default
+  pdf: default
+---
+
+{{< include ../../_macros.qmd >}}

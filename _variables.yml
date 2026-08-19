@@ -1,15 +1,34 @@
 course:
-  code: "MATH 40604"
+  code: "MATH 40604A"
   title: "Advanced Mathematical Tools for Management"
   semester: "Fall 2026"
   days: "Monday"
-  time: "8:30–11:30"
-  location: "HEC Montréal"
-  description: "fill later"
+  time: "8:30-11:30"
+  github: "https://www.github.com/khaledfouda/MATH40604A"
+  location: "[Hélène-Desmarais](https://www.hec.ca/campus/cote_sainte_catherine/1er_etage/salles_cours/hdesmarais.html)"
+  description: 
+    "This course aims to introduce or review the essential mathematical concepts, techniques, 
+    and tools necessary for understanding scientific literature and conducting research activities in various fields of quantitative management."
+    # 
+    # The topics are presented, starting from basic notions, in increasing order of complexity. 
+    # The range of concepts covered does not allow for in-depth exploration of each; 
+    # the objective is rather to foster understanding of the concepts and to introduce the contexts in which they are used.
+    # 
+    # The course includes an introduction to the fundamental mathematical concepts required for advanced studies in quantitative management: 
+    # terminology, functions, matrix notation, random variables, systems of equations, and calculus. 
+    # It then presents the foundations of optimization (models and methods) and statistical data analysis (estimation, forecasting, inference).
 
 instructor:
   name: "Khaled Fouda"
-  url: "..."
-  office: "fill later"
+  url: ""
+  office: "4.455, Côte-Sainte-Catherine"
   email: "khaled.fouda@hec.ca"
-  contact_policy: "fill later"
+  contact_policy: "Office-hours will be decided on during the first class. Feel free to reach me anytime by Email."
+  
+coinstructor:
+  name: "Fatiha Kacher"
+  section: "MATH 40604 (French)"
+
+university:
+  name: "HEC Montréal"
+  url: "https://www.hec.ca"

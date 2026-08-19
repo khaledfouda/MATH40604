@@ -1,6 +1,14 @@
-# Lecture 1: Modelling, Sets, and Algebra
+---
+title: "Week 1 - Pre-class notes"
+subtitle: "Modelling, sets, and algebra"
+toc: true
+format:
+  html: default
+  pdf: default
+---
 
-{{< include ../_macros.qmd >}}
+{{< include ../../_macros.qmd >}}
+
 
 Most of the mathematics here are not new and its likely that you have met it before. The aim is to refresh your memory and get you ready for the first class.
 
@@ -51,7 +59,7 @@ This is all the information we need to solve the model. A clear definition of th
 Below we summarize the components of an optimization problem as we saw them in the example.
 
 | Component | What it is | In the example |
-|:---------------|:---------------|:----------------------------------------|
+|:----------------|:----------------|:-------------------------------------|
 | **Decision variables** | The quantities you choose. Unknown before solving. | $x_A$, $x_B$ |
 | **Parameters** | Values handed to you. Known before solving. | unit profits 30 and 20; labor times 2 h and 1 h; capacity 100 h; demand ceilings 40 and 70 |
 | **Objective function** | The single number you are making as large or as small as possible. | $30x_A + 20x_B$, maximized |
@@ -179,7 +187,7 @@ Finally, intervals are defined by a region with a starting point and an end poin
 
 Below, we show a representation of intervals on the real line.
 
-![Intervals represented on the real line](../images/intervals-real-line.png){#fig-intervals width="90%"}
+![Intervals represented on the real line](../../images/w01/intervals-real-line.png){#fig-intervals width="90%"}
 
 In @fig-intervals, $A = [-4, -2]$, $B = [0, 1)$ and $C = (2, 5)$. The number $-3$ is an **interior point** of $A$ because it lies in $A$ with a little room on both sides, unlike the endpoints $-4$ and $-2$. Note that $B$ contains $0$ but not $1$, and that $C$ contains neither $2$ nor $5$.
 
@@ -373,7 +381,7 @@ $$\bigcup_{i=1}^{k} X_i = X_1 \cup X_2 \cup X_3 \cup \cdots \cup X_k.$$
 *That is, the subsets split* $U$ into pieces with no gaps or overlaps[,]{style="color:#128a3a"} and every element in $U$ belongs to exactly one piece.
 :::
 
-![Partition of a universal set into six non-empty subsets](../images/partition-universe.png){#fig-partition width="65%"}
+![Partition of a universal set into six non-empty subsets](../../images/w01/partition-universe.png){#fig-partition width="65%"}
 
 ## Essential algebra for working with models
 

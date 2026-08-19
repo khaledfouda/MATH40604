@@ -6,7 +6,7 @@
 index.typ
 *.log
 /index.tex
-
+_site/
 /_reference/
 
 # mac/editor stuff

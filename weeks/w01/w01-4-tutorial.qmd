@@ -1,0 +1,11 @@
+---
+title: "Week 1 - Tutorial exercises"
+solutions: false        
+toc: false
+number-sections: false
+format:
+  html: default
+  pdf: default
+---
+
+{{< include ../../_macros.qmd >}}

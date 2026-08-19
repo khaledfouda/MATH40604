@@ -1,5 +1,9 @@
 :::: {.content-visible when-format="html"}
 ::: hidden
+
+
+
+
 $$\newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
@@ -23,14 +27,7 @@ $$\newcommand{\R}{\mathbb{R}}
 
 ```{=html}
 <!--
-HTML only, on purpose. MathJax reads the definitions above and registers them
-for the page; the .hidden wrapper stops the (empty) display equation showing.
-
-PDF gets the SAME macros from tex/macros.tex via include-in-header in
-_quarto.yml. Keeping the two paths separate matters: if both fired, LaTeX would
-hit \newcommand on an already-defined macro and abort. tex/macros.tex therefore
-uses \providecommand as a second line of defence.
-
-If you add a macro, add it in BOTH files.
+These are for generating the HTML documents. Similar commands are in tex/macros.tex for generating
+the PDF files via _quarto.yml. Both are needed and should match so add the macros to both files!
 -->
 ```

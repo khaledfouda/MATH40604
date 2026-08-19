@@ -1,0 +1,9 @@
+---
+title: "Week 1 - Lecture notes"
+toc: true
+format:
+  html: default
+  pdf: default
+---
+
+{{< include ../../_macros.qmd >}}

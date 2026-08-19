@@ -1,0 +1,31 @@
+---
+title: "Week 1 - Modelling, sets, and algebra"
+toc: false
+number-sections: false
+format:
+  html: default
+---
+
+## What this week covers
+
+- Mathematical modelling
+- Variables and parameters
+- Sets, intervals, and notation
+- Elementary algebra
+- Logic and proof techniques
+
+## Documents
+
+| Document | Use it | Available |
+|:---|:---|:---|
+| [Pre-class notes](w01-1-preclass.qmd) · [PDF](w01-1-preclass.pdf) | Read before class | Before class |
+| [Pre-class exercises](w01-2-preclass-ex.qmd) · [PDF](w01-2-preclass-ex.pdf) | Work through after reading the notes; solutions included | Before class |
+| [Lecture notes](w01-3-lecture.qmd) · [PDF](w01-3-lecture.pdf) | What we cover during class | After class |
+| [Tutorial exercises](w01-4-tutorial.qmd) · [PDF](w01-4-tutorial.pdf) | You will work on them during the tutorial | Before class; solutions to selected exercises added after the tutorial |
+
+## TODO before class
+
+1.  Read the pre-class notes. The notes are supposed to be easy to follow. If you found any of the notions to be challenging, skip them and we will cover them in class.
+2.  Attempt the pre-class exercises before looking at the solution. The solutions are there so you can check yourself, not so you can read them instead.
+
+## See you in class!! :)
