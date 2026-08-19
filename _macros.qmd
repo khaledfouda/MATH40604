@@ -1,7 +1,6 @@
-::: {.content-visible when-format="html"}
-::: {.hidden}
-$$
-\newcommand{\R}{\mathbb{R}}
+:::: {.content-visible when-format="html"}
+::: hidden
+$$\newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -18,11 +17,11 @@ $$
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\card}[1]{\lvert #1 \rvert}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
-\newcommand{\set}[1]{\left\{ #1 \right\}}
-$$
+\newcommand{\set}[1]{\left\{ #1 \right\}}$$
 :::
-:::
+::::
 
+```{=html}
 <!--
 HTML only, on purpose. MathJax reads the definitions above and registers them
 for the page; the .hidden wrapper stops the (empty) display equation showing.
@@ -34,3 +33,4 @@ uses \providecommand as a second line of defence.
 
 If you add a macro, add it in BOTH files.
 -->
+```

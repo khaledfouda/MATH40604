@@ -1,0 +1,15 @@
+course:
+  code: "MATH 40604"
+  title: "Advanced Mathematical Tools for Management"
+  semester: "Fall 2026"
+  days: "Monday"
+  time: "8:30–11:30"
+  location: "HEC Montréal"
+  description: "fill later"
+
+instructor:
+  name: "Khaled Fouda"
+  url: "..."
+  office: "fill later"
+  email: "khaled.fouda@hec.ca"
+  contact_policy: "fill later"

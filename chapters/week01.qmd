@@ -4,7 +4,7 @@
 
 Most of the mathematics here are not new and its likely that you have met it before. The aim is to refresh your memory and get you ready for the first class.
 
-------------------------------------------------------------------------
+A
 
 ## What a mathematical model is
 
@@ -51,7 +51,7 @@ This is all the information we need to solve the model. A clear definition of th
 Below we summarize the components of an optimization problem as we saw them in the example.
 
 | Component | What it is | In the example |
-|:-----------------------|:-----------------------|:-----------------------|
+|:---------------|:---------------|:----------------------------------------|
 | **Decision variables** | The quantities you choose. Unknown before solving. | $x_A$, $x_B$ |
 | **Parameters** | Values handed to you. Known before solving. | unit profits 30 and 20; labor times 2 h and 1 h; capacity 100 h; demand ceilings 40 and 70 |
 | **Objective function** | The single number you are making as large or as small as possible. | $30x_A + 20x_B$, maximized |
@@ -303,14 +303,12 @@ $$\sum_{i=1}^{n}(x_i - \xbar)^2 = \sum_{i=1}^{n} x_i^2 - n\xbar^{\,2}.$$
 
 It is often necessary to combine two or more summation symbols. For example, when data are arranged in a grid (matrix), two indices are needed: $a_{ij}$ for row $i$, column $j$. Consider a matrix with $m$ rows and $n$ columns, and let $S_i$ be the total of row $i$:
 
-$$
-\begin{array}{ccccl}
+$$\begin{array}{ccccl}
 a_{11} & a_{12} & \cdots & a_{1n} & \longrightarrow \ \sum_{j=1}^{n} a_{1j} = S_1 \\
 a_{21} & a_{22} & \cdots & a_{2n} & \longrightarrow \ \sum_{j=1}^{n} a_{2j} = S_2 \\
 \vdots & \vdots & & \vdots & \\
 a_{m1} & a_{m2} & \cdots & a_{mn} & \longrightarrow \ \sum_{j=1}^{n} a_{mj} = S_m
-\end{array}
-$$
+\end{array}$$
 
 Adding the row totals gives the grand total, and the same grand total is reached by adding column totals instead:
 
@@ -391,7 +389,7 @@ An algebraic expression combines numbers, variables and operations. The basic ma
 | Expand | $a(b + c) = ab + ac$ | remove parentheses |
 | Factor | $ab + ac = a(b + c)$ | factor out a common factor |
 | Square of a sum | $(a+b)^2 = a^2 + 2ab + b^2$ | simplify quadratic functions |
-| Difference of squares | $a^2 - b^2 = (a-b)(a+b)$ | solve or factor expressions |
+| Difference of squares | $a^2 - b^2 = (a-b)(a+b)$\$a\^2 - b\^2 = (a-b)(a+b)\$ | solve or factor expressions |
 
 ### Polynomials and quadratic equations
 

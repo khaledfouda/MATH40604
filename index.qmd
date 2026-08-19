@@ -1,1 +1,43 @@
-`# Preface {.unnumbered}`
+---
+page-layout: full
+toc: false
+---
+
+# Course information {.unnumbered}
+
+{{< var course.code >}}, {{< var course.semester >}}  ·  HEC Montréal
+
+------------------------------------------------------------------------
+
+:::::: grid
+::: {.g-col-12 .g-col-md-4}
+### Contact information
+
+- **Instructor**   [{{< var instructor.name >}}]({{< var instructor.url >}})
+- **Office**   {{< var instructor.office >}}
+- **Email**   [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Course details
+
+- {{< var course.semester >}}
+- {{< var course.days >}}
+- {{< var course.time >}}
+- {{< var course.location >}}
+:::
+
+::: {.g-col-12 .g-col-md-4}
+### Office hours
+
+{{< var instructor.contact_policy >}}
+:::
+::::::
+
+------------------------------------------------------------------------
+
+## Weekly notes {.unnumbered}
+
+| Week | Topic                        | Notes                            |
+|------|------------------------------|----------------------------------|
+| 1    | Modelling, sets, and algebra | [Chapter 1](chapters/week01.qmd) |

@@ -5,7 +5,7 @@
 *.tex.bak
 index.typ
 *.log
-
+/index.tex
 
 /_reference/
 
