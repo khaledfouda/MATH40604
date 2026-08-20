@@ -30,8 +30,8 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: course-plan.qmd
-        text: Course plan
+      - href: outline.qmd
+        text: Outline
 
 author: 
   - "Fatiha Kacher"
