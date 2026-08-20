@@ -5,8 +5,8 @@ project:
     - "weeks/*/released/*.pdf"
 
 website:
-  title: "Course Notes for MATH 40604A, Fall 2026 at HEC Montreal"
-  description: "Advanced Mathematical Tools for Management"
+  title: "Advanced Mathematical Tools for Management"
+  description: "MATH 40604A, Fall 2026 at HEC Montreal"
   search:
     location: sidebar
     type: textbox
