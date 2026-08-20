@@ -8,4 +8,419 @@ format:
   pdf: default
 ---
 
+
+
 {{< include ../../_macros.qmd >}}
+
+These exercises let you practice the notions introduced in the pre-class notes.
+ If an exercise resists after a few minutes, mark it and bring it to
+class.
+
+::: {.callout-note title="Conventions used"}
+- $\N = \set{0, 1, 2, \dots}$ and $\Rp = [0, +\infty)$.
+- A data set with $n$ observations and $p$ variables is stored in a matrix $$X = (x_{ij}) \in \R^{n \times p},$$ where $x_{ij}$ is the value of
+  variable $j$ for observation $i$. 
+:::
+
+## Exercise 1: Reading and writing symbolic statements
+
+Translate each expression into precise English.
+
+1. $x = 12$.
+2. $c \neq 0$.
+3. $n \leq 50$.
+4. $r > 0$.
+5. $0 \leq p_i \leq 1$ for every $i \in \set{1, \dots, n}$.
+6. $\vect{x} \in \R^p$.
+7. $-2 \notin \N$.
+8. $\forall i \in \set{1, \dots, n}, \ e_i \geq 0$.
+9. $\exists j \in \set{1, \dots, m}$ such that $y_j < 0$.
+10. $\sum_{j=1}^{p} w_j = 1$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. $x$ is equal to $12$.
+2. $c$ is different from $0$.
+3. $n$ is less than or equal to $50$.
+4. $r$ is strictly greater than $0$.
+5. For every index $i$ from $1$ to $n$, the number $p_i$ lies between $0$ and
+   $1$, endpoints included.
+6. The vector $\vect{x}$ has $p$ real components.
+7. $-2$ does not belong to the set of natural numbers.
+8. For every index $i$, the number $e_i$ is non-negative.
+9. There exists at least one index $j$ such that $y_j$ negative.
+10. The sum of weights $w_j$ where $j$ ranges from $1$ to $p$, is equal to $1$.
+:::
+::::
+
+## Exercise 2: Number sets, vectors, and matrices
+
+State whether each proposition is true or false, and justify briefly. In
+proposition 8, write
+$$M = \begin{pmatrix} 1 & 2 & 0 \\ 0 & \tfrac{1}{2} & 4 \end{pmatrix}.$$
+
+1. $0 \in \N$.
+2. $-3 \in \Z$.
+3. $\tfrac{1}{4} \in \Q$.
+4. $\sqrt{2} \in \Q$.
+5. $\pi \in \R$.
+6. $-1 \in \Rp$.
+7. $(2, -1, 4) \in \R^3$.
+8. $M \in \R^{2 \times 3}$.
+9. $(0.2, 0.5, 0.3) \in \Rp^3$.
+10. If $X \in \R^{100 \times 8}$ and the rows are observations, then the data
+    set contains $100$ variables.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+| Proposition | Answer | Justification |
+|:---|:---|:---|
+| $0 \in \N$ | True | $\N$ contains $0$. |
+| $-3 \in \Z$ | True | The integer set include the negative integers too. |
+| $\tfrac{1}{4} \in \Q$ | True | It is a ratio of two integers with non-zero denominator. |
+| $\sqrt{2} \in \Q$ | False | $\sqrt{2}$ is irrational. |
+| $\pi \in \R$ | True | $\pi$ is real because all irrational numbers are real numbers. |
+| $-1 \in \Rp$ | False | $\Rp$ contains only non-negative reals. |
+| $(2,-1,4) \in \R^3$ | True | All three components are real. |
+| $M \in \R^{2 \times 3}$ | True | The matrix has two rows and three columns. |
+| $(0.2,0.5,0.3) \in \Rp^3$ | True | All three components are non-negative real numbers. |
+| $100$ variables | False | There are $100$ observations and $8$ variables. |
+
+**Remark.** The vector in proposition 9 has non-negative entries summing to
+$1$. This is a vector of weights. The set of all such vector is called a **simplex** of size $p$, where
+p is the number of elements in the vector, and is defined as follows
+$$\simplex{p} = \set{\vect{w} \in \Rp^{p} \ \middle|\ \sum_{j=1}^{p} w_j = 1 }$$
+So the vector in proposition 9 is a simplex of size 3. A probability vector is an example of a simplex vector.
+:::
+::::
+
+## Exercise 3: Set operations and data filters
+
+A customer database is indexed by the universal set
+$$U = \set{1,2,3,4,5,6,7,8}.$$
+Define
+
+- $A = \set{1,2,4,7}$ as the customers whose annual expenditure $d$ exceeds
+  \$1,000; and
+- $B = \set{2,3,4,6}$ as the customers whose risk score $s$ is at least $0.7$.
+
+Then:
+
+1. Determine $A \cap B$, $A \cup B$, $A - B$, and $B - A$.
+2. Determine the complement $A^c$ relative to $U$.
+3. Interpret $A \cap B$ in the business context.
+4. Write, in set-builder notation, the set of observations satisfying both
+   $d_i > 1000$ and $s_i \geq 0.7$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. $$A \cap B = \set{2,4}, \qquad A \cup B = \set{1,2,3,4,6,7},$$
+   $$A - B = \set{1,7}, \qquad B - A = \set{3,6}.$$
+2. $$A^c = U - A = \set{3,5,6,8}.$$
+3. $A \cap B$ is the set of customers who <u>simultaneously</u> spend more than
+   \$1,000 and carry a risk score of at least $0.7$.
+   That is, accounts who are both high-value and high-risk at the same time.
+   Mathematically:
+4. $$\set{ i \in U \mid d_i > 1000 \ \text{ and } \ s_i \geq 0.7 } = A \cap B.$$
+:::
+::::
+
+## Exercise 4: Absolute value
+
+Compute:
+
+1. $\abs{-7}$;
+2. $\abs{3 - 8}$;
+3. $\abs{-\tfrac{1}{2}}$;
+4. $\Bigl\lvert \abs{-4} - 6 \Bigr\rvert$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+$$\abs{-7} = 7, \qquad \abs{3-8} = \abs{-5} = 5, \qquad \abs{-\tfrac{1}{2}} = \tfrac{1}{2}.$$
+
+For the last one, we work inside out:
+$$\Bigl\lvert \abs{-4} - 6 \Bigr\rvert = \abs{4 - 6} = \abs{-2} = 2.$$
+:::
+::::
+
+## Exercise 5: Matrix representation of a data set
+
+Consider
+$$X = \begin{pmatrix} 2 & 5 & 1 \\ 4 & 3 & 0 \\ 6 & 7 & 1 \\ 8 & 2 & 0 \end{pmatrix}.$$
+
+1. To which space does $X$ belong? How many observations and how many
+   variables does it record?
+2. Write down the second observation.
+3. Write down the third variable.
+4. What is $x_{32}$, and what does it represent?
+5. Using summation notation, write the sum of variable $j$ over all
+   observations.
+6. Using summation notation, write the mean of variable $j$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. $X \in \R^{4 \times 3}$. It contains $4$ observations and $3$ variables.
+2. The second observation is the second row:
+   $\vect{x}_2 = (4, 3, 0)$.
+3. The third variable is the third column:
+   $$\begin{pmatrix} 1 \\ 0 \\ 1 \\ 0 \end{pmatrix}.$$
+4. $x_{32} = 7$. It represents the value of variable $2$ for observation $3$. 
+5. $$\sum_{i=1}^{n} x_{ij}.$$
+6. $$\xbar_{\cdot j} = \frac{1}{n}\sum_{i=1}^{n} x_{ij}.$$
+:::
+::::
+
+## Exercise 6: Expanding and condensing summations
+
+**A. Write each sum without the symbol $\Sigma$.**
+
+1. $\sum_{i=1}^{5} x_i$.
+2. $\sum_{t=0}^{3} r_t$.
+3. $\sum_{j=2}^{5} (2j-1)$.
+4. $\sum_{i=1}^{4} p_i q_i$.
+5. $\sum_{k=1}^{n} c$, where $c$ is a constant.
+
+**B. Rewrite each expression using the symbol $\Sigma$.**
+
+1. $a_1 + a_2 + \cdots + a_8$.
+2. $x_1^2 + x_2^2 + \cdots + x_n^2$.
+3. $2y_1 + 2y_2 + \cdots + 2y_m$.
+4. $p_1 q_1 + p_2 q_2 + \cdots + p_n q_n$.
+5. $(z_1 - \mu)^2 + \cdots + (z_n - \mu)^2$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+**A. Expansion**
+
+1. $x_1 + x_2 + x_3 + x_4 + x_5$.
+2. $r_0 + r_1 + r_2 + r_3$.
+3. $(2\cdot 2 - 1) + (2 \cdot 3 - 1) + (2 \cdot 4 - 1) + (2 \cdot 5 - 1)$.
+4. $p_1 q_1 + p_2 q_2 + p_3 q_3 + p_4 q_4$.
+5. $\underbrace{c + c + \cdots + c}_{n \text{ terms}} = nc$. 
+
+**B. Condensation**
+
+$$\sum_{i=1}^{8} a_i, \qquad \sum_{i=1}^{n} x_i^2, \qquad \sum_{i=1}^{m} 2y_i = 2\sum_{i=1}^{m} y_i,$$
+
+$$\sum_{i=1}^{n} p_i q_i, \qquad \sum_{i=1}^{n} (z_i - \mu)^2.$$
+
+:::
+::::
+
+## Exercise 7: Price index
+
+A basket contains three goods, with quantities, base-year prices, and year-$t$
+prices
+$$\vect{q} = (10, 5, 2), \qquad \vect{p}^{0} = (2, 4, 10), \qquad \vect{p}^{t} = (2.5, 5, 12).$$
+
+1. Compute the cost of the basket in the base year,
+   $C_0 = \sum_{i=1}^{3} p_i^0 q_i$.
+2. Compute the cost of the same basket in year $t$,
+   $C_t = \sum_{i=1}^{3} p_i^t q_i$.
+3. Compute the index $I_t = \dfrac{C_t}{C_0} \times 100$.
+4. Interpret the result.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. $$C_0 = 2(10) + 4(5) + 10(2) = 20 + 20 + 20 = 60.$$
+2. $$C_t = 2.5(10) + 5(5) + 12(2) = 25 + 25 + 24 = 74.$$
+3. $$I_t = \frac{74}{60} \times 100 \approx 123.33.$$
+4. The basket costs about $123.33\%$ of what it cost in the base year. That is, its
+   cost has increased by roughly $23.33\%$.
+:::
+::::
+
+## Exercise 8: Prediction errors and loss functions
+
+Observed values and predictions are
+$$\vect{y} = (10, 13, 15, 20), \qquad \widehat{\vect{y}} = (11, 12, 14, 22).$$
+
+1. Compute the residuals $e_i = \widehat{y}_i - y_i$.
+2. Compute the mean absolute error
+   $$\MAE = \frac{1}{n}\sum_{i=1}^{n} \abs{e_i}$$.
+3. Compute the mean squared error
+   $$\MSE = \frac{1}{n}\sum_{i=1}^{n} e_i^2$$.
+4. Compute the root mean squared error $\operatorname{RMSE} = \sqrt{\MSE}$.
+5. Which observation contributes most to the $\MSE$? Explain.
+6. Recompute the $\MAE$ and the $\MSE$ when the last prediction changes from
+   $22$ to $25$. By what factor does each one increase? Which of the two
+   reacts more strongly to the change, and why?
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. $$\vect{e} = \widehat{\vect{y}} - \vect{y} = (11-10,\ 12-13,\ 14-15,\ 22-20) = (1, -1, -1, 2).$$
+2. $$\MAE = \frac{1}{4}\bigl(\abs{1} + \abs{-1} + \abs{-1} + \abs{2}\bigr) = \frac{5}{4} = 1.25.$$
+3. $$\MSE = \frac{1}{4}\bigl(1^2 + (-1)^2 + (-1)^2 + 2^2\bigr) = \frac{7}{4} = 1.75.$$
+4. $$\operatorname{RMSE} = \sqrt{1.75} \approx 1.323.$$
+5. Observation $4$ because its squared error is $2^2 = 4$, whereas each of the other squared errors is $1$.
+6. With $\widehat{y}_4 = 25$ the residuals become $(1, -1, -1, 5)$, so
+   $$\MAE_{\text{new}} = \frac{1+1+1+5}{4} = 2, \qquad
+     \MSE_{\text{new}} = \frac{1+1+1+25}{4} = 7.$$
+   The $\MAE$ went from $1.25$ to $2$ (a factor of $1.6$), the $\MSE$ from
+   $1.75$ to $7$ (a factor of $4$). The $\MSE$ increases much more rapidly because squaring magnifies the influence
+   of large errors. 
+:::
+::::
+
+## Exercise 9: Optimization modelling (allocating a marketing budget)
+
+A company splits a budget across three digital channels. Let $x_j$ be the
+amount, in thousands of dollars, invested in channel $j$. The estimated
+incremental profit, in thousands of dollars, is
+$$7x_1 + 5x_2 + 4x_3.$$
+The following is known:
+
+- the total budget cannot exceed $100$;
+- campaign-management capacity imposes $2x_1 + x_2 \leq 140$;
+- risk exposure must satisfy $0.4x_1 + 0.2x_2 + 0.1x_3 \leq 25$;
+- at least $10$ must be invested in the third channel;
+- investments cannot be negative.
+
+Then:
+
+1. Identify the decision variables, the parameters, the objective function, and
+   the constraints.
+2. Write the feasible set $D$ for the decision variables in set-builder notation.
+3. Write the optimization problem in full.
+4. Determine whether the decisions $(40, 30, 20)$ and $(60, 20, 20)$ are
+   feasible.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. the decision variables are $x_1, x_2, x_3$ (the amounts invested).
+  Recall that a parameter is a number given to us before solving, that is, all the numbers in the
+  exercise statement is a parameter. That is, the unit profits $7, 5, 4$; The capacities $100$ and $140$;
+  the coefficients of the constraints for the campaign management capacity ($2,1$)  risk exposure 
+  ($0.4,0.2,0.1$); and the limits $100$, $140$, $25$, and $10$.
+   The objective function is $7x_1 + 5x_2 + 4x_3$, which aim to maximize. Finally, the constraints
+   are the 5 bullet points in the exercise statement.
+2. $$D = \left\{ \vect{x} \in \Rp^{3} \ \middle|\
+   \begin{aligned}
+   x_1 + x_2 + x_3 &\leq 100, \\
+   2x_1 + x_2 &\leq 140, \\
+   0.4x_1 + 0.2x_2 + 0.1x_3 &\leq 25, \\
+   x_3 &\geq 10
+   \end{aligned} \right\}.$$
+   Writing $\vect{x} = (x_1,x_2,x_3) \in \Rp^3$. Notice that the feasible set is the set of numbers
+   satisfying all 5 constraints.
+3. $$\max_{x_1, x_2, x_3} \quad 7x_1 + 5x_2 + 4x_3$$
+   subject to
+   $$\left\{ \begin{aligned}
+   & x_1 + x_2 + x_3 \leq 100, \\
+   & 2x_1 + x_2 \leq 140, \\
+   & 0.4x_1 + 0.2x_2 + 0.1x_3 \leq 25, \\
+   & x_3 \geq 10, \\
+   & x_1, x_2, x_3 \geq 0.
+   \end{aligned} \right.$$
+4. For $(40, 30, 20)$, the budget used is $40+30+20 = 90 \leq 100$; the capacity
+   expression is $2(40) + 30 = 110 \leq 140$; the risk expression is
+   $0.4(40) + 0.2(30) + 0.1(20) = 24 \leq 25$;
+   $x_3 = 20 \geq 10$; and $(40,30,20) \in \Rp^{3}$. Hence, all five constraints hold and the decision
+   is feasible.
+
+   For $(60, 20, 20)$, the risk expression is
+   $$0.4(60) + 0.2(20) + 0.1(20) = 30 > 25$$ which violates one of the constraints. Violating one
+   of the constraints is enough to reject the decision.
+:::
+::::
+
+## Exercise 10: System of linear inequalities
+
+In an optimization problem the objective is to minimize
+$$3t + 2u,$$
+subject to
+$$t \geq \abs{2x - 3y + 5}, \qquad u = \max\set{0, \ 4x - y - 6}.$$
+
+1. Replace these two relations by a system of linear inequalities.
+2. Compute $t$, $u$, and $3t + 2u$ for $x = 2$ and $y = 1$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. A number is $\geq \abs{a}$ when it is both $\geq a$ and $\geq -a$, so
+   $$t \geq \abs{2x - 3y + 5}
+   \iff
+   \left\{ \begin{aligned}
+   & t \geq 2x - 3y + 5, \\
+   & t \geq -(2x - 3y + 5).
+   \end{aligned} \right.$$
+   
+
+   The relation $u = \max\set{0,\ 4x - y - 6}$ is replaced by
+   $$\left\{ \begin{aligned} & u \geq 0, \\ & u \geq 4x - y - 6. \end{aligned} \right.$$
+  
+
+2. Because we are minimizing the positive sum of $t$ and $u$, we compute the smallest $t$ and $u$ such that the inequalities above hold. The smallest 
+admissible value are achieved at the equality "$=$". Hence, at $x=2$ and $y=1$ we have,
+   $$t = \abs{2(2) - 3(1) + 5} = \abs{6} = 6,$$
+   and
+   $$u = \max\set{0,\ 4(2) - 1 - 6} = \max\set{0, 1} = 1,$$
+   so
+   $$3t + 2u = 3(6) + 2(1) = 20.$$
+:::
+::::
+
+## Exercise 11: Isolating a variable using the log function
+
+A multiplicative relation is given by
+$$Y = A X^{\beta} e^{-\gamma Z},$$
+where $A > 0$, $X > 0$, $Y > 0$, and $\beta \neq 0$.
+
+1. Isolate $X$ as a function of $Y$, $A$, $\beta$, $\gamma$, and $Z$.
+2. Transform the relation into an equation that is linear in $\ln X$ and $Z$.
+3. Compute $X$ when $A = 12$, $\beta = 0.8$, $\gamma = 0.15$, $Z = 4$, and
+   $Y = 30$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. Divide by $A$ and multiply by $e^{\gamma Z}$:
+   $$X^{\beta} = \frac{Y e^{\gamma Z}}{A}.$$
+   Because the right-hand side is strictly positive and $\beta \neq 0$, we can raise
+   both sides to the power $1/\beta$:
+   $$X = \left( \frac{Y e^{\gamma Z}}{A} \right)^{1/\beta}.$$
+2. Now that we have the power, taking the natural log of each side allows us  to turn the multiplications
+into a linear sum:
+   $$\ln Y = \ln A + \beta \ln X - \gamma Z.$$
+3. Substituting,
+   $$X = \left( \frac{30 \, e^{0.15 \times 4}}{12} \right)^{1/0.8}
+       = \left( \frac{30 \, e^{0.6}}{12} \right)^{1.25}
+       \approx (4.5553)^{1.25} \approx 6.655.$$
+:::
+::::
+
+## Exercise 12: log-linear form
+
+Consider the model
+$$Y = A X^{\beta} e^{\gamma Z},$$
+where $A > 0$ and $X, Y > 0$. Three transformed observations are available:
+
+| Observation | $\ln X$ | $Z$ | $\ln Y$ |
+|:---:|:---:|:---:|:---:|
+| 1 | $0$ | $0$ | $1$ |
+| 2 | $1$ | $0$ | $3$ |
+| 3 | $0$ | $2$ | $0$ |
+
+1. Write the log-linear form of the model.
+2. Identify $A$, $\beta$, and $\gamma$ exactly.
+3. Predict $Y$ when $X = e^2$ and $Z = 1$.
+
+:::: {.content-visible when-meta="solutions"}
+::: {.callout-note collapse="true" title="Solution"}
+1. Taking natural logarithms:
+   $$\ln Y = \ln A + \beta \ln X + \gamma Z.$$
+   Set $\alpha = \ln A$, so that $\ln Y = \alpha + \beta \ln X + \gamma Z$.
+2. Substituting the three observations give us
+   $$\left\{ \begin{aligned}
+   &\alpha + \beta(0) + \gamma(0) = \alpha = 1, \\
+   &\alpha + \beta(1) + \gamma(0) = \alpha + \beta =  3, \\
+   &\alpha + \beta(0) + \gamma(2) = \alpha + 2 \gamma = 0.
+   \end{aligned} \right.
+   $$
+   The first equation gives $\alpha = 1$; substituting into the second gives
+   $\beta = 2$; substituting into the third gives $\gamma = -\tfrac{1}{2}$. Since $A = e^{\alpha}$,
+   $$A = e, \qquad \beta = 2, \qquad \gamma = -\tfrac{1}{2}.$$
+3. With $X = e^2$ we have $\ln X = 2$, and $Z = 1$, so
+   $$\ln Y = 1 + 2(2) - \tfrac{1}{2}(1) = 1 + 4 - \tfrac{1}{2} = \tfrac{9}{2},$$
+   hence
+   $$Y = e^{9/2} \approx 90.02.$$
+:::
+::::
