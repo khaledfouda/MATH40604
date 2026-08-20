@@ -1,0 +1,251 @@
+---
+title: "Course plan"
+subtitle: "MATH 40604 - Advanced Mathematical Tools for Management"
+toc: true
+toc-depth: 2
+toc-title: "Sessions"
+---
+
+
+
+| Session | Title |
+|:---------------------------------------|:-------------------------------|
+| [Session 01](#session-01) | Introduction and Foundations |
+| [Session 02](#session-02) | Functions of One Variable I: Fundamental Notions and Analysis |
+| [Session 03](#session-03) | Functions of One Variable II: Univariate Optimization, Integration, and Numerical Methods |
+| [Session 04](#session-04) | Linear Algebra I: Vector and Matrix Algebra, Systems of Linear Equations |
+| [Session 05](#session-05) | Linear Algebra II: Eigenvalues and Quadratic Forms |
+| [Session 06](#session-06) | Functions of Several Variables I: Optimization I |
+| [Session 07](#session-07) | Functions of Several Variables II: Optimization II |
+| [Session 08](#session-08) | Random Variables I: Probability and Distributions |
+| [Session 09](#session-09) | Random Variables II: Moments and Multivariate Distributions |
+| [Session 10](#session-10) | Estimation and Statistical Inference I |
+| [Session 11](#session-11) | Estimation and Statistical Inference II |
+| [Session 12](#session-12) | Oral Presentations |
+
+: 
+
+##  Introduction and Foundations {#session-01}
+
+This session establishes the common language of the course. It presents the role of modelling in management science research and reviews the basic mathematical objects used throughout: variables, parameters, constants, sets, intervals, algebraic operations, and relations. Particular attention is given to the rigorous reading of a mathematical statement and to the main forms of reasoning and proof.
+
+**Learning objectives**
+
+- Distinguish among a variable, a parameter, a constant, data, and an unknown in a model.
+- Use correctly the notation for sets, intervals, inclusion, and membership.
+- Manipulate simple algebraic expressions and interpret their meaning within a model.
+- Recognize the standard structures of reasoning: implication, equivalence, contrapositive, counterexample, and proof by contradiction.
+- Translate an elementary management problem into variables, relations, and mathematical assumptions.
+
+**Topics covered**
+
+- Mathematical modelling
+- Variables and parameters
+- Sets, intervals, and notation
+- Elementary algebra
+- Logic and proof techniques
+
+##  Functions of One Variable I: Fundamental Notions and Analysis {#session-02}
+
+This session introduces the function as the central tool for modelling a relationship between variables. It covers the domain of definition, the range, and the analytic and graphical representations, together with the essential properties: monotonicity, boundedness, injectivity, surjectivity, and bijectivity. The main families of standard functions are placed in management and quantitative research contexts. Functions of time and the notion of an implicit function are introduced conceptually.
+
+**Learning objectives**
+
+- Define a function rigorously and identify its domain, its codomain, and its range.
+- Read and relate the algebraic, graphical, and contextual representations of a function.
+- Recognize the properties of monotonicity, boundedness, injectivity, surjectivity, and bijectivity.
+- Identify and interpret the standard functions: affine, polynomial, power, exponential, logarithmic, and logistic.
+- Understand the role of functions of time and of implicit relations in the formulation of models.
+
+**Topics covered**
+
+- Definitions, domain, range
+- Standard functions, composition, inverse functions
+- Limits and continuity
+- The derivative
+- Monotonicity
+- Convexity
+- Local approximation, Taylor's formula
+
+##  Functions of One Variable II: Univariate Optimization, Integration, and Numerical Methods {#session-03}
+
+This session deepens the study of functions of one variable, focusing on essential tools for quantitative solution and analysis. It presents the conditions under which the extrema of a function can be identified and characterized, and then turns to the solution of nonlinear equations when an analytic solution is difficult or impossible to obtain. Elementary numerical methods are introduced to approximate the solutions of such equations. The session also presents the definite integral, its interpretation, and its connection with antiderivatives, and then introduces the main ideas of the numerical approximation of an integral.
+
+**Learning objectives**
+
+- Identify and characterize the extrema of a function of one variable.
+- Formulate and solve simple univariate optimization problems.
+- Solve nonlinear equations numerically using appropriate methods.
+- Understand, compute, and interpret a definite integral.
+- Approximate an integral numerically and assess the quality of the approximation.
+
+**Topics covered**
+
+- Extrema
+- Nonlinear equations
+- Numerical methods
+- The definite integral
+- Numerical approximation
+
+##  Linear Algebra I: Vector and Matrix Algebra, Systems of Linear Equations {#session-04}
+
+This session introduces the main tools of linear algebra required for modelling and quantitative analysis. It presents vectors and matrices together with the principal operations associated with them. Systems of linear equations are then formulated in matrix form and studied through the notions of rank and invertibility, in order to characterize the existence and uniqueness of their solutions.
+
+**Learning objectives**
+
+- Manipulate vectors and matrices and carry out the principal matrix operations correctly.
+- Represent a system of linear equations in matrix form.
+- Solve systems of linear equations using appropriate methods.
+- Determine and interpret the rank of a matrix in the study of a linear system.
+- Analyse the invertibility of a matrix and establish its connection with the rank of the matrix and with the existence and uniqueness of solutions of a linear system.
+
+**Topics covered**
+
+- Matrices: matrix operations
+- Systems of linear equations, rank, and invertibility
+- Vectors: operations on vectors, linear combinations of vectors, linear independence of vectors, basis of a vector space
+
+##  Linear Algebra II: Eigenvalues and Quadratic Forms {#session-05}
+
+This session deepens linear algebra through the study of eigenvalues, eigenvectors, and the diagonalization of matrices. Particular attention is given to symmetric matrices and to their spectral properties. The session then introduces quadratic forms and their classification in terms of the eigenvalues of the associated matrix. These notions are fundamental tools for the analysis of curvature and for the study of optimality conditions in multivariate optimization.
+
+**Learning objectives**
+
+- Determine the eigenvalues and eigenvectors of a matrix and interpret their meaning.
+- Use the characteristic polynomial to determine the eigenvalues of a matrix.
+- Understand the principle of diagonalization and recognize the conditions under which a matrix is diagonalizable.
+- Represent and analyse a quadratic form.
+- Classify a quadratic form as positive definite, negative definite, positive or negative semidefinite, or indefinite, in particular from the eigenvalues of the associated symmetric matrix.
+
+**Topics covered**
+
+- Eigenvalues and eigenvectors
+- Characteristic polynomial
+- Diagonalization
+- Symmetric matrices
+- Quadratic forms
+- Positive definite, negative definite, semidefinite, and indefinite matrices
+
+##  Functions of Several Variables I: Optimization I {#session-06}
+
+This session introduces differential calculus for functions of several variables. It presents partial derivatives, the gradient, and the differential, in order to analyse the local variation of a function and to construct a linear approximation of it. Second derivatives are then organized in the Hessian matrix, which makes it possible to study local curvature. The session also addresses implicitly defined functions and the conditions under which certain variables can, locally, be expressed as functions of the others. These tools constitute the foundations required for the study of multivariate optimization.
+
+**Learning objectives**
+
+- Describe and interpret a function of several variables, its domain, and its principal representations.
+- Compute and interpret the partial derivatives, the directional derivatives, and the gradient of a multivariate function.
+- Use the total differential to construct a local linear approximation and to analyse the effect of small changes in the variables.
+- Compute the Hessian matrix and interpret second derivatives in terms of local curvature.
+- Analyse an implicitly defined relation and use implicit differentiation, when the appropriate conditions are satisfied, to determine the variation of one variable with respect to the others.
+
+**Topics covered**
+
+- Functions of several variables
+- Partial derivatives, gradient, directional derivatives, total differential
+- Hessian matrix
+- Implicit functions
+
+##  Functions of Several Variables II: Optimization II {#session-07}
+
+This session presents the main concepts and tools of optimization for functions of several variables. It begins with the mathematical formulation of an optimization problem, and then studies the conditions under which optimal points can be identified and classified in the unconstrained case. The session next addresses problems subject to equality constraints by means of the method of Lagrange multipliers. Finally, an overview of numerical optimization methods is provided, in order to show how to handle problems for which an analytic solution is difficult or impossible to obtain.
+
+**Learning objectives**
+
+- Formulate a multivariate optimization problem by identifying the objective function, the decision variables, and any constraints.
+- Determine the stationary points of an unconstrained optimization problem using the first-order conditions.
+- Use the Hessian matrix and the second-order conditions to classify stationary points and to characterize local extrema.
+- Solve simple optimization problems under equality constraints using the method of Lagrange multipliers.
+- Understand the general principle of numerical optimization methods and recognize the situations in which their use is necessary.
+
+**Topics covered**
+
+- Modelling of optimization problems
+- Unconstrained optimization
+- First-order and second-order conditions
+- Optimization under equality constraints, Lagrange multipliers
+- Overview of numerical optimization methods
+
+##  Random Variables I: Probability and Distributions {#session-08}
+
+This session introduces the fundamental probability concepts required for the study of random variables. It distinguishes discrete from continuous random variables and presents the tools used to describe their distribution: the probability mass function for discrete variables, the probability density function for continuous variables, and the cumulative distribution function in both cases. The emphasis is on the interpretation of these functions and on their use in computing probabilities.
+
+**Learning objectives**
+
+- Use the fundamental notions of probability to describe and analyse random events.
+- Distinguish a discrete random variable from a continuous random variable and recognize the appropriate framework.
+- Determine and interpret the probability mass function or the probability density function associated with a random variable.
+- Define, compute, and interpret the cumulative distribution function of a random variable.
+- Compute probabilities from a probability mass function, a probability density function, or a cumulative distribution function.
+
+**Topics covered**
+
+- Fundamental notions of probability
+- Discrete and continuous random variables
+- Probability mass functions, probability density functions, cumulative distribution functions
+- Computation of probabilities from a distribution
+
+##  Random Variables II: Moments and Multivariate Distributions {#session-09}
+
+This session deepens the study of random variables by introducing the principal numerical measures that characterize their distribution, notably the expectation, the variance, and the moments. It then extends these notions to the multivariate setting through random vectors and joint distributions. Covariance and correlation are introduced in order to measure and interpret relationships among several random variables, in preparation for the study of estimation and statistical inference.
+
+**Learning objectives**
+
+- Compute and interpret the expectation, the variance, and the moments of a random variable.
+- Use the principal properties of expectation and variance, in particular for transformations and combinations of random variables.
+- Describe a random vector and interpret its joint distribution as well as its marginal distributions.
+- Compute and interpret the covariance between two random variables and understand its connection with dependence.
+- Compute and interpret the correlation coefficient and distinguish clearly among correlation, independence, and dependence.
+
+**Topics covered**
+
+- Expectation of a random variable
+- Variance
+- Moments
+- Random vectors
+- Joint distributions
+- Covariance and correlation
+
+##  Estimation and Statistical Inference I {#session-10}
+
+This session introduces the fundamental principles of statistical inference, which make it possible to draw conclusions about a population from a sample. It begins with the formulation of a research question and with the distinction among population, sample, and parameters of interest. The notions of representativeness and sampling variability are then addressed. The session presents point estimation and interval estimation, the principal properties of estimators, and the behaviour of estimators as the sample size increases. It concludes by introducing the general logic of hypothesis testing.
+
+**Learning objectives**
+
+- Identify the target population, the sample under study, the variables of interest, and the population parameters associated with the research question.
+- Explain the role of sampling and of representativeness in statistical inference, and recognize the possible consequences of a non-representative sample for the generalization of results to the population.
+- Distinguish and interpret point estimation and interval estimation, in particular by understanding the role of an estimator, of an estimate, of a confidence interval, and of the confidence level.
+- Analyse the principal properties of an estimator, notably bias, variance, convergence, and consistency, and understand the value of asymptotic behaviour as the sample size increases.
+- Understand and apply the fundamental principles of hypothesis testing, notably the formulation of the null and alternative hypotheses, the test statistic, the significance level, and the decision rule, in order to reach a statistical conclusion in relation to a research question.
+
+**Topics covered**
+
+- Formulation of a research question
+- Population and sample
+- Point estimation
+- Interval estimation; properties of estimators
+- Asymptotic behaviour
+- Introduction to hypothesis testing
+
+##  Estimation and Statistical Inference II {#session-11}
+
+This session deepens the use of statistical models by drawing a clear distinction between inferential objectives, which aim to understand and quantify relationships among variables, and predictive objectives, which aim to forecast future values or outcomes. It presents the main considerations guiding the choice of a model, notably its suitability for the research question, its predictive capacity, its complexity, and its interpretability. Particular attention is given to forecasting, to the evaluation of model performance, and to the principles of validation. The session concludes by emphasizing the identification of the limitations of models, so as to develop a critical and rigorous use of statistical results in research and decision-making contexts in management science.
+
+**Learning objectives**
+
+- Distinguish inference from prediction by identifying their respective objectives, the types of questions each answers, and the consequences of this distinction for the construction and use of a statistical model.
+- Choose a statistical model suited to a given problem, taking into account the research question, the nature of the data, the assumptions of the model, its complexity, and the objective pursued, whether explanatory or predictive.
+- Interpret the results of a model rigorously, distinguishing the interpretability of the parameters, the explanatory capacity of the model, and its predictive performance, while avoiding conclusions that go beyond what the data and the model support.
+- Use a model for forecasting and evaluate its performance by means of appropriate criteria for measuring the quality of predictions and for comparing several models.
+- Understand the principles of validation and recognize the limitations of a model, notably the risk of overfitting, the dependence on the data used, the limits to generalization, and the uncertainty associated with predictions, in order to form a critical judgement about its use.
+
+**Topics covered**
+
+- Inference versus prediction
+- Model selection
+- Interpretability
+- Forecasting
+- Performance evaluation, validation, and limitations of models
+
+##  Oral Presentations {#session-12}
+
+- To be decided

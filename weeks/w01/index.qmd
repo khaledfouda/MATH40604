@@ -6,7 +6,7 @@ format:
   html: default
 ---
 
-## What this week covers
+## What This Week Covers
 
 - Mathematical modelling
 - Variables and parameters
@@ -14,18 +14,19 @@ format:
 - Elementary algebra
 - Logic and proof techniques
 
-## Documents
+## Week Documents
 
-| Document | Use it | Available |
-|:---|:---|:---|
-| [Pre-class notes](w01-1-preclass.qmd) · [PDF](w01-1-preclass.pdf) | Read before class | Before class |
-| [Pre-class exercises](w01-2-preclass-ex.qmd) · [PDF](w01-2-preclass-ex.pdf) | Work through after reading the notes; solutions included | Before class |
-| [Lecture notes](w01-3-lecture.qmd) · [PDF](w01-3-lecture.pdf) | What we cover during class | After class |
-| [Tutorial exercises](w01-4-tutorial.qmd) · [PDF](w01-4-tutorial.pdf) | You will work on them during the tutorial | Before class; solutions to selected exercises added after the tutorial |
+| Document | Availability Status |
+|:-----------------------------------|:-----------------------------------|
+| [Pre-class notes](w01-1-preclass.qmd) · [PDF](w01-1-preclass.pdf) | Available |
+| [Pre-class exercises](w01-2-preclass-ex.qmd) · [PDF](w01-2-preclass-ex.pdf) | Available |
+| [Lecture slides](w01-3-slides.pdf) | Before class |
+| [Annotated slides](released/w01-3-slides-annotated.pdf) | After class |
+| [Tutorial exercises](w01-4-tutorial.qmd) · [PDF](w01-4-tutorial.pdf) | Before class |
 
-## TODO before class
 
-1.  Read the pre-class notes. The notes are supposed to be easy to follow. If you found any of the notions to be challenging, skip them and we will cover them in class.
-2.  Attempt the pre-class exercises before looking at the solution. The solutions are there so you can check yourself, not so you can read them instead.
+## To-Do Before Class
+
+**Read the pre-class notes and attempt the pre-class exercises. The notes are supposed to be easy to follow. If you find any of the concepts to be challenging, skip them and we will cover them in class.**
 
 ## See you in class!! :)

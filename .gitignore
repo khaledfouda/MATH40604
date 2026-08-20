@@ -2,12 +2,24 @@
 /_book/
 /.quarto/
 /_freeze/
+_site/
+/_reference/
+*_files/
 *.tex.bak
 index.typ
 *.log
 /index.tex
-_site/
-/_reference/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.out
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+.quarto_ipynb*
 
 # mac/editor stuff
 .DS_Store
@@ -18,4 +30,6 @@ _site/
 **/*.quarto_ipynb
 .Rhistory
 
+# files not to be published yet
+/_private/
 

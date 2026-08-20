@@ -8,52 +8,57 @@ toc: false
 {{< var course.description >}}
 
 ::: {style="color: gray;"}
-{{< var course.code >}}, {{< var course.semester >}} 
+{{< var course.code >}}, {{< var course.semester >}}
 
 [{{< var university.name >}}]({{< var university.url >}})
 :::
 
 ------------------------------------------------------------------------
 
-
-
-::: {.home}
-
+::::::: home
 :::::: grid
-
 <!-- ::: {.g-col-12 .g-col-md-4} -->
+
 <!-- ### Instructor {.unnumbered} -->
+
 <!-- - {{< fa user >}} &nbsp; {{< var instructor.name >}} -->
+
 <!-- - {{< fa university >}} &nbsp; {{< var instructor.office >}} -->
+
 <!-- - {{< fa envelope >}} &nbsp; <a href='mailto:{{< var instructor.email >}}'>{{< var instructor.email >}}</a> -->
+
 <!-- ::: -->
 
-
 <!-- ::: {.g-col-12 .g-col-sm-6 .g-col-md-4} -->
+
 <!-- ### Course details {.unnumbered} -->
+
 <!-- - {{< fa calendar-alt >}} &nbsp; {{< var course.semester >}} -->
+
 <!-- - {{< fa calendar >}} &nbsp; {{< var course.days >}} -->
+
 <!-- - {{< fa clock >}} &nbsp; {{< var course.time >}} -->
+
 <!-- - {{< fa location-dot >}} &nbsp; {{< var course.location >}} -->
+
 <!-- ::: -->
 
 ::: {.g-col-12 .g-col-md-4}
 ### Contact Information {.unnumbered}
-- **Instructor**  &nbsp;  {{< var instructor.name >}}
-- **Office**  &nbsp;  {{< var instructor.office >}}
-- **Email**  &nbsp;  [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
-:::
 
+- **Instructor:**   {{< var instructor.name >}}
+- **Office:**   {{< var instructor.office >}}
+- **Email:**   [{{< var instructor.email >}}](mailto:{{< var instructor.email >}})
+:::
 
 ::: {.g-col-12 .g-col-md-4}
 ### Course details {.unnumbered}
-- **Semester**  &nbsp; {{< var course.semester >}}
--  **Day** &nbsp; {{< var course.days >}}
-- **Time**  &nbsp; {{< var course.time >}}
-- **Room**  &nbsp; {{< var course.location >}}
+
+- **Semester:**   {{< var course.semester >}}
+- **Day:**   {{< var course.days >}}
+- **Time:**   {{< var course.time >}}
+- **Room:**   {{< var course.location >}}
 :::
-
-
 
 ::: {.g-col-12 .g-col-md-4}
 ### Office hours {.unnumbered}
@@ -61,15 +66,12 @@ toc: false
 {{< var instructor.contact_policy >}}
 :::
 ::::::
-:::
+:::::::
+
 ------------------------------------------------------------------------
 
 ## Weekly notes {.unnumbered}
 
-| Week | Topic                        | Notes                            |
-|------|------------------------------|----------------------------------|
+| Week | Topic                        | Notes                         |
+|------|------------------------------|-------------------------------|
 | 1    | Modelling, sets, and algebra | [Week 1](weeks/w01/index.qmd) |
-
-
-
-

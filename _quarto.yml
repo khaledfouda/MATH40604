@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - "weeks/*/released/*.pdf"
 
 website:
   title: "Course Notes for MATH 40604A, Fall 2026 at HEC Montreal"
@@ -19,11 +21,17 @@ website:
         contents:
           - weeks/w01/w01-1-preclass.qmd
           - weeks/w01/w01-2-preclass-ex.qmd
-          - weeks/w01/w01-3-lecture.qmd
+          # - weeks/w01/w01-3-lecture.qmd
           - weeks/w01/w01-4-tutorial.qmd
   page-footer:
     left: "MATH 40604A"
     right: "Fatiha Kacher . Khaled Fouda"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: course-plan.qmd
+        text: Course plan
 
 author: 
   - "Fatiha Kacher"
@@ -58,4 +66,4 @@ format:
 
 execute:
   freeze: auto
-editor: visual
+editor: source

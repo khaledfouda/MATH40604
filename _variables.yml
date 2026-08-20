@@ -5,7 +5,7 @@ course:
   days: "Monday"
   time: "8:30-11:30"
   github: "https://www.github.com/khaledfouda/MATH40604A"
-  location: "[Hélène-Desmarais](https://www.hec.ca/campus/cote_sainte_catherine/1er_etage/salles_cours/hdesmarais.html)"
+  location: "[Hélène-Desmarais, CSC](https://www.hec.ca/campus/cote_sainte_catherine/1er_etage/salles_cours/hdesmarais.html)"
   description: 
     "This course aims to introduce or review the essential mathematical concepts, techniques, 
     and tools necessary for understanding scientific literature and conducting research activities in various fields of quantitative management."
@@ -23,7 +23,7 @@ instructor:
   url: ""
   office: "4.455, Côte-Sainte-Catherine"
   email: "khaled.fouda@hec.ca"
-  contact_policy: "Office-hours will be decided on during the first class. Feel free to reach me anytime by Email."
+  contact_policy: "Office hours will be decided during the first class. Feel free to reach me anytime by email."
   
 coinstructor:
   name: "Fatiha Kacher"
