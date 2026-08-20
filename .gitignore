@@ -23,8 +23,8 @@ index.typ
 
 # mac/editor stuff
 .DS_Store
-.Rproj.user/
-*.Rproj
+#.Rproj.user/
+#*.Rproj
 .vscode/
 .positron/
 **/*.quarto_ipynb
