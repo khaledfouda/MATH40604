@@ -2,23 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Fatiha Kacher">
+<meta name="author" content="Khaled Fouda">
 
-<title>1&nbsp; Modelling, Sets, and Algebra – Advanced Mathematical Tools for Management</title>
+<title>Week 1 - Pre-class notes – Course Notes for MATH 40604A, Fall 2026 at HEC Montreal</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -29,28 +28,27 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../index.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-71aa96dd783cecc28fad12b15280a1e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-ff6d47bf0ddbfcbbeb0180396094f431.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-71aa96dd783cecc28fad12b15280a1e9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-f23b87d0f4880dd50cc732f1f76ab932.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-f20fd860e747afdd56fa80de740c06ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-f23b87d0f4880dd50cc732f1f76ab932.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -63,7 +61,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -80,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -111,7 +108,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-sidebar docked nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -277,12 +274,39 @@ window.Quarto = {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Course Notes for MATH 40604A, Fall 2026 at HEC Montreal</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../course-plan.html"> 
+<span class="menu-text">Course plan</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/week01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/w01/index.html">Week 1 - Modelling, sets, and algebra</a></li><li class="breadcrumb-item"><a href="../../weeks/w01/w01-1-preclass.html">Week 1 - Pre-class notes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -292,17 +316,9 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Advanced Mathematical Tools for Management</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
@@ -312,16 +328,39 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">How to use these notes</span></a>
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course information</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../weeks/w01/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1 - Modelling, sets, and algebra</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../chapters/week01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></span></a>
+  <a href="../../weeks/w01/w01-1-preclass.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 1 - Pre-class notes</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/w01/w01-2-preclass-ex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1 - Pre-class exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../weeks/w01/w01-4-tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1 - Tutorial exercises</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -332,64 +371,58 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-a-mathematical-model-is" id="toc-what-a-mathematical-model-is" class="nav-link active" data-scroll-target="#what-a-mathematical-model-is"><span class="header-section-number">2</span> What a mathematical model is</a>
+  <li><a href="#what-a-mathematical-model-is" id="toc-what-a-mathematical-model-is" class="nav-link active" data-scroll-target="#what-a-mathematical-model-is"><span class="header-section-number">1</span> What a mathematical model is</a>
   <ul class="collapse">
-  <li><a href="#the-components-of-an-optimization-problem-decision-model" id="toc-the-components-of-an-optimization-problem-decision-model" class="nav-link" data-scroll-target="#the-components-of-an-optimization-problem-decision-model"><span class="header-section-number">2.1</span> The components of an optimization problem (decision model)</a></li>
-  <li><a href="#deterministic-and-probabilistic-models" id="toc-deterministic-and-probabilistic-models" class="nav-link" data-scroll-target="#deterministic-and-probabilistic-models"><span class="header-section-number">2.2</span> Deterministic and probabilistic models</a></li>
-  <li><a href="#sec-stat-model" id="toc-sec-stat-model" class="nav-link" data-scroll-target="#sec-stat-model"><span class="header-section-number">2.3</span> Statistical models</a></li>
+  <li><a href="#the-components-of-an-optimization-problem-decision-model" id="toc-the-components-of-an-optimization-problem-decision-model" class="nav-link" data-scroll-target="#the-components-of-an-optimization-problem-decision-model"><span class="header-section-number">1.1</span> The components of an optimization problem (decision model)</a></li>
+  <li><a href="#deterministic-and-probabilistic-models" id="toc-deterministic-and-probabilistic-models" class="nav-link" data-scroll-target="#deterministic-and-probabilistic-models"><span class="header-section-number">1.2</span> Deterministic and probabilistic models</a></li>
+  <li><a href="#sec-stat-model" id="toc-sec-stat-model" class="nav-link" data-scroll-target="#sec-stat-model"><span class="header-section-number">1.3</span> Statistical models</a></li>
   </ul></li>
-  <li><a href="#sets-and-subsets" id="toc-sets-and-subsets" class="nav-link" data-scroll-target="#sets-and-subsets"><span class="header-section-number">3</span> Sets and subsets</a>
+  <li><a href="#sets-and-subsets" id="toc-sets-and-subsets" class="nav-link" data-scroll-target="#sets-and-subsets"><span class="header-section-number">2</span> Sets and subsets</a>
   <ul class="collapse">
-  <li><a href="#basic-mathematical-notation" id="toc-basic-mathematical-notation" class="nav-link" data-scroll-target="#basic-mathematical-notation"><span class="header-section-number">3.1</span> Basic mathematical notation</a></li>
-  <li><a href="#describing-a-set" id="toc-describing-a-set" class="nav-link" data-scroll-target="#describing-a-set"><span class="header-section-number">3.2</span> Describing a set</a></li>
-  <li><a href="#the-standard-number-sets" id="toc-the-standard-number-sets" class="nav-link" data-scroll-target="#the-standard-number-sets"><span class="header-section-number">3.3</span> The standard number sets</a></li>
-  <li><a href="#absolute-value-of-a-number" id="toc-absolute-value-of-a-number" class="nav-link" data-scroll-target="#absolute-value-of-a-number"><span class="header-section-number">3.4</span> Absolute value of a number</a>
-  <ul class="collapse">
-  <li><a href="#distance-between-two-real-numbers" id="toc-distance-between-two-real-numbers" class="nav-link" data-scroll-target="#distance-between-two-real-numbers"><span class="header-section-number">3.4.1</span> Distance between two real numbers</a></li>
+  <li><a href="#basic-mathematical-notation" id="toc-basic-mathematical-notation" class="nav-link" data-scroll-target="#basic-mathematical-notation"><span class="header-section-number">2.1</span> Basic mathematical notation</a></li>
+  <li><a href="#describing-a-set" id="toc-describing-a-set" class="nav-link" data-scroll-target="#describing-a-set"><span class="header-section-number">2.2</span> Describing a set</a></li>
+  <li><a href="#the-standard-number-sets" id="toc-the-standard-number-sets" class="nav-link" data-scroll-target="#the-standard-number-sets"><span class="header-section-number">2.3</span> The standard number sets</a></li>
+  <li><a href="#absolute-value-of-a-number" id="toc-absolute-value-of-a-number" class="nav-link" data-scroll-target="#absolute-value-of-a-number"><span class="header-section-number">2.4</span> Absolute value of a number</a></li>
+  <li><a href="#summation-notation-sigma" id="toc-summation-notation-sigma" class="nav-link" data-scroll-target="#summation-notation-sigma"><span class="header-section-number">2.5</span> Summation notation (sigma)</a></li>
+  <li><a href="#subsets-cardinality-and-set-operations" id="toc-subsets-cardinality-and-set-operations" class="nav-link" data-scroll-target="#subsets-cardinality-and-set-operations"><span class="header-section-number">2.6</span> Subsets, cardinality, and set operations</a></li>
   </ul></li>
-  <li><a href="#summation-notation-sigma" id="toc-summation-notation-sigma" class="nav-link" data-scroll-target="#summation-notation-sigma"><span class="header-section-number">3.5</span> Summation notation (sigma)</a>
+  <li><a href="#essential-algebra-for-working-with-models" id="toc-essential-algebra-for-working-with-models" class="nav-link" data-scroll-target="#essential-algebra-for-working-with-models"><span class="header-section-number">3</span> Essential algebra for working with models</a>
   <ul class="collapse">
-  <li><a href="#example-price-index" id="toc-example-price-index" class="nav-link" data-scroll-target="#example-price-index"><span class="header-section-number">3.5.1</span> Example: price index</a></li>
-  <li><a href="#summation-rules" id="toc-summation-rules" class="nav-link" data-scroll-target="#summation-rules"><span class="header-section-number">3.5.2</span> Summation rules</a></li>
-  <li><a href="#example-arithmetic-mean-and-deviations-from-the-mean" id="toc-example-arithmetic-mean-and-deviations-from-the-mean" class="nav-link" data-scroll-target="#example-arithmetic-mean-and-deviations-from-the-mean"><span class="header-section-number">3.5.3</span> Example: arithmetic mean and deviations from the mean</a></li>
-  <li><a href="#double-sums" id="toc-double-sums" class="nav-link" data-scroll-target="#double-sums"><span class="header-section-number">3.5.4</span> Double sums</a></li>
-  </ul></li>
-  <li><a href="#subsets-cardinality-and-set-operations" id="toc-subsets-cardinality-and-set-operations" class="nav-link" data-scroll-target="#subsets-cardinality-and-set-operations"><span class="header-section-number">3.6</span> Subsets, cardinality, and set operations</a>
-  <ul class="collapse">
-  <li><a href="#cartesian-product-and-multidimensional-observations" id="toc-cartesian-product-and-multidimensional-observations" class="nav-link" data-scroll-target="#cartesian-product-and-multidimensional-observations"><span class="header-section-number">3.6.1</span> Cartesian product and multidimensional observations</a></li>
-  <li><a href="#partition-of-a-universal-set" id="toc-partition-of-a-universal-set" class="nav-link" data-scroll-target="#partition-of-a-universal-set"><span class="header-section-number">3.6.2</span> Partition of a universal set</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#essential-algebra-for-working-with-models" id="toc-essential-algebra-for-working-with-models" class="nav-link" data-scroll-target="#essential-algebra-for-working-with-models"><span class="header-section-number">4</span> Essential algebra for working with models</a>
-  <ul class="collapse">
-  <li><a href="#algebraic-expressions" id="toc-algebraic-expressions" class="nav-link" data-scroll-target="#algebraic-expressions"><span class="header-section-number">4.1</span> Algebraic expressions</a></li>
-  <li><a href="#polynomials-and-quadratic-equations" id="toc-polynomials-and-quadratic-equations" class="nav-link" data-scroll-target="#polynomials-and-quadratic-equations"><span class="header-section-number">4.2</span> Polynomials and quadratic equations</a>
-  <ul class="collapse">
-  <li><a href="#roots-of-a-first-degree-polynomial" id="toc-roots-of-a-first-degree-polynomial" class="nav-link" data-scroll-target="#roots-of-a-first-degree-polynomial"><span class="header-section-number">4.2.1</span> Roots of a first-degree polynomial</a></li>
-  <li><a href="#roots-of-a-quadratic-polynomial" id="toc-roots-of-a-quadratic-polynomial" class="nav-link" data-scroll-target="#roots-of-a-quadratic-polynomial"><span class="header-section-number">4.2.2</span> Roots of a quadratic polynomial</a></li>
-  </ul></li>
-  <li><a href="#exponents-and-logarithms" id="toc-exponents-and-logarithms" class="nav-link" data-scroll-target="#exponents-and-logarithms"><span class="header-section-number">4.3</span> Exponents and logarithms</a>
-  <ul class="collapse">
-  <li><a href="#example-exponential-growth-and-decay" id="toc-example-exponential-growth-and-decay" class="nav-link" data-scroll-target="#example-exponential-growth-and-decay"><span class="header-section-number">4.3.1</span> Example: exponential growth and decay</a></li>
-  </ul></li>
+  <li><a href="#algebraic-expressions" id="toc-algebraic-expressions" class="nav-link" data-scroll-target="#algebraic-expressions"><span class="header-section-number">3.1</span> Algebraic expressions</a></li>
+  <li><a href="#polynomials-and-quadratic-equations" id="toc-polynomials-and-quadratic-equations" class="nav-link" data-scroll-target="#polynomials-and-quadratic-equations"><span class="header-section-number">3.2</span> Polynomials and quadratic equations</a></li>
+  <li><a href="#exponents-and-logarithms" id="toc-exponents-and-logarithms" class="nav-link" data-scroll-target="#exponents-and-logarithms"><span class="header-section-number">3.3</span> Exponents and logarithms</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="w01-1-preclass.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../weeks/w01/index.html">Week 1 - Modelling, sets, and algebra</a></li><li class="breadcrumb-item"><a href="../../weeks/w01/w01-1-preclass.html">Week 1 - Pre-class notes</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Modelling, Sets, and Algebra</span></h1>
+<h1 class="title">Week 1 - Pre-class notes</h1>
+<p class="subtitle lead">Modelling, sets, and algebra</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Fatiha Kacher </p>
+             <p>Khaled Fouda </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -400,8 +433,7 @@ window.Quarto = {
 
 
 <div class="hidden">
-<p><span class="math display">\[
-\newcommand{\R}{\mathbb{R}}
+<p><span class="math display">\[\newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -418,30 +450,22 @@ window.Quarto = {
 \newcommand{\ind}{\mathbf{1}}
 \newcommand{\card}[1]{\lvert #1 \rvert}
 \newcommand{\abs}[1]{\lvert #1 \rvert}
-\newcommand{\set}[1]{\left\{ #1 \right\}}
-\]</span></p>
+\newcommand{\set}[1]{\left\{ #1 \right\}}\]</span></p>
 </div>
 <!--
-HTML only, on purpose. MathJax reads the definitions above and registers them
-for the page; the .hidden wrapper stops the (empty) display equation showing.
-
-PDF gets the SAME macros from tex/macros.tex via include-in-header in
-_quarto.yml. Keeping the two paths separate matters: if both fired, LaTeX would
-hit \newcommand on an already-defined macro and abort. tex/macros.tex therefore
-uses \providecommand as a second line of defence.
-
-If you add a macro, add it in BOTH files.
+These are for generating the HTML documents. Similar commands are in tex/macros.tex for generating
+the PDF files via _quarto.yml. Both are needed and should match so add the macros to both files!
 -->
 <p>Most of the mathematics here are not new and its likely that you have met it before. The aim is to refresh your memory and get you ready for the first class.</p>
-<hr>
-<section id="what-a-mathematical-model-is" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> What a mathematical model is</h1>
+<section id="what-a-mathematical-model-is" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="what-a-mathematical-model-is"><span class="header-section-number">1</span> What a mathematical model is</h2>
 <p>A <strong>mathematical model</strong> is a simplified description of a real-world situation, written in symbols. We say simplified because a mathematical model leaves things out on purpose. For example, a model of a delivery network that accounted for every pothole would be useless, because it will be impossible to solve.</p>
 <p>The mathematical model is represented by an equation between variables and parameters. A <strong>parameter</strong> is a quantity whose value is settled before you solve the model. It is either an input given in the problem statement, measured, or estimated from the data. A <strong>variable</strong> is a quantity whose value is produced by solving the model, or supplied by an observation.<br>
 <br>
 Consider a straight-line relationship <span class="math inline">\(y = \beta_0 + \beta_1 x\)</span>. If you are a manager who has been handed <span class="math inline">\(\beta_0 = 12\)</span> and <span class="math inline">\(\beta_1 = 3\)</span> and asked to predict <span class="math inline">\(y\)</span> when <span class="math inline">\(x = 20\)</span>, then <span class="math inline">\(\beta_0, \beta_1\)</span> are <strong>parameters</strong> and <span class="math inline">\(y, x\)</span> are <strong>variables</strong>.</p>
-<section id="the-components-of-an-optimization-problem-decision-model" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="the-components-of-an-optimization-problem-decision-model"><span class="header-section-number">2.1</span> The components of an optimization problem (decision model)</h2>
+<p>Besides the variables and parameters, a mathematical model (or an optimization problem) include three more components. The example below illustrates them.</p>
+<section id="the-components-of-an-optimization-problem-decision-model" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="the-components-of-an-optimization-problem-decision-model"><span class="header-section-number">1.1</span> The components of an optimization problem (decision model)</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -467,15 +491,15 @@ Consider a straight-line relationship <span class="math inline">\(y = \beta_0 + 
 <p><span class="math display">\[x_A \leq 40, \qquad x_B \leq 70, \qquad x_A \geq 0, \quad x_B \geq 0.\]</span></p>
 <p>The last components of the model to be defined are the assumptions. Earlier we mentioned that the mathematical model is a simplified representation as we cannot realistically account for all possibilities. However, in order for the problem to be solvable and for us to be confident in the solution, some assumptions need to be made. For instance, in this example we may assume that the profit per unit is constant, that we know the production times, that we know the maximum demand, and that each unit produced can be sold.<br>
 <br>
-This is all the information we need to solve the model. A clear definition of the problem is crucial and must come before attempting to solve it. We will defer solving this problem to later classes.</p>
+This is all the information we need to solve the model. A clear definition of the problem is crucial and must come before attempting to solve it.</p>
 </div>
 </div>
 <p>Below we summarize the components of an optimization problem as we saw them in the example.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 52%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -501,7 +525,7 @@ This is all the information we need to solve the model. A clear definition of th
 <td style="text-align: left;"><span class="math inline">\(30x_A + 20x_B\)</span>, maximized</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Constraints</strong></td>
+<td style="text-align: left;"><strong>Constraints / Relationships</strong></td>
 <td style="text-align: left;">Equations and inequalities every admissible answer must satisfy.</td>
 <td style="text-align: left;"><span class="math inline">\(2x_A + x_B \leq 100\)</span>; <span class="math inline">\(x_A \leq 40\)</span>; <span class="math inline">\(x_B \leq 70\)</span>; <span class="math inline">\(x_A, x_B \geq 0\)</span></td>
 </tr>
@@ -526,8 +550,8 @@ Caution
 </div>
 </div>
 </section>
-<section id="deterministic-and-probabilistic-models" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="deterministic-and-probabilistic-models"><span class="header-section-number">2.2</span> Deterministic and probabilistic models</h2>
+<section id="deterministic-and-probabilistic-models" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="deterministic-and-probabilistic-models"><span class="header-section-number">1.2</span> Deterministic and probabilistic models</h3>
 <p>In the example above, the model is <strong>deterministic</strong> because profits, production times, capacity and maximum demand are assumed to be known with certainty. That is a strong assumption. If some of these data were uncertain, then the model would become <strong>probabilistic</strong>. For example, recall that we assumed a demand ceiling of 40 units for product <span class="math inline">\(A\)</span>. Now, if we assume instead that the demand for product <span class="math inline">\(A\)</span> follows a normal distribution with mean <span class="math inline">\(40\)</span> and standard deviation of <span class="math inline">\(5\)</span>, then the demand for product <span class="math inline">\(A\)</span> will be represented by the random variable:</p>
 <p><span class="math display">\[D_A \sim \normal(40, 5^2).\]</span></p>
 <p>The company would then have to choose its production level while accounting for the risk of producing more than the realized demand.</p>
@@ -541,12 +565,12 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the notation <span class="math inline">\(\normal(\mu, \sigma^2)\)</span> the <strong>second argument is the variance, not the standard deviation</strong>. Writing <span class="math inline">\(\normal(40, 5^2)\)</span> means a standard deviation of 5. Some software, including R’s <code>rnorm</code>, takes the standard deviation as its argument instead, which is a frequent source of error when moving between a formula and code.</p>
+<p>In the notation <span class="math inline">\(\normal(\mu, \sigma^2)\)</span>, the <strong>second argument is the variance, not the standard deviation</strong>. Writing <span class="math inline">\(\normal(40, 5^2)\)</span> means a standard deviation of 5. Some software, including R’s <code>rnorm</code>, takes the standard deviation as its argument instead, which is a frequent source of error when moving between a formula and code.</p>
 </div>
 </div>
 </section>
-<section id="sec-stat-model" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sec-stat-model"><span class="header-section-number">2.3</span> Statistical models</h2>
+<section id="sec-stat-model" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="sec-stat-model"><span class="header-section-number">1.3</span> Statistical models</h3>
 <p>In the previous example, profits per unit were given to us. We said earlier that model parameters are either known in advance or estimated. A statistical model allows us to estimate those parameters from observed data and to say how much we trust them.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
 <div class="callout-header d-flex align-content-center">
@@ -569,13 +593,13 @@ Caution
 </ul>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: response and explanatory variables">
+<div class="callout callout-style-default callout-note callout-titled" title="Definition:">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: response and explanatory variables
+<span class="screen-reader-only">Note</span>Definition:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -586,12 +610,12 @@ Caution
 <p>In the sales model, <span class="math inline">\(Y_i\)</span> is the response and <span class="math inline">\(X_i\)</span> is the explanatory variable. The quantities <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> are the model parameters. Generally, we would have a limited number of observations of pairs <span class="math inline">\((Y_i, X_i)\)</span> which we use to estimate the model parameters as well as the error variance. Then, we use the estimated parameters and the explanatory variable(s) to predict future values of the response. One final note: the names “dependent” and “independent” are somewhat misleading, as they have nothing to do with statistical independence.</p>
 </section>
 </section>
-<section id="sets-and-subsets" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Sets and subsets</h1>
-<p>A <strong>set</strong> is a well-defined unordered collection of distinct objects, called <strong>elements</strong>. Sets are useful because so many things are naturally collections, for example, a population, the domain of a variable, the set of feasible decisions, a set of observations.</p>
+<section id="sets-and-subsets" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sets-and-subsets"><span class="header-section-number">2</span> Sets and subsets</h2>
+<p>A <strong>set</strong> is a well-defined unordered collection of distinct objects, called <strong>elements</strong>. Sets are useful because many things are naturally collections, for example, a population, the domain of a variable, the set of feasible decisions, a set of observations.</p>
 <p>We write <span class="math inline">\(x \in A\)</span> for “<span class="math inline">\(x\)</span> belongs to the set <span class="math inline">\(A\)</span>”, and <span class="math inline">\(x \notin A\)</span> for “<span class="math inline">\(x\)</span> does not belong to <span class="math inline">\(A\)</span>”. We first present some basic mathematical notation that we will rely on for the rest of the course. Here, lower-case letters denote scalars (<span class="math inline">\(a,b,x\)</span>), and <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> are statements. Statements could be mathematical relationships (e.g., <span class="math inline">\(a=b\)</span>) or just plain English (e.g., this course is fun).</p>
-<section id="basic-mathematical-notation" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="basic-mathematical-notation"><span class="header-section-number">3.1</span> Basic mathematical notation</h2>
+<section id="basic-mathematical-notation" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="basic-mathematical-notation"><span class="header-section-number">2.1</span> Basic mathematical notation</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -669,34 +693,34 @@ Caution
 </tbody>
 </table>
 <p><span class="math inline">\(\R\)</span> and <span class="math inline">\(\N\)</span> are the sets of real and natural numbers, respectively. We will introduce them below along with other standard number sets. First, let’s look at the last two in the table above.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example of an Implication">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example
+<span class="screen-reader-only">Tip</span>Example of an Implication
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>An implication.</strong> Let total revenue be</p>
+<p>Let total revenue be</p>
 <p><span class="math display">\[R = pq,\]</span></p>
 <p>where <span class="math inline">\(p\)</span> is unit price and <span class="math inline">\(q\)</span> is quantity sold. If the selling price rises while demand is unchanged, then revenue increases:</p>
 <p><span class="math display">\[\big(p_1 &gt; p_0 \ \text{ and } \ q_1 = q_0\big) \implies R_1 &gt; R_0.\]</span></p>
 <p>The arrow runs one way only. The opposite does not necessarily hold. That is, observing <span class="math inline">\(R_1 &gt; R_0\)</span> does <em>not</em> let you conclude the price went up.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example of an Equivalence">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example
+<span class="screen-reader-only">Tip</span>Example of an Equivalence
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>An equivalence.</strong> Let revenue and cost be</p>
+<p>Let revenue and cost be</p>
 <p><span class="math display">\[R = pq, \qquad C(q) = C_f + C_v q,\]</span></p>
 <p>with <span class="math inline">\(C_f\)</span> the fixed cost and <span class="math inline">\(C_v\)</span> the variable cost per unit. A company reaches its break-even point exactly when revenue equals total cost:</p>
 <p><span class="math display">\[\text{break-even reached} \iff pq = C_f + C_v q.\]</span></p>
@@ -704,21 +728,21 @@ Caution
 </div>
 </div>
 </section>
-<section id="describing-a-set" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="describing-a-set"><span class="header-section-number">3.2</span> Describing a set</h2>
+<section id="describing-a-set" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="describing-a-set"><span class="header-section-number">2.2</span> Describing a set</h3>
 <p>A set can be defined in three main ways.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: the three descriptions">
+<div class="callout callout-style-default callout-note callout-titled" title="Definition:">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: the three descriptions
+<span class="screen-reader-only">Note</span>Definition:
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>a) By enumeration</strong> <span class="math display">\[A = \{1, 2, 3, 4\}.\]</span> The set <span class="math inline">\(A\)</span> contains exactly the elements 1, 2, 3 and 4.</p>
-<p><strong>b) By a property</strong> (set-builder notation) <span class="math display">\[B = \{\, x \in \R \mid x \geq 0 \,\}, \qquad C = \{\, x \in \R \mid a \leq x \leq b \,\}.\]</span> The vertical bar is read “such that”. <span class="math inline">\(B\)</span> is the set of non-negative real numbers; <span class="math inline">\(C\)</span> is the set of reals between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> inclusive.</p>
+<p><strong>b) By a property (set-builder notation)</strong> <span class="math display">\[B = \{\, x \in \R \mid x \geq 0 \,\}, \qquad C = \{\, x \in \R \mid a \leq x \leq b \,\}.\]</span> The vertical bar is read “such that”. <span class="math inline">\(B\)</span> is the set of non-negative real numbers; <span class="math inline">\(C\)</span> is the set of reals between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> inclusive.</p>
 <p><strong>c) By an interval</strong></p>
 <p>We provide an interval defined by a starting and end points and we include all the values in-between. More examples below.</p>
 </div>
@@ -776,17 +800,17 @@ Caution
 <div id="fig-intervals" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/intervals-real-line.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="../../images/w01/intervals-real-line.png" class="img-fluid figure-img" style="width:90.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-intervals-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.1: Intervals represented on the real line
+Figure&nbsp;1: Intervals represented on the real line
 </figcaption>
 </figure>
 </div>
-<p>In <a href="#fig-intervals" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>, <span class="math inline">\(A = [-4, -2]\)</span>, <span class="math inline">\(B = [0, 1)\)</span> and <span class="math inline">\(C = (2, 5)\)</span>. The number <span class="math inline">\(-3\)</span> is an <strong>interior point</strong> of <span class="math inline">\(A\)</span> because it lies in <span class="math inline">\(A\)</span> with a little room on both sides, unlike the endpoints <span class="math inline">\(-4\)</span> and <span class="math inline">\(-2\)</span>. Note that <span class="math inline">\(B\)</span> contains <span class="math inline">\(0\)</span> but not <span class="math inline">\(1\)</span>, and that <span class="math inline">\(C\)</span> contains neither <span class="math inline">\(2\)</span> nor <span class="math inline">\(5\)</span>.</p>
+<p>In <a href="#fig-intervals" class="quarto-xref">Figure&nbsp;1</a>, <span class="math inline">\(A = [-4, -2]\)</span>, <span class="math inline">\(B = [0, 1)\)</span> and <span class="math inline">\(C = (2, 5)\)</span>. The number <span class="math inline">\(-3\)</span> is an <strong>interior point</strong> of <span class="math inline">\(A\)</span> because it lies in <span class="math inline">\(A\)</span> with a little room on both sides, unlike the endpoints <span class="math inline">\(-4\)</span> and <span class="math inline">\(-2\)</span>. Note that <span class="math inline">\(B\)</span> contains <span class="math inline">\(0\)</span> but not <span class="math inline">\(1\)</span>, and that <span class="math inline">\(C\)</span> contains neither <span class="math inline">\(2\)</span> nor <span class="math inline">\(5\)</span>.</p>
 </section>
-<section id="the-standard-number-sets" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="the-standard-number-sets"><span class="header-section-number">3.3</span> The standard number sets</h2>
+<section id="the-standard-number-sets" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="the-standard-number-sets"><span class="header-section-number">2.3</span> The standard number sets</h3>
 <p>We briefly mentioned the sets of real and natural numbers earlier. The table below presents the standard number sets commonly used.</p>
 <table class="caption-top table">
 <colgroup>
@@ -840,15 +864,15 @@ Figure&nbsp;3.1: Intervals represented on the real line
 </tbody>
 </table>
 </section>
-<section id="absolute-value-of-a-number" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="absolute-value-of-a-number"><span class="header-section-number">3.4</span> Absolute value of a number</h2>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: absolute value">
+<section id="absolute-value-of-a-number" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="absolute-value-of-a-number"><span class="header-section-number">2.4</span> Absolute value of a number</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition:">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: absolute value
+<span class="screen-reader-only">Note</span>Definition:
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -858,34 +882,23 @@ Figure&nbsp;3.1: Intervals represented on the real line
 </div>
 <p>For example,</p>
 <p><span class="math display">\[\abs{13} = 13, \qquad \abs{-13} = -(-13) = 13, \qquad \left\lvert -\tfrac{1}{2} \right\rvert = \tfrac{1}{2}, \qquad \abs{0} = 0.\]</span></p>
-<section id="distance-between-two-real-numbers" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="distance-between-two-real-numbers"><span class="header-section-number">3.4.1</span> Distance between two real numbers</h3>
-<div class="callout callout-style-default callout-important callout-titled" title="Key result: distance and tolerance">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Key result: distance and tolerance
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> be real. The distance between them on the real line is <span class="math display">\[d(x_1, x_2) = \abs{x_1 - x_2}.\]</span> Distance is always non-negative, and it is zero exactly when the two numbers are equal: <span class="math display">\[d(x_1,x_2) \geq 0, \qquad d(x_1,x_2) = 0 \iff x_1 = x_2.\]</span> For <span class="math inline">\(a &gt; 0\)</span>, <span class="math display">\[\abs{x} &lt; a \iff -a &lt; x &lt; a \iff x \in (-a, a), \qquad \abs{x} \leq a \iff x \in [-a, a].\]</span></p>
-<p><em>That is, we can say that “</em><span class="math inline">\(x\)</span> is within <span class="math inline">\(a\)</span> of zero” and “<span class="math inline">\(x\)</span> lies in the interval of width <span class="math inline">\(2a\)</span> centred at zero”.</p>
-</div>
-</div>
+<section id="distance-between-two-real-numbers" class="level4" data-number="2.4.1">
+<h4 data-number="2.4.1" class="anchored" data-anchor-id="distance-between-two-real-numbers"><span class="header-section-number">2.4.1</span> Distance between two real numbers</h4>
+<!-- ::: callout-important -->
+<p>Let <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> be real. The distance between them on the real line is <span class="math display">\[d(x_1, x_2) = \abs{x_1 - x_2}.\]</span> Distance is always non-negative, and it is zero exactly when the two numbers are equal: <span class="math display">\[d(x_1,x_2) \geq 0, \qquad d(x_1,x_2) = 0 \iff x_1 = x_2.\]</span> For <span class="math inline">\(a &gt; 0\)</span>, <span class="math display">\[\abs{x} &lt; a \iff -a &lt; x &lt; a \iff x \in (-a, a),\]</span> and <span class="math display">\[  \abs{x} \leq a \iff x \in [-a, a].\]</span></p>
+<p>That is, we can say that “<span class="math inline">\(x\)</span> lies in the interval of width <span class="math inline">\(2a\)</span> centred at zero”. <!-- ::: --></p>
 </section>
 </section>
-<section id="summation-notation-sigma" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="summation-notation-sigma"><span class="header-section-number">3.5</span> Summation notation (sigma)</h2>
+<section id="summation-notation-sigma" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="summation-notation-sigma"><span class="header-section-number">2.5</span> Summation notation (sigma)</h3>
 <p>Summation notation is shorthand for addition.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: the summation symbol">
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: Summation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: the summation symbol
+<span class="screen-reader-only">Note</span>Definition: Summation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -893,12 +906,6 @@ Figure&nbsp;3.1: Intervals represented on the real line
 <p>The letter <span class="math inline">\(i\)</span> is the <strong>index</strong> and the numbers above and below <span class="math inline">\(\sum\)</span> are the limits.</p>
 </div>
 </div>
-<p>Economists frequently use census data. Suppose a country is divided into six regions and <span class="math inline">\(N_i\)</span> denotes the population of region <span class="math inline">\(i\)</span>. The country’s total population is then</p>
-<p><span class="math display">\[N_1 + N_2 + N_3 + N_4 + N_5 + N_6 = \sum_{i=1}^{6} N_i.\]</span></p>
-<p>Here are more examples of summation</p>
-<p><span class="math display">\[\sum_{i=1}^{4} x_i = x_1 + x_2 + x_3 + x_4, \qquad \sum_{j=2}^{5}(2j-1) = 3 + 5 + 7 + 9 = 24, \qquad \sum_{k=1}^{n} c = \underbrace{c + \cdots + c}_{n \text{ terms}} = nc.\]</span></p>
-<section id="example-price-index" class="level3" data-number="3.5.1">
-<h3 data-number="3.5.1" class="anchored" data-anchor-id="example-price-index"><span class="header-section-number">3.5.1</span> Example: price index</h3>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -906,6 +913,22 @@ Figure&nbsp;3.1: Intervals represented on the real line
 </div>
 <div class="callout-title-container flex-fill">
 <span class="screen-reader-only">Tip</span>Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Economists frequently use census data. Suppose a country is divided into six regions and <span class="math inline">\(N_i\)</span> denotes the population of region <span class="math inline">\(i\)</span>. The country’s total population is then</p>
+<p><span class="math display">\[N_1 + N_2 + N_3 + N_4 + N_5 + N_6 = \sum_{i=1}^{6} N_i.\]</span></p>
+</div>
+</div>
+<p>Here are more examples of summation</p>
+<p><span class="math display">\[\sum_{i=1}^{4} x_i = x_1 + x_2 + x_3 + x_4,\]</span> <span class="math display">\[\sum_{j=2}^{5}(2j-1) = 3 + 5 + 7 + 9 = 24,\]</span> and <span class="math display">\[\sum_{k=1}^{n} c = \underbrace{c + \cdots + c}_{n \text{ terms}} = nc.\]</span></p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: price index">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example: price index
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -928,17 +951,16 @@ Figure&nbsp;3.1: Intervals represented on the real line
 </ul>
 </div>
 </div>
-</section>
-<section id="summation-rules" class="level3" data-number="3.5.2">
-<h3 data-number="3.5.2" class="anchored" data-anchor-id="summation-rules"><span class="header-section-number">3.5.2</span> Summation rules</h3>
+<section id="summation-rules" class="level4" data-number="2.5.1">
+<h4 data-number="2.5.1" class="anchored" data-anchor-id="summation-rules"><span class="header-section-number">2.5.1</span> Summation rules</h4>
 <p>The following properties are useful when manipulating sums.</p>
-<div class="callout callout-style-default callout-important callout-titled" title="Key result: algebra of sums">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Key result: algebra of sums
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -950,15 +972,15 @@ Figure&nbsp;3.1: Intervals represented on the real line
 <p>It is important to note that there is no product rule. That is,</p>
 <p><span class="math display">\[\sum a_i b_i \neq \left(\sum a_i\right)\left(\sum b_i\right), \qquad \sum a_i^2 \neq \left(\sum a_i\right)^2.\]</span></p>
 </section>
-<section id="example-arithmetic-mean-and-deviations-from-the-mean" class="level3" data-number="3.5.3">
-<h3 data-number="3.5.3" class="anchored" data-anchor-id="example-arithmetic-mean-and-deviations-from-the-mean"><span class="header-section-number">3.5.3</span> Example: arithmetic mean and deviations from the mean</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: arithmetic mean">
+<section id="example-arithmetic-mean-and-deviations-from-the-mean" class="level4" data-number="2.5.2">
+<h4 data-number="2.5.2" class="anchored" data-anchor-id="example-arithmetic-mean-and-deviations-from-the-mean"><span class="header-section-number">2.5.2</span> Example: arithmetic mean and deviations from the mean</h4>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: arithmetic mean
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -972,23 +994,21 @@ Figure&nbsp;3.1: Intervals represented on the real line
 <p>The quantity <span class="math inline">\(x_i - \xbar\)</span> is the deviation of observation <span class="math inline">\(i\)</span> from the mean. Because the deviations always sum to zero, they cannot be used as a measure of spread. To measure the spread of the observations, we square these deviations. In particular<span style="color:#128a3a">,</span> we have that (show the derivation as an exercise)</p>
 <p><span class="math display">\[\sum_{i=1}^{n}(x_i - \xbar)^2 = \sum_{i=1}^{n} x_i^2 - n\xbar^{\,2}.\]</span></p>
 </section>
-<section id="double-sums" class="level3" data-number="3.5.4">
-<h3 data-number="3.5.4" class="anchored" data-anchor-id="double-sums"><span class="header-section-number">3.5.4</span> Double sums</h3>
+<section id="double-sums" class="level4" data-number="2.5.3">
+<h4 data-number="2.5.3" class="anchored" data-anchor-id="double-sums"><span class="header-section-number">2.5.3</span> Double sums</h4>
 <p>It is often necessary to combine two or more summation symbols. For example, when data are arranged in a grid (matrix), two indices are needed: <span class="math inline">\(a_{ij}\)</span> for row <span class="math inline">\(i\)</span>, column <span class="math inline">\(j\)</span>. Consider a matrix with <span class="math inline">\(m\)</span> rows and <span class="math inline">\(n\)</span> columns, and let <span class="math inline">\(S_i\)</span> be the total of row <span class="math inline">\(i\)</span>:</p>
-<p><span class="math display">\[
-\begin{array}{ccccl}
+<p><span class="math display">\[\begin{array}{ccccl}
 a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} &amp; \longrightarrow \ \sum_{j=1}^{n} a_{1j} = S_1 \\
 a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} &amp; \longrightarrow \ \sum_{j=1}^{n} a_{2j} = S_2 \\
 \vdots &amp; \vdots &amp; &amp; \vdots &amp; \\
 a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; \longrightarrow \ \sum_{j=1}^{n} a_{mj} = S_m
-\end{array}
-\]</span></p>
+\end{array}\]</span></p>
 <p>Adding the row totals gives the grand total, and the same grand total is reached by adding column totals instead:</p>
 <p><span class="math display">\[S_1 + S_2 + \cdots + S_m = \sum_{i=1}^{m} S_i = \sum_{i=1}^{m}\sum_{j=1}^{n} a_{ij} = \sum_{j=1}^{n}\sum_{i=1}^{m} a_{ij}.\]</span></p>
 </section>
 </section>
-<section id="subsets-cardinality-and-set-operations" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="subsets-cardinality-and-set-operations"><span class="header-section-number">3.6</span> Subsets, cardinality, and set operations</h2>
+<section id="subsets-cardinality-and-set-operations" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="subsets-cardinality-and-set-operations"><span class="header-section-number">2.6</span> Subsets, cardinality, and set operations</h3>
 <div class="callout callout-style-default callout-note callout-titled" title="Definition: subset">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1000,13 +1020,13 @@ a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn} &amp; \longrightarrow \ \sum_{j=1}
 </div>
 <div class="callout-body-container callout-body">
 <p>A set <span class="math inline">\(A\)</span> is a <strong>subset</strong> of <span class="math inline">\(B\)</span> if every element of <span class="math inline">\(A\)</span> also belongs to <span class="math inline">\(B\)</span>: <span class="math display">\[A \subseteq B \iff \forall x, \ x \in A \Rightarrow x \in B.\]</span></p>
-<p>We say that the set <span class="math inline">\(A\)</span> is <strong>strictly a subset</strong> of <span class="math inline">\(B\)</span> if every element of <span class="math inline">\(A\)</span> belongs to <span class="math inline">\(B\)</span> while <span class="math inline">\(B\)</span> being larger than <span class="math inline">\(A\)</span>:</p>
+<p>We say that the set <span class="math inline">\(A\)</span> is a ** proper subset** of <span class="math inline">\(B\)</span> if every element of <span class="math inline">\(A\)</span> belongs to <span class="math inline">\(B\)</span> while <span class="math inline">\(B\)</span> being larger than <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[A \subset B \iff (\forall x, \ x \in A \Rightarrow x \in B) \text{ and } (\exists x \in B \Rightarrow x \notin A).\]</span></p>
 </div>
 </div>
 <p>Some of the standard sets we defined earlier are subsets of one another. For example<span style="color:#128a3a">,</span> we have <span class="math inline">\(\N \subset \Z \subset \Q \subset \R\)</span>. This means that every integer is rational (write <span class="math inline">\(-3\)</span> as <span class="math inline">\(-3/1\)</span>) and every rational is real. The reverse fails, for example, <span class="math inline">\(\sqrt{2}\)</span> and <span class="math inline">\(\pi\)</span> are real but not rational.<br>
 Note: Think of the difference between <span class="math inline">\(\subseteq\)</span> and <span class="math inline">\(\subset\)</span> as the difference between <span class="math inline">\(\leq\)</span> and <span class="math inline">\(&lt;\)</span> for numbers.</p>
-<p>Two further terms:</p>
+<p>Two further terms to define:</p>
 <ul>
 <li>The <strong>universal set</strong> <span class="math inline">\(U\)</span> is the reference set within which we are working.</li>
 <li>The <strong>cardinality</strong> of a finite set <span class="math inline">\(A\)</span>, written <span class="math inline">\(\card{A}\)</span>, is its number of elements.</li>
@@ -1025,7 +1045,7 @@ Note: Think of the difference between <span class="math inline">\(\subseteq\)</s
 <th style="text-align: left;">Operation</th>
 <th style="text-align: left;">Notation</th>
 <th style="text-align: left;">Definition</th>
-<th style="text-align: left;">Management interpretation</th>
+<th style="text-align: left;">Example</th>
 </tr>
 </thead>
 <tbody>
@@ -1055,15 +1075,15 @@ Note: Think of the difference between <span class="math inline">\(\subseteq\)</s
 </tr>
 </tbody>
 </table>
-<section id="cartesian-product-and-multidimensional-observations" class="level3" data-number="3.6.1">
-<h3 data-number="3.6.1" class="anchored" data-anchor-id="cartesian-product-and-multidimensional-observations"><span class="header-section-number">3.6.1</span> Cartesian product and multidimensional observations</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: Cartesian product">
+<section id="cartesian-product-and-multidimensional-observations" class="level4" data-number="2.6.1">
+<h4 data-number="2.6.1" class="anchored" data-anchor-id="cartesian-product-and-multidimensional-observations"><span class="header-section-number">2.6.1</span> Cartesian product and multidimensional observations</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: cartesian product">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: Cartesian product
+<span class="screen-reader-only">Note</span>Definition: cartesian product
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1073,13 +1093,13 @@ Note: Think of the difference between <span class="math inline">\(\subseteq\)</s
 <p>In a data set, an individual is usually described by several variables at once, and is therefore represented by a vector:</p>
 <p><span class="math display">\[\vect{x}_i = \left(x_{i1}, x_{i2}, \dots, x_{ip}\right) \in \R^p,\]</span></p>
 <p>where <span class="math inline">\(p\)</span> is the number of variables measured for individual <span class="math inline">\(i\)</span>.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example: movie recommendation">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example
+<span class="screen-reader-only">Tip</span>Example: movie recommendation
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1087,15 +1107,15 @@ Note: Think of the difference between <span class="math inline">\(\subseteq\)</s
 </div>
 </div>
 </section>
-<section id="partition-of-a-universal-set" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="partition-of-a-universal-set"><span class="header-section-number">3.6.2</span> Partition of a universal set</h3>
-<div class="callout callout-style-default callout-note callout-titled" title="Definition: partition">
+<section id="partition-of-a-universal-set" class="level4" data-number="2.6.2">
+<h4 data-number="2.6.2" class="anchored" data-anchor-id="partition-of-a-universal-set"><span class="header-section-number">2.6.2</span> Partition of a universal set</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: partition of a universal set">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Definition: partition
+<span class="screen-reader-only">Note</span>Definition: partition of a universal set
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1103,27 +1123,27 @@ Note: Think of the difference between <span class="math inline">\(\subseteq\)</s
 <p><span class="math display">\[\bigcup_{i=1}^{k} X_i = U,\]</span> and <span class="math display">\[\qquad X_i \cap X_j = \varnothing \ \text{ for every } i \neq j,\]</span></p>
 <p>where</p>
 <p><span class="math display">\[\bigcup_{i=1}^{k} X_i = X_1 \cup X_2 \cup X_3 \cup \cdots \cup X_k.\]</span></p>
-<p><em>That is, the subsets split</em> <span class="math inline">\(U\)</span> into pieces with no gaps or overlaps<span style="color:#128a3a">,</span> and every element in <span class="math inline">\(U\)</span> belongs to exactly one piece.</p>
+<p>That is, the subsets split <span class="math inline">\(U\)</span> into pieces with no gaps or overlaps, and every element in <span class="math inline">\(U\)</span> belongs to exactly one piece. The figure below gives an example of a universal set partitioned into 6 subsets.</p>
 </div>
 </div>
 <div id="fig-partition" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-partition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="../images/partition-universe.png" class="img-fluid figure-img" style="width:65.0%">
+<img src="../../images/w01/partition-universe.png" class="img-fluid figure-img" style="width:65.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-partition-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
+Figure&nbsp;2: Partition of a universal set into six non-empty subsets
 </figcaption>
 </figure>
 </div>
 </section>
 </section>
 </section>
-<section id="essential-algebra-for-working-with-models" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Essential algebra for working with models</h1>
+<section id="essential-algebra-for-working-with-models" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="essential-algebra-for-working-with-models"><span class="header-section-number">3</span> Essential algebra for working with models</h2>
 <p>Algebra allows us to simplify expressions and solve equations.</p>
-<section id="algebraic-expressions" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="algebraic-expressions"><span class="header-section-number">4.1</span> Algebraic expressions</h2>
+<section id="algebraic-expressions" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="algebraic-expressions"><span class="header-section-number">3.1</span> Algebraic expressions</h3>
 <p>An algebraic expression combines numbers, variables and operations. The basic manipulations are as follows<span style="color:#128a3a">:</span></p>
 <table class="caption-top table">
 <colgroup>
@@ -1167,8 +1187,8 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
 </tbody>
 </table>
 </section>
-<section id="polynomials-and-quadratic-equations" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="polynomials-and-quadratic-equations"><span class="header-section-number">4.2</span> Polynomials and quadratic equations</h2>
+<section id="polynomials-and-quadratic-equations" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="polynomials-and-quadratic-equations"><span class="header-section-number">3.2</span> Polynomials and quadratic equations</h3>
 <p>A polynomial of degree <span class="math inline">\(n\)</span> is an expression of the form</p>
 <p><span class="math display">\[P(x) = a_n x^n + a_{n-1}x^{n-1} + \cdots + a_1 x + a_0, \qquad a_n \neq 0.\]</span></p>
 <p><strong>Examples.</strong></p>
@@ -1177,38 +1197,50 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
 <li><span class="math inline">\(P(x) = 2x^2 - 3x + 1\)</span>: a polynomial of degree 2.</li>
 <li><span class="math inline">\(Q(x) = 5x^3 + x - 7\)</span>: a polynomial of degree 3.</li>
 </ul>
-<section id="roots-of-a-first-degree-polynomial" class="level3" data-number="4.2.1">
-<h3 data-number="4.2.1" class="anchored" data-anchor-id="roots-of-a-first-degree-polynomial"><span class="header-section-number">4.2.1</span> Roots of a first-degree polynomial</h3>
+<section id="roots-of-a-first-degree-polynomial" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="roots-of-a-first-degree-polynomial"><span class="header-section-number">3.2.1</span> Roots of a first-degree polynomial</h4>
 <p>A linear equation in one unknown is written as</p>
 <p><span class="math display">\[ax + b = 0, \qquad a \neq 0,\]</span></p>
 <p>with the single solution</p>
 <p><span class="math display">\[x = -\frac{b}{a} = -a^{-1}b.\]</span></p>
 </section>
-<section id="roots-of-a-quadratic-polynomial" class="level3" data-number="4.2.2">
-<h3 data-number="4.2.2" class="anchored" data-anchor-id="roots-of-a-quadratic-polynomial"><span class="header-section-number">4.2.2</span> Roots of a quadratic polynomial</h3>
+<section id="roots-of-a-quadratic-polynomial" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="roots-of-a-quadratic-polynomial"><span class="header-section-number">3.2.2</span> Roots of a quadratic polynomial</h4>
 <p>A quadratic equation is written <span class="math display">\[ax^2 + bx + c = 0, \qquad a \neq 0,\]</span> and its discriminant is <span class="math display">\[\Delta = b^2 - 4ac.\]</span></p>
 <ul>
 <li><p>If <span class="math inline">\(\Delta &gt; 0\)</span>, there are two distinct real roots: <span class="math display">\[x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \qquad x_2 = \frac{-b + \sqrt{\Delta}}{2a}.\]</span></p></li>
 <li><p>If <span class="math inline">\(\Delta = 0\)</span>, there is one repeated real root: <span class="math display">\[x = -\frac{b}{2a}.\]</span></p></li>
 <li><p>If <span class="math inline">\(\Delta &lt; 0\)</span>, there is no real root.</p></li>
 </ul>
-<p><em>That is, the discriminant tells us whether we have two, one, or no real solutions.</em></p>
-</section>
-</section>
-<section id="exponents-and-logarithms" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="exponents-and-logarithms"><span class="header-section-number">4.3</span> Exponents and logarithms</h2>
-<p>For <span class="math inline">\(a, b &gt; 0\)</span> and compatible exponents, the basic rules are</p>
-<p><span class="math display">\[a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn},\]</span></p>
-<p><span class="math display">\[(ab)^n = a^n b^n, \qquad a^{-n} = \frac{1}{a^n}, \qquad a^0 = 1.\]</span></p>
-<p>For equations with the same positive base <span class="math inline">\(a \neq 1\)</span>,</p>
-<p><span class="math display">\[a^f = a^g \iff f = g, \qquad \text{and in particular} \qquad e^f = e^g \iff f = g.\]</span></p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common pitfall
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The discriminant tells us whether we have two, one, or no real solutions.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="exponents-and-logarithms" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="exponents-and-logarithms"><span class="header-section-number">3.3</span> Exponents and logarithms</h3>
+<p>For <span class="math inline">\(a, b &gt; 0\)</span> and compatible exponents, the basic rules are</p>
+<p><span class="math display">\[a^m a^n = a^{m+n}, \qquad \frac{a^m}{a^n} = a^{m-n}, \qquad (a^m)^n = a^{mn},\]</span></p>
+<p><span class="math display">\[(ab)^n = a^n b^n, \qquad a^{-n} = \frac{1}{a^n}, \qquad a^0 = 1.\]</span></p>
+<p>For equations with the same positive base <span class="math inline">\(a \neq 1\)</span>,</p>
+<p><span class="math display">\[a^f = a^g \iff f = g, \qquad \text{and in particular} \qquad e^f = e^g \iff f = g.\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1216,48 +1248,60 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
 </div>
 </div>
 <p>The logarithm to base <span class="math inline">\(a &gt; 0\)</span>, with <span class="math inline">\(a \neq 1\)</span>, is defined by <span class="math display">\[\log_a(x) = y \iff a^y = x.\]</span> The <strong>natural logarithm</strong> is written <span class="math inline">\(\ln\)</span> and corresponds to base <span class="math inline">\(e\)</span>: <span class="math display">\[\ln(x) = y \iff e^y = x.\]</span></p>
-<p>*That is, a logarithm answers “what power do I raise the base to, in order to get* <span class="math inline">\(x\)</span>?”</p>
-<p>Useful rules include</p>
-<p><span class="math display">\[\ln(xy) = \ln x + \ln y, \qquad \ln\!\left(\frac{x}{y}\right) = \ln x - \ln y, \qquad \ln(x^r) = r\ln x,\]</span></p>
-<p><span class="math display">\[\ln(e) = 1, \qquad \ln(1) = 0, \qquad \ln(e^x) = x, \qquad e^{\ln x} = x \ \ (x &gt; 0).\]</span></p>
-<p>And for equations,</p>
-<p><span class="math display">\[\log_a(f) = \log_a(g) \iff f = g, \qquad \text{in particular} \qquad \ln(f) = \ln(g) \iff f = g.\]</span></p>
-<div class="callout callout-style-default callout-warning callout-titled" title="Common pitfall">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Warning</span>Common pitfall
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A logarithm answers “what power do I raise the base to, in order to get <span class="math inline">\(x\)</span>?”</p>
+</div>
+</div>
+<p>Useful rules for logarithms include</p>
+<p><span class="math display">\[\ln(xy) = \ln x + \ln y, \qquad \ln\!\left(\frac{x}{y}\right) = \ln x - \ln y, \qquad \ln(x^r) = r\ln x,\]</span></p>
+<p><span class="math display">\[\ln(e) = 1, \qquad \ln(1) = 0, \qquad \ln(e^x) = x, \qquad e^{\ln x} = x \ \ (x &gt; 0).\]</span></p>
+<p>And for equations,</p>
+<p><span class="math display">\[\log_a(f) = \log_a(g) \iff f = g,\]</span> which implies that <span class="math display">\[\ln(f) = \ln(g) \iff f = g.\]</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>The notation “<span class="math inline">\(\log\)</span>” can sometimes be ambiguous. In R and most mathematical writing, <code>log(x)</code> is the natural logarithm<span style="color:#128a3a">.</span> However, in calculators, <code>LOG</code> means base 10. These notes always write <span class="math inline">\(\ln\)</span> for the natural log and always show the base otherwise. Moreover, there is no rule for the logarithm of a sum: <span class="math display">\[\ln(x + y) \neq \ln x + \ln y.\]</span></p>
 </div>
 </div>
-<section id="example-exponential-growth-and-decay" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="example-exponential-growth-and-decay"><span class="header-section-number">4.3.1</span> Example: exponential growth and decay</h3>
-<div class="callout callout-style-default callout-important callout-titled" title="Key result: growth and decay factors">
+<section id="example-exponential-growth-and-decay" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="example-exponential-growth-and-decay"><span class="header-section-number">3.3.1</span> Example: exponential growth and decay</h4>
+<div class="callout callout-style-default callout-note callout-titled" title="Definition: exponential growth and decay">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Key result: growth and decay factors
+<span class="screen-reader-only">Note</span>Definition: exponential growth and decay
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>An initial quantity <span class="math inline">\(Q_0\)</span> that <strong>increases</strong> by <span class="math inline">\(p\%\)</span> each year has, after <span class="math inline">\(t\)</span> years, the value <span class="math display">\[Q_0\left(1 + \frac{p}{100}\right)^{t}.\]</span> An initial quantity <span class="math inline">\(Q_0\)</span> that <strong>decreases</strong> by <span class="math inline">\(p\%\)</span> each year has, after <span class="math inline">\(t\)</span> years, the value <span class="math display">\[Q_0\left(1 - \frac{p}{100}\right)^{t}.\]</span> The number <span class="math inline">\(1 + p/100\)</span> is the <strong>growth factor</strong> associated with an increase of <span class="math inline">\(p\%\)</span>; the number <span class="math inline">\(1 - p/100\)</span> is the <strong>decay factor</strong> associated with a decrease of <span class="math inline">\(p\%\)</span>. Here <span class="math inline">\(Q_0\)</span> is the initial value, <span class="math inline">\(p\)</span> the annual rate as a percentage, and <span class="math inline">\(t\)</span> the number of years.</p>
 </div>
 </div>
-<p>The factor is <em>multiplied</em> repeatedly rather than added because each year’s change applies to the new total (compounded), not to the original.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<p>The factor is multiplied repeatedly rather than added because each year’s change applies to the new total (compounded), not to the original. We finish the notes with two examples. Note that the solution for the two examples involve taking the natural logarithm of both sides of the equations.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example on exponential decay">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example
+<span class="screen-reader-only">Tip</span>Example on exponential decay
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1268,13 +1312,13 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
 <p><span class="math display">\[30000 \times (0.85)^6 = 30000 \times 0.377150 \approx \$11{,}314.49.\]</span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Example on exponential growth">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Example
+<span class="screen-reader-only">Tip</span>Example on exponential growth
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1380,7 +1424,7 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/khaledfouda\.github\.io\/MATH40604_course-notes\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1707,26 +1751,17 @@ Figure&nbsp;3.2: Partition of a universal set into six non-empty subsets
     }
   });
   </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../index.html" class="pagination-link" aria-label="How to use these notes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">How to use these notes</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>MATH 40604 — Study Notes</p>
+<p>MATH 40604A</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Complementary study aid. The official course material is the slide deck distributed in class.</p>
+<p>Fatiha Kacher . Khaled Fouda</p>
 </div>
   </div>
 </footer>
