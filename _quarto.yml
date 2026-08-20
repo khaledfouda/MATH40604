@@ -25,7 +25,6 @@ website:
           - weeks/w01/w01-4-tutorial.qmd
   page-footer:
     left: "MATH 40604A"
-    right: "Fatiha Kacher . Khaled Fouda"
   navbar:
     left:
       - href: index.qmd
@@ -33,9 +32,9 @@ website:
       - href: outline.qmd
         text: Outline
 
-author: 
-  - "Fatiha Kacher"
-  - "Khaled Fouda"
+# author: 
+#   - "Fatiha Kacher"
+#   - "Khaled Fouda"
 date: today
 date-format: "MMMM YYYY"
 
