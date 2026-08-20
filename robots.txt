@@ -1,1 +1,1 @@
-Sitemap: https://khaledfouda.github.io/MATH40604_course-notes/sitemap.xml
+Sitemap: https://khaledfouda.github.io/MATH40604/sitemap.xml
