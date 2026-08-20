@@ -33,3 +33,4 @@ index.typ
 # files not to be published yet
 /_private/
 
+.RData
