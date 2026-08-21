@@ -1,15 +1,12 @@
-% macros.tex — PDF fallback.
-% These duplicate the definitions in _macros.qmd. They are NOT loaded by
-% default; _macros.qmd supplies the macros to both HTML and PDF.
-% If the PDF build ever reports an undefined control sequence, uncomment the
-% include-in-header block in _quarto.yml and this file takes over for PDF.
+% These are duplicate the definitions in _macros.qmd. needed for pdf compilation
+% for some reason, when rendering to pdf, the files don't see _macros.qmd
 
 \providecommand{\R}{\mathbb{R}}
 \providecommand{\N}{\mathbb{N}}
 \providecommand{\Z}{\mathbb{Z}}
 \providecommand{\Q}{\mathbb{Q}}
 \providecommand{\Rp}{\mathbb{R}_{+}}
-\providecommand{\simplex}[1]{\Delta_{#1}}
+\providecommand{\simplex}[1]{\Delta^{#1}}
 \providecommand{\E}{\mathbb{E}}
 \providecommand{\Var}{\operatorname{Var}}
 \providecommand{\sd}{\operatorname{sd}}

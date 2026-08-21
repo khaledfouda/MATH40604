@@ -9,7 +9,7 @@ $$\newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Rp}{\mathbb{R}_{+}}
-\newcommand{\simplex}[1]{\Delta_{#1}}
+\newcommand{\simplex}[1]{\Delta^{#1}}
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\Var}{\operatorname{Var}}
 \newcommand{\sd}{\operatorname{sd}}
