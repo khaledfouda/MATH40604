@@ -40,8 +40,7 @@ editor:
 
 - **Proof techniques:** propositions, quantifiers, implications,
   necessary and sufficient conditions, five techniques of proofs:
-  direct, contrapositive, by contradiction, by induction, and by
-  counterexample.
+  direct, contrapositive, contradiction, induction, and counterexample.
 
 **To be completed before class:** the first two topics of mathematical
   modelling, sets and algebra. (Material on the course site)
@@ -59,13 +58,13 @@ editor:
 **Learning objectives.** By the end of the session, you should be able
 to:
 
-- state clearly the components of mathematical model;
+- state clearly the components of a mathematical model;
 - translate a real-life problem into mathematical expressions and
   constraints;
 - manipulate algebraic expressions and represent domains using sets;
-- Interpret quantifiers, implications, and logical conditions;
+- interpret quantifiers, implications, and logical conditions;
 - select an appropriate proof technique and write a simple and
-  structured \textbf{Proof.}
+  structured proof.
 
 ## Today
 
@@ -74,7 +73,7 @@ to:
 
 **Part 1.** Review of the pre-session activities.
 
-**Part 2.** Proof techniques
+**Part 2.** quantifiers, implications, and Proof techniques
 
 **Part 3.** Tutorial session
 
@@ -93,11 +92,11 @@ depends on the price $p$ of the good and on consumers' income $y$:
 
 $$q_D = a - bp + cy, \qquad \text{where  } a,\, b,\, c > 0 .$$
 
-Supply is assumed fixed and equal to $q_S$; 
+Supply is assumed fixed and equal to $q_S$.
 Determine the equilibrium price in the market for this good.
 
 ```{=latex}
-\scriptsize
+\footnotesize
 \renewcommand{\arraystretch}{1.25}
 \begin{center}
 \begin{tabular}{|p{2.1cm}|p{4.3cm}|p{6.0cm}|}
@@ -140,7 +139,7 @@ Assumptions & & \\[2mm]
       target equal to $0.7$. Describe the admissible set. (interval/property) \ans[4]
 \item Consider a vector of proportions $\vect{x} = (x_1, \dots, x_n)$. Each
       component is non-negative and the sum of the components is equal to $1$.
-      Describe the admissible set. (interval/property) \ans[4]
+      Describe the admissible set. (property) \ans[4]
 \end{enumerate}
 ```
 
@@ -149,21 +148,21 @@ Assumptions & & \\[2mm]
 ```{=latex}
 \footnotesize
 Consider the following weights and scores:
-$$\vect{w} = (0.2,\, 0.5,\, 0.3), \qquad \vect{z} = (70,\, 80,\, 90).$$
+$$\vect{u} = (0.2,\, 0.5,\, 0.3), \qquad \vect{z} = (70,\, 80,\, 90).$$
 
 \begin{enumerate}\setlength{\itemsep}{0pt}
-\item  Verify that $\vect{w}$ belongs to the simplex
-    $\bigl\{\, \vect{w} \in \Rp^{3} \mid \sum_{j=1}^{3} w_j = 1 \,\bigr\}$.
+\item  Verify that $\vect{u}$ belongs to the simplex
+    $\simplex{3}=\bigl\{\, \vect{w} \in \Rp^{3} \mid \sum_{j=1}^{3} w_j = 1 \,\bigr\}$.
  \ans[4]
 \item  $\simplex{3}$ is a subset of which space (or universe)?
  \ans[4]
-\item Compute the weighted score $S = \sum_{j=1}^{3} w_j z_j$.
+\item Compute the weighted score $S = \sum_{j=1}^{3} u_j z_j$.
  \ans[4]
-\item Is the vector $\widetilde{\vect{w}} = (0.4,\, 0.8,\, -0.2)$
+\item Is the vector $\widetilde{\vect{u}} = (0.4,\, 0.8,\, -0.2)$
     admissible? Justify.
  \ans[4]
 \item Explain why $S$ lies between the smallest and the largest score when
-    $\vect{w} \in \Delta^{3}$.
+    $\vect{u} \in \simplex{3}$.
  \ans[4]
 \end{enumerate}
 
@@ -194,18 +193,18 @@ resulting set.
 \footnotesize
 
 \begin{itemize}
-\item $\mathbf\forall$: \\
+\item $\boldsymbol{\forall}$: \\
 \ans[1]
 Example: $\forall x \in \R,\ x^2 \ge 0$.
 
   \ans[4]
 
-\item $\mathbf\exists$: \\
+\item $\boldsymbol{\exists}$: \\
 \ans[1]
   Example: $\exists\, x \in \R$ such that $x^2 = 4$.
 \ans[4]
 
-\item $\mathbf\exists!$: \\
+\item $\boldsymbol{\exists!}$: \\
 \ans[1]
   Example: $\exists!\, x \in \R$ such that $x + 3 = 5$.
 
@@ -219,16 +218,16 @@ Example: $\forall x \in \R,\ x^2 \ge 0$.
 \footnotesize
 
 \begin{itemize}
-\item $\forall x \in A$ such that $P(x)$: \ans[5]
+\item $\forall x \in A$, $P(x)$: \ans[5]
 
-\item $\exists x \in A$ tel que $P(x)$: \ans[5]
+\item $\exists x \in A$ such that $P(x)$: \ans[5]
 \end{itemize}
 
 \textbf{Which of these propositions are true?}
 \begin{itemize}
-\item $\forall x \in \R,\ \exists y \in \R$ tel que $y > x$.
+\item $\forall x \in \R,\ \exists \, y \in \R$ such that $y > x$.
 \ans[5]
-\item $\exists y \in \R$ tel que $\forall x \in \R,\ y > x$.
+\item $\exists \, y \in \R$ such that $\forall x \in \R,\ y > x$.
 \end{itemize}
 ```
 
@@ -244,14 +243,14 @@ $$x \in \bigcap_{i \in I} A_i \iff \dots$$
 
 ## Implications
 
-**$P \implies Q$**
+$\textbf{\(P \implies Q\)}$
 
 - $P$ implies $Q$
 - If $P$ is true, then $Q$ is true
 - $P$ is a sufficient condition for $Q$
 - $Q$ is a necessary condition for $P$
 
-**$P \iff Q$**
+\textbf{\(P \iff Q\)}
 
 - Both $P \implies Q$ and $Q \implies P$ hold
 - $P$ is a necessary and sufficient condition for $Q$ (and vice versa)
@@ -266,10 +265,10 @@ $$x \in \bigcap_{i \in I} A_i \iff \dots$$
 Consider the following two propositions:
 \begin{itemize}
 \item $P$: The person resides in Montreal.
-\item $Q$: The person resides in Quebec (the provice).
+\item $Q$: The person resides in Quebec (the province).
 \end{itemize}
 
-Translate each statement into symbolic form (using $P$, $Q$, $\Rightarrow$, and $\Leftrightarrow$) and determine whether the statement is true  it is true or false. 
+Translate each statement into symbolic form (using $P$, $Q$, $\Rightarrow$, and $\Leftrightarrow$) and determine whether it is true or false. 
 
 \begin{enumerate}
 \item  Residing in Montreal is a sufficient condition for residing in  Quebec. 
@@ -279,20 +278,20 @@ Translate each statement into symbolic form (using $P$, $Q$, $\Rightarrow$, and 
     residing in Montreal. 
 \ans[3]\item  Residing in Montreal is a necessary condition for residing in  Quebec. 
 \ans[3]\item  Residing in Montreal is a necessary and sufficient condition for
-    residin in Quebec. 
+    residing in Quebec. 
 \end{enumerate}
 ```
 
-## Proof techniques
+# Proof techniques
 
 ## Proof techniques
 
 
 
 We use a mathematical proof to verify that a conclusion truly follows
-from the hypotheses. As readers, proofs let us trust results we didn't come up with, and as writers, proofs is how we convince readers (reviewers) that our results make sense.
+from the hypotheses. Proofs let trust results we did not derive ourselves.
 
-Typically, a proof include the following steps: 
+Typically, a proof includes the following steps: 
 
 - Identify the hypotheses (what we assume to be true) and the universe (admissible set(s)) in which the object(s)
   are defined.
@@ -328,7 +327,7 @@ even.
 To prove $P \Rightarrow Q$, we can prove that if $Q$ is false, then $P$
 is false.
 
-$$(P \Rightarrow Q) \iff (\text{No } Q \Rightarrow \text{No } P)$$
+$$(P \Rightarrow Q) \iff (\text{Not } Q \Rightarrow \text{Not } P)$$
 
 
 \textbf{Example.} Let $n \in \Z$. Show that if $n^2$ is even, then $n$ is
@@ -344,11 +343,11 @@ even.
 ```{=latex}
 \footnotesize
 
-In contradiction, we show that the alternative is false. We want to show that $P \implies Q$ which means that if $P$ is true, then $Q$ is true. In this technique, we begin the proof by assuming that $P$ is true and that $Q$ is false. Then we show that our assumption is false. If our assumption is false, then it must be that $P \implies Q$ holds.
+In contradiction, we show that the alternative is false. We want to show that $P \implies Q$ which means that if $P$ is true, then $Q$ is true. In this technique, we begin the proof by assuming that $P$ is true and $Q$ is false, and derive a contradiction. Since $P$ and not($Q$) cannot hold together, $P \implies Q$.
 
 
 \textbf{Example (the pigeonhole principle).} Suppose that $n$ items are
-put into $m$ containers, with $n > m$, then at least one container must contain more than one item.
+put into $m$ containers, with $n > m$. Then, at least one container must contain more than one item.
 
 \textbf{Proof.}
 ```
@@ -360,9 +359,9 @@ put into $m$ containers, with $n > m$, then at least one container must contain 
 ```{=latex}
 \footnotesize
 
-In mathematical induction, we show that our statement is true for every admissible number (or case) in the universe (universal set). This is done by first proving a simple case, then we condition on it to prove the next case. This informal metaphor taken from Wikipedia help explain the concept
+In mathematical induction, we show that our statement is true for every admissible number (or case) in the universe (universal set). This is done by first proving a simple case, then we condition on it to prove the next case. This informal metaphor found on Wikipedia helps explain the concept:
 \ans[3]
-\begin{quote}\small\itshape
+\begin{quote}\scriptsize\itshape
 Mathematical induction proves that we can climb as high as we like on a ladder,
 by proving that we can climb onto the bottom rung (the basis) and that from each
 rung we can climb up to the next one (the step).
@@ -370,19 +369,20 @@ rung we can climb up to the next one (the step).
 \upshape\raggedleft\textemdash\ \emph{Concrete Mathematics}, page 3 margins.
 \end{quote}
 
-Assume that we want to show that the statement $P(n)$ hold in the universe $N_0 = \{n\in \N | n \ge n_0 \}$ for some $n_0 \in \N$.
+Assume that we want to show that the statement $P(n)$ holds in the universe $\N_{\ge n_0} = \{n\in \N \mid n \ge n_0 \}$ for some $n_0 \in \N$.
 The steps of a mathematical induction proof are:
 
 \begin{itemize}
 
 \item \textbf{Base case.} We first show that the first case is true. That is, $P(n_0)$ holds.
 
-\item \textbf{Induction step.} We prove that if the statement hold for any $k \in N_0$, then it holds for  $k+1$, as long as $(k+1) \in N_0$. That is,  $\forall k \in N_0, P(k) \implies P(k+1)$
+\item \textbf{Induction step.} We prove that if the statement holds for any $k \in \N_{\ge n_0}$, then it holds for  $k+1$. That is,  $\forall k \in \N_{\ge n_0}, P(k) \implies P(k+1)$
 
+\item \textbf{Conclusion.} Given the above, $P(n)$ holds for every $n\in \N_{\ge n_0}$.
 
 \end{itemize}
 \ans[1]
-Generally in induction, our universe will be the set of positive integers starting at either $0$ or $1$, which means that the base case is either $n=0$ or $n=1$ and that $k+1$ always belong to the universe.
+Generally in induction, our universe will be the set of integers from $n_0$ onwards, which automatically implies that $k+1$ belongs to the universe.
 ```
 
 
@@ -392,8 +392,8 @@ Generally in induction, our universe will be the set of positive integers starti
 \footnotesize
 
 
-\textbf{Example.} Prove that $\forall n \in \N^{*}$, the statement
-$P(n)\colon=\sum_{j=1}^{n} j = \dfrac{n(n+1)}{2}$ holds, where $\N^{*}$ denotes the set
+\textbf{Example.} Prove that $\forall n \in \N_{\ge 1}$, the statement
+$P(n)\,\colon\,\sum_{j=1}^{n} j = \dfrac{n(n+1)}{2}$ holds, where $\N_{\ge 1}$ denotes the set
 of positive integers.
 
 \textbf{Proof.}
@@ -416,7 +416,45 @@ $$ \bigl( \forall x \in E,\ P(x) \bigr) \text{ is false } \iff \exists\, x_0 \in
 ```
 
 
-# Summary
+# Wrap-up
+
+## Summary {.t}
+
+```{=latex}
+\footnotesize
+\begin{itemize}
+\item\textbf{Mathematical Modelling.} Identify model variables, parameters, relationships,
+objective function, and model assumptions \\
+\item\textbf{Sets.} Describe a set (or a universe) by enumeration, by a property, or by an interval. \\
+\item \textbf{Quantifiers.} $\forall$, $\exists$, and $\exists!$.\\
+\item\textbf{Functions.} How to solve equations and isolate variables using algebraic properties and the log/exponential functions. \\
+\item\textbf{Implication.} $P \implies Q$ means that $P$ is
+sufficient and $Q$ is necessary. 
+
+
+\item\textbf{Choosing the appropriate proof technique:}
+
+\scriptsize
+\renewcommand{\arraystretch}{1.3}
+\begin{center}
+\begin{tabular}{|p{2.9cm}|p{4.6cm}|p{5.0cm}|}
+\hline
+\textbf{Technique} & \textbf{Use when} & \textbf{Assume, then derive} \\
+\hline
+Direct & the steps from $P$ to $Q$ are straightforward  & assume $P$; derive $Q$ \\
+\hline
+Contrapositive & the negations are easier to work with & assume not $Q$; derive not $P$ \\
+\hline
+Contradiction & It is easier to work with $P$ and the negation of $Q$ & assume $P$ and not $Q$; derive a contradiction \\
+\hline
+Induction & the claim is indexed by $n \ge n_0$ & verify $P(n_0)$ then assume $P(k)$ and derive $P(k+1)$ \\
+\hline
+Counterexample & you want to disprove $\forall x \in E,\ P(x)$ & assume nothing; show one example where $P(x)$ is false \\
+\hline
+\end{tabular}
+\end{center}
+\end{itemize}
+```
 
 ## Before next class
 
