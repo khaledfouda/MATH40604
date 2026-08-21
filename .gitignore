@@ -22,6 +22,10 @@ _quarto.yml.local
 *.vrb
 .quarto_ipynb*
 **/*.quarto_ipynb
+/site_libs
+*.html
+*.pdf
+*.tex
 
 # mac/editor stuff
 .DS_Store
@@ -41,3 +45,4 @@ _quarto.yml.local
 
 # files not to be published yet
 /_private/
+
