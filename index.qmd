@@ -22,12 +22,12 @@ teaching the English section of this class.
 The purpose of this course is to give you the mathematical and
 statistical background you need to feel comfortable in the rest of your
 program. We will review and build up on the following topics: modelling, linear algebra, functions, calculus, optimization, probability, and statistical inference. That is a wide territory to cover but you will find yourself familiar with some of the material.
-The course is new this year, and by the end of the term,
-mathematical notation should feel more readable rather than intimidating.
+The course is new this year, and by the end of the term you should feel more comfortable around
+mathematical/statistical notation.
 
 ### ZoneCours vs this website {.unnumbered}
 
-You may have noticed that both sections are sharing the same ZoneCours which makes sharing files there a little bit complicated. This website will contain all the course material needed for the English section. However, I will still upload the same documents to ZoneCours for those who prefer it. 
+You may have noticed that both sections are sharing the same ZoneCours which makes sharing files there a little bit complicated. This site will contain all the course material needed for the English section. However, I will still upload the same documents to ZoneCours for those who prefer it. 
 
 ### How the course works {.unnumbered}
 
@@ -41,7 +41,7 @@ trouble, please skip it, make a note of it,  and we will go over it together dur
 Our first class is Monday, August 24th at 8:30–11:30. I know that is early in
 the term, but I would be very grateful if you took a look at the Week 1 material  [Week 1 - Modelling, sets, and algebra](https://khaledfouda.github.io/MATH40604/weeks/w01/index.html)
 
-Until then, enjoy what is left of the break and get some rest. Feel free to email me if you have any question. I am looking
+Until then, enjoy what is left of the break and get some rest. Feel free to email me if you have any questions. I am looking
 forward to meeting you all.
 
 ~ Khaled

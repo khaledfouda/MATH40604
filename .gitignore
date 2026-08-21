@@ -2,7 +2,7 @@
 /_book/
 /.quarto/
 /_freeze/
-_site/
+/_site/
 /_reference/
 *_files/
 *.tex.bak
@@ -11,6 +11,7 @@ index.typ
 /index.tex
 *.aux
 *.fdb_latexmk
+_quarto.yml.local
 *.fls
 *.log
 *.nav
@@ -20,17 +21,23 @@ index.typ
 *.toc
 *.vrb
 .quarto_ipynb*
+**/*.quarto_ipynb
 
 # mac/editor stuff
 .DS_Store
-#.Rproj.user/
-#*.Rproj
 .vscode/
 .positron/
-**/*.quarto_ipynb
+
+
+# Rproj session
+.Rproj.user/
 .Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+# keep .Rproj itself
+!R/sysdata.rda
+
 
 # files not to be published yet
 /_private/
-
-.RData
