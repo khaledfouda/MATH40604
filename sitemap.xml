@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-4-tutorial.html</loc>
-    <lastmod>2026-08-20T14:55:14.734Z</lastmod>
+    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-2-preclass-ex.html</loc>
+    <lastmod>2026-08-20T15:02:21.798Z</lastmod>
   </url>
   <url>
-    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-1-preclass.html</loc>
-    <lastmod>2026-08-20T14:55:14.733Z</lastmod>
-  </url>
-  <url>
-    <loc>https://khaledfouda.github.io/MATH40604/outline.html</loc>
+    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/index.html</loc>
     <lastmod>2026-08-20T14:55:14.732Z</lastmod>
   </url>
   <url>
@@ -17,11 +13,15 @@
     <lastmod>2026-08-21T13:59:47.371Z</lastmod>
   </url>
   <url>
-    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/index.html</loc>
+    <loc>https://khaledfouda.github.io/MATH40604/outline.html</loc>
     <lastmod>2026-08-20T14:55:14.732Z</lastmod>
   </url>
   <url>
-    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-2-preclass-ex.html</loc>
-    <lastmod>2026-08-20T15:02:21.798Z</lastmod>
+    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-1-preclass.html</loc>
+    <lastmod>2026-08-20T14:55:14.733Z</lastmod>
+  </url>
+  <url>
+    <loc>https://khaledfouda.github.io/MATH40604/weeks/w01/w01-4-tutorial.html</loc>
+    <lastmod>2026-08-20T14:55:14.734Z</lastmod>
   </url>
 </urlset>
