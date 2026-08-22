@@ -92,7 +92,7 @@ depends on the price $p$ of the good and on consumers' income $y$:
 
 $$q_D = a - bp + cy, \qquad \text{where  } a,\, b,\, c > 0 .$$
 
-Supply is assumed fixed and equal to $q_S$.
+Supply is assumed to depend on price such that $q_S=d+ep$, where $d,e>0$.
 Determine the equilibrium price in the market for this good.
 
 ```{=latex}
